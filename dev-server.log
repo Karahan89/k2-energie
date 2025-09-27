@@ -1,0 +1,2072 @@
+
+> web@0.0.1 dev /Users/yunus/Webseite/k2-energie-1/apps/web
+> next dev --turbopack
+
+ ⚠ Port 3000 is in use by process 77218
+92588, using available port 3003 instead.
+   ▲ Next.js 15.4.6 (Turbopack)
+   - Local:        http://localhost:3003
+   - Network:      http://192.168.178.27:3003
+   - Environments: .env.local
+   - Experiments (use with caution):
+     ✓ inlineCss
+     ✓ reactCompiler
+
+ ✓ Starting...
+ ✓ Ready in 1372ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.6s
+Fetching navigation and settings data...
+getNavigationData fetch duration: 206.814ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET / 200 in 4313ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 148ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 150ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 179ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 166ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 35ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 0ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 0ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 82ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 94ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 92ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 68ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.api.san../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 232ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ ○ Compiling /api/navigation ...
+ ✓ Compiled /api/navigation in 559ms
+Fetching navigation and settings data...
+getNavigationData fetch duration: 134.778ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 844ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 93ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 99ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 33ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ ✓ Compiled in 741ms
+ ✓ Compiled in 383ms
+Fetching navigation and settings data...
+getNavigationData fetch duration: 124.061ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:NNpC4Q', 'sanity:s1:mQXfnA' ]
+ GET /api/navigation 200 in 167ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 81ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 82ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ ✓ Compiled in 281ms
+Fetching navigation and settings data...
+getNavigationData fetch duration: 186.826ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET / 200 in 601ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 137ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 137ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 138ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 132ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 33ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 35ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=*%5B_type.. 200 in 35ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 0ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 0ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 66ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 86ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.api.san../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 215ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 141.561ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 169ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 81ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 107ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 125.727ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 167ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 85ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 85ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 35ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 282.688ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:R1dS9w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:NNpC4Q', 'sanity:s1:mQXfnA' ]
+ GET /api/navigation 200 in 311ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 240ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 242ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 123.068ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 147ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 83ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 87ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 38ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 139.607ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 167ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 98ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 100ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 33ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 119.252ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:NNpC4Q', 'sanity:s1:mQXfnA' ]
+ GET /api/navigation 200 in 148ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 82ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 33ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 156.123ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 179ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 100ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 122ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 121.864ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 186ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 83ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 86ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 123.359ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:R1dS9w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 151ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 36ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 126.817ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:R1dS9w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 149ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 89ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 89ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 121.487ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:NNpC4Q', 'sanity:s1:mQXfnA' ]
+ GET /api/navigation 200 in 148ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 82ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 80ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 37ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 37ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 124.428ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:R1dS9w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 162ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 87ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 37ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 119.723ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 154ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 82ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 81ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 128.401ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 167ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 86ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 91ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 35ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 126.678ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:NNpC4Q', 'sanity:s1:mQXfnA' ]
+ GET /api/navigation 200 in 161ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 91ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 90ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 31ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 202.704ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:g1qiww',
+  'sanity:s1:utHV7w',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 237ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 165ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 163ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 35ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 34ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 120.489ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:mQXfnA', 'sanity:s1:NNpC4Q' ]
+ GET /api/navigation 200 in 143ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 86ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 32ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+Fetching navigation and settings data...
+getNavigationData fetch duration: 122.366ms
+Navigation data fetched: [
+  'sanity',
+  'sanity:s1:g1qiww',
+  'sanity:s1:YVQWKw',
+  'sanity:s1:b7nusg',
+  'sanity:s1:H2yQDA',
+  'sanity:s1:R1dS9w',
+  'sanity:s1:NEWufA',
+  'sanity:s1:dHEraQ',
+  'sanity:s1:utHV7w'
+]
+Settings data fetched: [ 'sanity', 'sanity:s1:NNpC4Q', 'sanity:s1:mQXfnA' ]
+ GET /api/navigation 200 in 145ms
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../v2025-08-29/data/query/..?query=%0A++*%5B.. 200 in 84ms (cache skip)
+ │ │ Cache skipped reason: (auto no cache)
+ │ GET https://90o2rk5e.apicdn.../ ✓ Compiled in 291ms
+ ✓ Compiled in 501ms
+ ✓ Compiled in 107ms
+ ✓ Compiled in 91ms
+ ✓ Compiled in 507ms
+ ✓ Compiled in 495ms
+ ✓ Compiled in 308ms
+   Reload env: .env.local
+ ✓ Compiled in 1681ms
+   Reload env: .env.local
+ ✓ Compiled in 1537ms
+ ✓ Compiled in 194ms
+ ✓ Compiled in 537ms
+ ✓ Compiled in 510ms
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m ✓ Compiled in 1278ms
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env
+   Reload env: .env
+   Reload env: .env.local
+m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled in 1290ms
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env
+   Reload env: .env
+   Reload env: .env.local
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ✓ Compiled in 249ms
+ ✓ Compiled in 482ms
+ ✓ Compiled in 108ms
+ ✓ Compiled in 93ms
+ ✓ Compiled in 599ms
+ ✓ Compiled in 502ms
+ ✓ Compiled in 122ms
+ ✓ Compiled in 180ms
+   Reload env: .env.local
+ ✓ Compiled in 1795ms
+   Reload env: .env.local
+ ✓ Compiled in 1494ms
+ ✓ Compiled in 195ms
+ ✓ Compiled in 534ms
+ ✓ Compiled in 534ms
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/cta.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityButtons[39m } [36mfrom[39m [32m"../elements/sanity-buttons"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/cta.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/cta.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/faq-accordion.tsx:13:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 11 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 12 |[39m
+[31m[1m>[22m[39m[90m 13 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 14 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 15 |[39m
+ [90m 16 |[39m type [33mFaqAccordionProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"faqAccordion"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/faq-accordion.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/feature-cards-with-icon.tsx:5:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 3 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 4 |[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 7 |[39m [36mimport[39m { [33mSanityIcon[39m } [36mfrom[39m [32m"../elements/sanity-icon"[39m[33m;[39m
+ [90m 8 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/feature-cards-with-icon.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/hero.tsx:7:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  5 |[39m [36mimport[39m type { [33mPagebuilderType[39m[33m,[39m [33mSanityButtonProps[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m  6 |[39m
+[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m  8 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m  9 |[39m
+ [90m 10 |[39m type [33mHeroBlockProps[39m [33m=[39m [33mPagebuilderType[39m[33m<[39m[32m"hero"[39m[33m>[39m[33m;[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/hero.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/hero.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/image-link-cards.tsx:6:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m 4 |[39m [36mimport[39m type { [33mPagebuilderType[39m } [36mfrom[39m [32m"@/types"[39m[33m;[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 8 |[39m [36mimport[39m { [33mCTACard[39m } [36mfrom[39m [32m"../image-link-card"[39m[33m;[39m
+ [90m 9 |[39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/image-link-cards.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./apps/web/src/components/sections/subscribe-newsletter.tsx:10:1
+Module not found: Can't resolve '../ambient-surface'
+[0m [90m  8 |[39m
+ [90m  9 |[39m [90m// import { newsletterSubmission } from "@/action/newsletter-submission";[39m
+[31m[1m>[22m[39m[90m 10 |[39m [36mimport[39m { [33mAmbientSurface[39m } [36mfrom[39m [32m"../ambient-surface"[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 11 |[39m [36mimport[39m { [33mRichText[39m } [36mfrom[39m [32m"../elements/rich-text"[39m[33m;[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [90m// const InteractiveGridPattern = dynamic([39m[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component Browser]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/src/components/sections/subscribe-newsletter.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Client Component SSR]
+    ./apps/web/src/components/pagebuilder.tsx [Server Component]
+    ./apps/web/src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled in 1277ms
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env
+   Reload env: .env
+   Reload env: .env.local

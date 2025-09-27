@@ -1,0 +1,28 @@
+{
+  "name": "k2energieberatung",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "check-types": "turbo check-types",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "migrate": "tsx sanity/migrate-from-demo.ts"
+  },
+  "devDependencies": {
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "dotenv": "^17.2.2",
+    "prettier": "^3.6.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "turbo": "^2.5.4",
+    "typescript": "5.9.2",
+    "uuid": "^13.0.0"
+  },
+  "packageManager": "pnpm@10.12.2",
+  "engines": {
+    "node": ">=20"
+  }
+}
