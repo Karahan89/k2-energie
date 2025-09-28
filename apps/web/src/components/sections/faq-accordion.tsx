@@ -34,7 +34,7 @@ export function FaqAccordion({
             {eyebrow && (
               <Badge
                 variant="secondary"
-                className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-strong)] px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-[color:var(--brand-blue-900)]"
+                className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-strong)] px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-[color:var(--brand-800)] dark:text-[color:var(--neutral-000)]/85"
               >
                 {eyebrow}
               </Badge>
@@ -64,11 +64,11 @@ export function FaqAccordion({
                   key={`AccordionItem-${faq?._id ?? index}-${index}`}
                   className="border-b border-[color:var(--border)]/60 last:border-none"
                 >
-                  <AccordionTrigger className="group py-4 text-left text-[length:var(--step--1)] font-medium text-[color:var(--brand-blue-900)] transition-colors hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)]">
+                  <AccordionTrigger className="group py-4 text-left text-[length:var(--step--1)] font-medium text-[color:var(--brand-800)] transition-colors hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)] dark:text-[color:var(--neutral-000)]">
                     <span className="flex items-center justify-between gap-3 text-left">
                       {faq?.title}
                       <ArrowUpRight
-                        className="h-4 w-4 shrink-0 text-[color:var(--brand-blue-900)] transition-transform duration-200 group-data-[state=open]:rotate-45"
+                        className="h-4 w-4 shrink-0 text-[color:var(--brand-800)] transition-transform duration-200 group-data-[state=open]:rotate-45 dark:text-[color:var(--neutral-000)]"
                         aria-hidden="true"
                       />
                     </span>
@@ -93,7 +93,7 @@ export function FaqAccordion({
                 <Link
                   href={link.href ?? "#"}
                   target={link.openInNewTab ? "_blank" : "_self"}
-                  className="mt-1 inline-flex items-center gap-2 text-[length:var(--step--1)] font-semibold text-[color:var(--brand-blue-900)] transition-colors hover:text-[color:var(--brand-accent-amber)]"
+                  className="mt-1 inline-flex items-center gap-2 text-[length:var(--step--1)] font-semibold text-[color:var(--brand-800)] transition-colors hover:text-[color:var(--accent-500)] dark:text-[color:var(--neutral-000)]"
                 >
                   {link?.description}
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

@@ -6,10 +6,19 @@ import { sanityFetch } from "@/lib/sanity/live";
 import { querySlugPageData, querySlugPagePaths } from "@/lib/sanity/query";
 import { getSEOMetadata } from "@/lib/seo";
 
+function normalizeSlug(slug: string) {
+  if (!slug) return slug;
+  return slug.startsWith("/") ? slug.slice(1) : slug;
+}
+
 async function fetchSlugPageData(slug: string, stega = true) {
+  const normalizedSlug = normalizeSlug(slug);
+  const slugWithLeading = normalizedSlug.startsWith("/")
+    ? normalizedSlug
+    : `/${normalizedSlug}`;
   return await sanityFetch({
     query: querySlugPageData,
-    params: { slug: `/${slug}` },
+    params: { slug: normalizedSlug || slugWithLeading, slugWithLeading },
     stega,
   });
 }
@@ -20,6 +29,7 @@ async function fetchSlugPagePaths() {
   for (const slug of slugs) {
     if (!slug) continue;
     const parts = slug.split("/").filter(Boolean);
+    if (parts.length === 0) continue;
     paths.push({ slug: parts });
   }
   return paths;

@@ -210,7 +210,7 @@ export const queryHomePageData =
   }`);
 
 export const querySlugPageData = defineQuery(`
-  *[_type == "page" && slug.current == $slug][0]{
+  *[_type in ["page","service","companyPage","contactPage","jobsIndexPage","homePage","blogIndex","project","teamMember","jobPosting"] && slug.current in [$slug, $slugWithLeading]][0]{
     ...,
     "slug": slug.current,
     ${pageBuilderFragment}
@@ -218,7 +218,7 @@ export const querySlugPageData = defineQuery(`
   `);
 
 export const querySlugPagePaths = defineQuery(`
-  *[_type == "page" && defined(slug.current)].slug.current
+  *[_type in ["page","service","companyPage","contactPage","jobsIndexPage","homePage","blogIndex","project","teamMember","jobPosting"] && defined(slug.current)].slug.current
 `);
 
 export const queryBlogIndexPageData = defineQuery(`

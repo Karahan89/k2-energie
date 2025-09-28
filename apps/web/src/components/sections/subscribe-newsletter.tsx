@@ -59,7 +59,7 @@ export function SubscribeNewsletter({
       <div className="layout-shell">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-[var(--space-6)] rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface-strong)] p-8 shadow-[var(--shadow-soft)] sm:flex-row sm:items-center sm:justify-between">
           <div className="flex-1 space-y-[var(--space-3)] text-left">
-            <h2 className="text-2xl font-semibold text-[color:var(--brand-blue-900)]">
+            <h2 className="text-2xl font-semibold text-[color:var(--brand-800)] dark:text-[color:var(--neutral-000)]">
               {title || "Förder-Update für Eigentümer:innen"}
             </h2>
             {subTitle && (

@@ -2,7 +2,6 @@ import { Badge } from "@workspace/ui/components/badge";
 
 import type { PagebuilderType } from "@/types";
 
-import { AmbientSurface } from "../ambient-surface";
 import { RichText } from "../elements/rich-text";
 import { SanityButtons } from "../elements/sanity-buttons";
 
@@ -10,43 +9,37 @@ export type CTABlockProps = PagebuilderType<"cta">;
 
 export function CTABlock({ richText, title, eyebrow, buttons }: CTABlockProps) {
   return (
-    <AmbientSurface
-      id="cta"
-      variant="default"
-      withTopDivider
-      className="my-[var(--space-10)] py-[var(--space-12)] md:my-[var(--space-14)] lg:py-[var(--space-16)]"
-    >
-      <div className="layout-shell">
-        <div className="mx-auto max-w-3xl space-y-[var(--space-5)] text-center">
-          {eyebrow && (
-            <Badge
-              variant="secondary"
-              className="mx-auto w-max rounded-full border border-[color:var(--border)] bg-[color:var(--surface-subtle)] px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-[color:var(--brand-blue-900)]"
-            >
-              {eyebrow}
-            </Badge>
-          )}
-
-          <h2 className="text-balance text-3xl font-semibold sm:text-[length:var(--step-3)]">
-            {title}
-          </h2>
-
-          <div className="text-[length:var(--step--1)] text-[color:var(--neutral-500)]">
-            <RichText richText={richText} className="text-pretty" />
+    <section className="my-[var(--space-10)] bg-[color:var(--brand-800)] text-[color:var(--neutral-000)]">
+      <div className="layout-shell py-[var(--space-10)] md:py-[var(--space-12)]">
+        <div className="mx-auto flex flex-col items-start gap-[var(--space-6)] md:flex-row md:items-center md:justify-between">
+          <div className="max-w-xl space-y-[var(--space-3)] text-left">
+            {eyebrow && (
+              <Badge
+                variant="secondary"
+                className="w-max rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-white"
+              >
+                {eyebrow}
+              </Badge>
+            )}
+            <h2 className="text-3xl font-semibold sm:text-[length:var(--step-3)]">
+              {title}
+            </h2>
+            <div className="text-[length:var(--step--1)] text-white/80">
+              <RichText richText={richText} className="text-pretty" />
+            </div>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+              Kostenfreie Erstberatung · Fördermittelcheck inklusive ·
+              Individueller Maßnahmenplan
+            </p>
           </div>
 
           <SanityButtons
             buttons={buttons}
-            buttonClassName="min-w-[min(100%,10rem)] sm:min-w-[10rem]"
-            className="mt-[var(--space-3)] flex flex-col items-center justify-center gap-[var(--space-3)] sm:flex-row"
+            buttonClassName="min-w-[min(100%,12rem)] sm:min-w-[12rem]"
+            className="flex flex-col items-stretch gap-[var(--space-3)] sm:flex-row"
           />
-
-          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--neutral-500)]">
-            Kostenfreie Erstberatung · Fördermittelcheck inklusive ·
-            Individueller Maßnahmenplan
-          </p>
         </div>
       </div>
-    </AmbientSurface>
+    </section>
   );
 }

@@ -9,131 +9,137 @@
 
 :root {
   /* Brand Palette */
-  --brand-blue-900: #0b3c5d;
-  --brand-blue-950: #082c45;
-  --brand-green-600: #1e7a46;
-  --brand-accent-amber: #ffc517;
-  --brand-accent-amber-strong: #e0ae13;
-  --brand-accent-orange: #ff8a00;
+  --brand-50: #f1f6f6;
+  --brand-100: #dfeeee;
+  --brand-200: #c0ddde;
+  --brand-300: #95c6c9;
+  --brand-400: #63a8ad;
+  --brand-500: #3f8f95;
+  --brand-600: #2f737a;
+  --brand-700: #285e64;
+  --brand-800: #234c51;
+  --brand-900: #1f4045;
+
+  --accent-50: #fff7ea;
+  --accent-100: #ffeaca;
+  --accent-200: #ffd394;
+  --accent-300: #ffb75a;
+  --accent-400: #ff9a2a;
+  --accent-500: #f27f00;
+  --accent-600: #cc6400;
+  --accent-700: #a44f00;
+  --accent-800: #7d3c00;
+  --accent-900: #5f2e00;
+
+  /* Legacy aliases for component references */
+  --brand-blue-900: var(--brand-900);
+  --brand-blue-950: color-mix(in srgb, var(--brand-900) 92%, black 8%);
+  --brand-green-600: var(--brand-500);
+  --brand-accent-amber: var(--accent-500);
+  --brand-accent-amber-strong: var(--accent-600);
+  --brand-accent-orange: var(--accent-400);
 
   --neutral-000: #ffffff;
-  --neutral-050: #f2f4f7;
-  --neutral-100: #e6e9ee;
-  --neutral-200: #d7dde5;
-  --neutral-500: #4a5668;
-  --neutral-700: #2f3a4a;
-  --neutral-800: #1a1a1a;
+  --neutral-050: #f7f8f9;
+  --neutral-100: #f1f3f5;
+  --neutral-200: #e6e9ee;
+  --neutral-300: #d6dbe2;
+  --neutral-400: #aeb6c2;
+  --neutral-500: #7c8798;
+  --neutral-600: #5a6576;
+  --neutral-700: #444e5b;
+  --neutral-800: #2f3742;
+  --neutral-900: #1f252d;
 
-  --info-50: #e6eef4;
+  --info-50: #eef6ff;
   --success-50: #e8f5ee;
 
   /* Core Tokens */
-  --background: var(--neutral-000);
-  --foreground: var(--neutral-800);
+  --background: var(--neutral-050);
+  --foreground: var(--neutral-900);
   --card: var(--neutral-000);
-  --card-foreground: var(--neutral-800);
+  --card-foreground: var(--foreground);
   --popover: var(--neutral-000);
-  --popover-foreground: var(--neutral-800);
-  --primary: var(--brand-blue-900);
+  --popover-foreground: var(--foreground);
+  --primary: var(--brand-700);
   --primary-foreground: var(--neutral-000);
-  --primary-strong: var(--brand-blue-950);
-  --primary-soft: color-mix(in srgb, var(--brand-blue-900) 12%, white 88%);
-  --secondary: var(--brand-green-600);
+  --primary-strong: var(--brand-900);
+  --primary-soft: color-mix(in srgb, var(--brand-200) 70%, var(--neutral-000) 30%);
+  --secondary: var(--brand-500);
   --secondary-foreground: var(--neutral-000);
-  --muted: var(--neutral-050);
-  --muted-foreground: var(--neutral-500);
-  --accent: var(--brand-accent-amber);
-  --accent-foreground: var(--neutral-800);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-600);
+  --accent: var(--accent-500);
+  --accent-foreground: var(--neutral-900);
   --destructive: #b42318;
   --destructive-foreground: var(--neutral-000);
-  --border: color-mix(in srgb, var(--brand-blue-900) 12%, var(--neutral-200) 88%);
-  --input: color-mix(in srgb, var(--brand-blue-900) 10%, var(--neutral-050) 90%);
-  --ring: color-mix(in srgb, var(--brand-blue-900) 70%, white 30%);
-  --chart-1: var(--brand-accent-amber);
-  --chart-2: var(--brand-green-600);
-  --chart-3: #23658f;
-  --chart-4: var(--brand-accent-orange);
-  --chart-5: #7c54a2;
+  --border: color-mix(in srgb, var(--neutral-300) 70%, transparent 30%);
+  --input: color-mix(in srgb, var(--neutral-200) 80%, transparent 20%);
+  --ring: color-mix(in srgb, var(--brand-400) 60%, transparent 40%);
+  --chart-1: var(--accent-500);
+  --chart-2: var(--brand-500);
+  --chart-3: #43618a;
+  --chart-4: #79a66b;
+  --chart-5: #6f5ea5;
   --radius: 0.75rem;
-  --sidebar: color-mix(in srgb, var(--brand-blue-900) 8%, var(--neutral-050) 92%);
+  --sidebar: color-mix(in srgb, var(--brand-100) 55%, var(--neutral-050) 45%);
   --sidebar-foreground: var(--neutral-800);
-  --sidebar-primary: var(--brand-blue-900);
+  --sidebar-primary: var(--brand-700);
   --sidebar-primary-foreground: var(--neutral-000);
-  --sidebar-accent: color-mix(in srgb, var(--brand-green-600) 45%, var(--neutral-050) 55%);
-  --sidebar-accent-foreground: var(--brand-blue-900);
-  --sidebar-border: color-mix(in srgb, var(--brand-blue-900) 14%, transparent 86%);
-  --sidebar-ring: color-mix(in srgb, var(--brand-blue-900) 45%, transparent 55%);
+  --sidebar-accent: color-mix(in srgb, var(--brand-200) 55%, var(--neutral-100) 45%);
+  --sidebar-accent-foreground: var(--brand-800);
+  --sidebar-border: color-mix(in srgb, var(--brand-200) 30%, transparent 70%);
+  --sidebar-ring: color-mix(in srgb, var(--brand-400) 45%, transparent 55%);
 
   --surface-strong: var(--neutral-000);
-  --surface-subtle: color-mix(in srgb, var(--neutral-000) 90%, var(--neutral-050) 10%);
-  --surface-muted: color-mix(in srgb, var(--neutral-050) 70%, var(--neutral-100) 30%);
+  --surface-subtle: color-mix(in srgb, var(--neutral-100) 70%, var(--neutral-000) 30%);
+  --surface-muted: color-mix(in srgb, var(--neutral-200) 70%, var(--neutral-100) 30%);
 
-  --liquid-glass-bg: color-mix(in srgb, var(--neutral-000) 72%, transparent 28%);
-  --liquid-glass-border: color-mix(in srgb, var(--brand-blue-900) 25%, transparent 75%);
-  --liquid-glass-highlight: color-mix(in srgb, var(--brand-accent-amber) 35%, transparent 65%);
+  --liquid-glass-bg: color-mix(in srgb, var(--neutral-000) 65%, transparent 35%);
+  --liquid-glass-border: color-mix(in srgb, var(--brand-400) 28%, transparent 72%);
+  --liquid-glass-highlight: color-mix(in srgb, var(--accent-400) 40%, transparent 60%);
 
   /* Glass + Shadows */
-  --glass-background: color-mix(in srgb, var(--neutral-000) 65%, transparent 35%);
-  --glass-background-strong: color-mix(in srgb, var(--neutral-000) 55%, var(--brand-blue-900) 45%);
-  --glass-border: color-mix(in srgb, var(--brand-blue-900) 22%, transparent 78%);
-  --shadow-soft: 0 18px 36px -24px rgba(8, 60, 93, 0.22);
-  --shadow-elevated: 0 28px 48px -24px rgba(8, 60, 93, 0.28),
-    0 12px 26px -18px rgba(31, 97, 141, 0.18);
+  --glass-background: color-mix(in srgb, var(--neutral-000) 60%, transparent 40%);
+  --glass-background-strong: color-mix(in srgb, var(--brand-100) 60%, var(--neutral-000) 40%);
+  --glass-border: color-mix(in srgb, var(--brand-300) 30%, transparent 70%);
+  --shadow-soft: 0 12px 28px -18px rgba(35, 76, 81, 0.18);
+  --shadow-elevated: 0 22px 46px -20px rgba(31, 64, 69, 0.28),
+    0 12px 24px -18px rgba(63, 143, 149, 0.16);
 
   /* Typography */
-  --font-sans: "Inter", "Work Sans", "Segoe UI", system-ui, -apple-system, "BlinkMacSystemFont", sans-serif;
-  --font-serif: "Spectral", "Merriweather", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
   --tracking-tight: -0.015em;
   --tracking-wide: 0.08em;
 
-  --step--2: clamp(0.75rem, 0.72rem + 0.2vw, 0.875rem);
-  --step--1: clamp(0.875rem, 0.84rem + 0.25vw, 1rem);
-  --step-0: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
-  --step-1: clamp(1.125rem, 1.03rem + 0.7vw, 1.375rem);
-  --step-2: clamp(1.375rem, 1.2rem + 1vw, 1.75rem);
-  --step-3: clamp(1.625rem, 1.4rem + 1.4vw, 2.25rem);
-  --step-4: clamp(2rem, 1.6rem + 2vw, 3rem);
-  --step-5: clamp(2.5rem, 1.9rem + 2.8vw, 3.75rem);
+  --step--2: 0.75rem; /* 12px */
+  --step--1: 0.875rem; /* 14px */
+  --step-0: 1rem; /* 16px */
+  --step-1: 1.125rem; /* 18px */
+  --step-2: 1.25rem; /* 20px */
+  --step-3: 1.5rem; /* 24px */
+  --step-4: 1.875rem; /* 30px */
+  --step-5: 2.25rem; /* 36px */
 
-  --max-readable: clamp(45ch, 65ch, 70ch);
-  /* Align shell widths with Tailwind's max-w-6xl/7xl container scale */
-  --page-max-width: 80rem;
-  --page-max-width-wide: 87.5rem;
+  --max-readable: clamp(45ch, 60ch, 68ch);
+  --page-max-width: 75rem; /* 1200px */
+  --page-max-width-wide: 82.5rem; /* 1320px */
 
-  /* 8px-based spacing scale (0.25rem ≈ 4px tick for fine control) */
-  --space-0: 0rem;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-7: 1.75rem;
-  --space-8: 2rem;
-  --space-9: 2.25rem;
-  --space-10: 2.5rem;
-  --space-11: 2.75rem;
-  --space-12: 3rem;
-  --space-13: 3.25rem;
-  --space-14: 3.5rem;
-  --space-15: 3.75rem;
-  --space-16: 4rem;
-  --space-17: 4.25rem;
-  --space-18: 4.5rem;
-  --space-19: 4.75rem;
-  --space-20: 5rem;
-  --space-21: 5.25rem;
-  --space-22: 5.5rem;
-  --space-23: 5.75rem;
-  --space-24: 6rem;
-  --space-25: 6.25rem;
-  --space-26: 6.5rem;
-  --space-27: 6.75rem;
-  --space-28: 7rem;
-  --space-29: 7.25rem;
-  --space-30: 7.5rem;
-  --space-31: 7.75rem;
-  --space-32: 8rem;
+  /* 4px-based spacing scale */
+  --space-0: 0rem; /* 0 */
+  --space-1: 0.25rem; /* 4 */
+  --space-2: 0.5rem; /* 8 */
+  --space-3: 0.75rem; /* 12 */
+  --space-4: 1rem; /* 16 */
+  --space-5: 1.5rem; /* 24 */
+  --space-6: 2rem; /* 32 */
+  --space-7: 2.5rem; /* 40 */
+  --space-8: 3rem; /* 48 */
+  --space-9: 4rem; /* 64 */
+  --space-10: 5rem; /* 80 */
+  --space-11: 6rem; /* 96 */
+  --space-12: 8rem; /* 128 */
 }
 
 .dark {
@@ -167,19 +173,19 @@
   --sidebar-border: color-mix(in srgb, var(--brand-accent-amber) 28%, transparent 72%);
   --sidebar-ring: color-mix(in srgb, var(--brand-accent-amber) 45%, transparent 55%);
 
-  --surface-strong: color-mix(in srgb, var(--brand-blue-900) 15%, var(--background) 85%);
-  --surface-subtle: color-mix(in srgb, var(--background) 85%, var(--brand-blue-900) 15%);
-  --surface-muted: color-mix(in srgb, var(--brand-blue-900) 40%, var(--background) 60%);
+  --surface-strong: color-mix(in srgb, var(--brand-900) 18%, var(--background) 82%);
+  --surface-subtle: color-mix(in srgb, var(--background) 80%, var(--brand-900) 20%);
+  --surface-muted: color-mix(in srgb, var(--brand-800) 45%, var(--background) 55%);
 
-  --liquid-glass-bg: color-mix(in srgb, var(--brand-blue-900) 45%, transparent 55%);
-  --liquid-glass-border: color-mix(in srgb, var(--brand-accent-amber) 35%, transparent 65%);
-  --liquid-glass-highlight: color-mix(in srgb, var(--brand-accent-amber) 55%, transparent 45%);
+  --liquid-glass-bg: color-mix(in srgb, var(--brand-900) 40%, transparent 60%);
+  --liquid-glass-border: color-mix(in srgb, var(--accent-400) 40%, transparent 60%);
+  --liquid-glass-highlight: color-mix(in srgb, var(--accent-500) 55%, transparent 45%);
 
-  --glass-background: color-mix(in srgb, var(--brand-blue-900) 40%, transparent 60%);
-  --glass-background-strong: color-mix(in srgb, var(--brand-accent-amber) 45%, transparent 55%);
-  --glass-border: color-mix(in srgb, var(--brand-accent-amber) 40%, transparent 60%);
-  --shadow-soft: 0 20px 40px -25px rgba(10, 46, 66, 0.45);
-  --shadow-elevated: 0 35px 70px -30px rgba(255, 197, 23, 0.35);
+  --glass-background: color-mix(in srgb, var(--brand-900) 38%, transparent 62%);
+  --glass-background-strong: color-mix(in srgb, var(--accent-500) 40%, transparent 60%);
+  --glass-border: color-mix(in srgb, var(--accent-500) 38%, transparent 62%);
+  --shadow-soft: 0 18px 38px -24px rgba(11, 49, 58, 0.45);
+  --shadow-elevated: 0 32px 60px -28px rgba(242, 127, 0, 0.32);
 }
 
 @media (min-width: 1400px) {
@@ -865,45 +871,37 @@
   }
 
   .liquid-glass {
-    background-color: var(--liquid-glass-bg);
-    border: 1px solid var(--liquid-glass-border);
-    box-shadow: var(--shadow-soft);
     position: relative;
-    isolation: isolate;
+    background: color-mix(in srgb, var(--neutral-000) 35%, transparent 65%);
+    border-radius: var(--radius-xl);
+    border: 1px solid color-mix(in srgb, var(--neutral-000) 20%, transparent 80%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow:
+      inset 0 1px 1px color-mix(in srgb, var(--neutral-000) 70%, transparent 30%),
+      0 4px 20px -8px color-mix(in srgb, var(--brand-blue-900) 30%, transparent 70%);
     overflow: hidden;
-    transition: transform 200ms ease, box-shadow 200ms ease;
   }
 
-  .liquid-glass::before,
-  .liquid-glass::after {
+  /* Highlight Layer */
+  .liquid-glass::before {
     content: "";
     position: absolute;
     inset: 0;
+    background: radial-gradient(
+        circle at 20% 20%,
+        color-mix(in srgb, var(--accent) 12%, transparent 88%) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        color-mix(in srgb, var(--secondary) 12%, transparent 88%) 0%,
+        transparent 70%
+      );
+    mix-blend-mode: overlay;
+    opacity: 0.6;
     pointer-events: none;
-    opacity: 0.45;
-    background: radial-gradient(circle at 20% 20%, var(--liquid-glass-highlight) 0%, transparent 55%);
-    mix-blend-mode: screen;
-    transition: opacity 200ms ease;
-  }
-
-  .liquid-glass::after {
-    opacity: 0.25;
-    background: linear-gradient(120deg, transparent 0%, var(--liquid-glass-highlight) 40%, transparent 75%);
-  }
-
-  .liquid-glass:hover {
-    box-shadow: var(--shadow-elevated);
-    transform: translateY(-1px);
-  }
-
-  .liquid-glass:hover::after {
-    opacity: 0.4;
-  }
-
-  @supports (backdrop-filter: blur(24px)) {
-    .liquid-glass {
-      backdrop-filter: blur(24px) saturate(160%);
-    }
+    animation: liquid-move 12s ease-in-out infinite alternate;
   }
 
   .animate-float {
@@ -938,4 +936,23 @@
     display: block;
     height: var(--space-8);
   }
+}
+
+/* hero-bg: ruhiger, professioneller Verlauf */
+.hero-bg {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in srgb, var(--primary) 8%, transparent 92%), transparent 70%),
+    linear-gradient(180deg, var(--surface-subtle) 0%, var(--background) 100%);
+}
+
+/* Dark Mode Akzente */
+.dark .hero-bg {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in srgb, var(--primary) 15%, transparent 85%), transparent 70%),
+    linear-gradient(180deg, var(--surface-subtle) 0%, var(--background) 100%);
+}
+
+@keyframes liquid-move {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(-4%, -2%, 0); }
 }

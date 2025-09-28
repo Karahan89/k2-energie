@@ -13,14 +13,14 @@ const surfaceByVariant: Record<SurfaceVariant, string> = {
 
 const accentByVariant: Record<SurfaceVariant, string[]> = {
   hero: [
-    "absolute -top-24 right-24 h-48 w-48 rounded-full bg-[color:var(--brand-accent-amber)]/18 blur-[120px]",
-    "absolute bottom-[-20%] left-1/3 h-40 w-40 rounded-full bg-[color:var(--brand-blue-900)]/14 blur-[110px]",
+    "absolute -top-24 right-24 h-48 w-48 rounded-full bg-[color:var(--accent-400)]/14 blur-[120px]",
+    "absolute bottom-[-20%] left-1/3 h-40 w-40 rounded-full bg-[color:var(--brand-200)]/18 blur-[110px]",
   ],
   default: [
-    "absolute -top-20 left-16 h-36 w-36 rounded-full bg-[color:var(--brand-blue-900)]/12 blur-[95px]",
+    "absolute -top-20 left-16 h-36 w-36 rounded-full bg-[color:var(--brand-100)]/18 blur-[95px]",
   ],
   muted: [
-    "absolute bottom-[-18%] right-20 h-32 w-32 rounded-full bg-[color:var(--brand-green-600)]/12 blur-[90px]",
+    "absolute bottom-[-18%] right-20 h-32 w-32 rounded-full bg-[color:var(--brand-200)]/16 blur-[90px]",
   ],
 };
 

@@ -1,15 +1,15 @@
 import { Button } from "@workspace/ui/components/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
 import type { PagebuilderType, SanityButtonProps } from "@/types";
 
-import { AmbientSurface } from "../ambient-surface";
 import { RichText } from "../elements/rich-text";
 
 type HeroBlockProps = PagebuilderType<"hero">;
 
-const HIGHLIGHT_CLASS = "text-[color:var(--brand-blue-900)]";
+const HIGHLIGHT_CLASS =
+  "text-[color:var(--primary-strong)] dark:text-[color:var(--neutral-000)]";
 
 function renderHighlightedTitle(
   title?: string | null,
@@ -96,32 +96,55 @@ export function HeroBlock({
   const featureItems = (features ?? []).filter(Boolean) as string[];
 
   const card = energyCard ?? {};
-  const efficiencyScore = Number(card.efficiencyScore ?? 0);
+  // Corrected efficiencyScore to include a fallback for demo purposes
+  const efficiencyScore = Number(card.efficiencyScore ?? 85);
   const clampedScore = Number.isFinite(efficiencyScore)
     ? Math.max(0, Math.min(100, efficiencyScore))
     : 0;
 
   return (
-    <AmbientSurface
-      id="hero"
-      variant="hero"
-      className="my-[var(--space-12)] lg:my-[var(--space-14)]"
-      withBottomDivider={false}
-    >
-      <div className="layout-shell-wide py-[var(--space-12)] lg:py-[var(--space-14)]">
-        <div className="grid grid-cols-1 gap-[var(--space-10)] lg:grid-cols-[ minmax(0,1.1fr)_minmax(0,0.9fr) ] lg:items-center">
+    <section className="relative overflow-hidden bg-[color:var(--surface-strong)]">
+      {/* Soft gradient + subtle grid */}
+      <div className="hero-bg pointer-events-none absolute inset-0 -z-10" />
+
+      <div className="layout-shell-wide py-[var(--space-10)] lg:py-[var(--space-12)]">
+        <div className="grid grid-cols-1 gap-[var(--space-8)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
           <div className="flex flex-col gap-[var(--space-6)] text-left">
             {badge && (
-              <span className="inline-flex w-max items-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface-subtle)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-blue-900)]">
+              <div
+                className="inline-flex items-center gap-2 self-start rounded-full px-3 py-1 text-sm"
+                style={{
+                  backgroundColor: "var(--primary-soft)",
+                  color: "var(--primary-strong)",
+                  border: "1px solid var(--border)",
+                }}
+              >
+                <span
+                  className="inline-block h-2 w-2 rounded-full"
+                  style={{ backgroundColor: "var(--secondary)" }}
+                />
                 {badge}
-              </span>
+              </div>
             )}
 
             <div className="space-y-[var(--space-4)]">
-              <h1 className="text-balance text-4xl font-semibold leading-tight sm:text-5xl lg:text-[clamp(3rem,3.6vw,3.8rem)]">
+              <h1
+                className="font-serif"
+                style={{
+                  color: "var(--primary-strong)",
+                  fontSize: "var(--step-5)",
+                  lineHeight: 1.05,
+                }}
+              >
                 {renderHighlightedTitle(title, titleHighlights)}
               </h1>
-              <div className="max-w-2xl text-pretty text-base leading-relaxed text-[color:var(--neutral-500)] sm:text-lg">
+              <div
+                className="content-readable"
+                style={{
+                  color: "var(--muted-foreground)",
+                  fontSize: "var(--step-1)",
+                }}
+              >
                 <RichText richText={richText} />
               </div>
             </div>
@@ -132,119 +155,157 @@ export function HeroBlock({
                   asChild
                   size="lg"
                   variant="default"
-                  className="w-full sm:w-auto"
+                  className="w-full shadow-elevated sm:w-auto"
+                  style={{
+                    backgroundColor: "var(--accent)",
+                    color: "var(--accent-foreground)",
+                    border:
+                      "1px solid color-mix(in srgb, var(--accent) 40%, transparent 60%)",
+                  }}
                 >
                   <Link
                     href={primaryButton.href}
                     target={primaryButton.openInNewTab ? "_blank" : "_self"}
                   >
-                    {primaryButton.text ?? "Kostenlose Erstberatung sichern"}
-                    <ArrowRight className="ml-2" />
+                    {primaryButton.text ??
+                      "Meine kostenlose Erstberatung buchen"}
+                    <ArrowRight className="ml-2 size-4" />
                   </Link>
                 </Button>
               )}
-              <p className="text-sm text-[color:var(--neutral-500)]">
-                Persönliche Analyse · BAFA-zugelassen · Antwort binnen
-                24&nbsp;Stunden
-              </p>
             </div>
+            <p className="text-sm text-[color:var(--muted-foreground)]">
+              Kostenlos & unverbindlich • Keine Datenweitergabe
+            </p>
 
             {featureItems.length > 0 && (
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {featureItems.map((feature) => (
-                  <li
+              <div
+                className="flex flex-wrap items-center gap-x-5 gap-y-3 pt-2"
+                aria-label="Vertrauensmerkmale"
+              >
+                {featureItems.map((feature, index) => (
+                  <div
                     key={feature}
-                    className="flex items-start gap-3 rounded-2xl bg-[color:var(--surface-subtle)] px-4 py-3 text-sm text-[color:var(--neutral-500)]"
+                    className="flex items-center gap-x-5 gap-y-3"
                   >
-                    <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[color:var(--brand-blue-900)]/10 text-[color:var(--brand-blue-900)]">
-                      <Check className="h-3.5 w-3.5" />
-                    </span>
-                    <span>{feature}</span>
-                  </li>
+                    <div className="inline-flex items-center gap-2 text-sm">
+                      <ShieldCheck
+                        className="size-4"
+                        style={{ color: "var(--secondary)" }}
+                        aria-hidden="true"
+                      />
+                      <span style={{ color: "var(--foreground)" }}>
+                        {feature}
+                      </span>
+                    </div>
+                    {index < featureItems.length - 1 && (
+                      <span
+                        aria-hidden="true"
+                        style={{ color: "var(--border)" }}
+                      >
+                        •
+                      </span>
+                    )}
+                  </div>
                 ))}
-              </ul>
+              </div>
             )}
           </div>
 
           <div className="mx-auto w-full max-w-md">
-            <article className="liquid-glass flex flex-col gap-[var(--space-5)] rounded-3xl p-8">
-              <header className="space-y-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--neutral-500)]">
+            <article className="card shadow-elevated flex flex-col gap-y-0 overflow-hidden rounded-3xl">
+              <div className="space-y-1 bg-[color:var(--surface-subtle)] p-6 md:p-7">
+                <p
+                  className="text-xs font-semibold uppercase tracking-[0.2em]"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
                   {card.badge || "Förderfähig"}
                 </p>
-                <h2 className="text-lg font-semibold text-[color:var(--brand-blue-900)]">
+                <h2
+                  className="text-lg font-semibold"
+                  style={{ color: "var(--primary-strong)" }}
+                >
                   {card.title || "Ihr Förder- und Effizienz-Check"}
                 </h2>
-                <p className="text-sm text-[color:var(--neutral-500)]">
+                <p
+                  className="text-sm"
+                  style={{ color: "var(--muted-foreground)" }}
+                >
                   {card.subtitle ||
                     "Orientierungswerte für ein Einfamilienhaus"}
                 </p>
-              </header>
+              </div>
 
-              <dl className="grid grid-cols-1 gap-[var(--space-3)] text-sm text-[color:var(--neutral-500)]">
-                <div className="flex justify-between rounded-2xl bg-[color:var(--surface-subtle)] px-4 py-3">
-                  <dt>Jährliche Einsparung</dt>
-                  <dd className="text-base font-semibold text-[color:var(--brand-blue-900)]">
-                    {card.annualSavings || "1.850 €"}
-                  </dd>
-                </div>
-                <div className="flex justify-between rounded-2xl bg-[color:var(--surface-subtle)] px-4 py-3">
-                  <dt>CO₂-Reduktion</dt>
-                  <dd className="text-base font-semibold text-[color:var(--brand-blue-900)]">
-                    {card.co2Reduction || "−3,2 t"}
-                  </dd>
-                </div>
-              </dl>
+              <div className="flex flex-col gap-[var(--space-5)] p-6 md:p-7">
+                <dl className="grid grid-cols-1 gap-[var(--space-3)] text-sm text-[color:var(--muted-foreground)]">
+                  <div className="flex justify-between rounded-xl bg-[color:var(--surface-subtle)] px-4 py-3">
+                    <dt>Jährliche Einsparung</dt>
+                    <dd
+                      className="text-base font-semibold"
+                      style={{ color: "var(--primary-strong)" }}
+                    >
+                      {card.annualSavings || "1.850 €"}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between rounded-xl bg-[color:var(--surface-subtle)] px-4 py-3">
+                    <dt>CO₂-Reduktion</dt>
+                    <dd
+                      className="text-base font-semibold"
+                      style={{ color: "var(--primary-strong)" }}
+                    >
+                      {card.co2Reduction || "−3,2 t"}
+                    </dd>
+                  </div>
+                </dl>
 
-              <div className="space-y-3 rounded-2xl bg-[color:var(--surface-strong)] px-5 py-4 shadow-[var(--shadow-soft)]">
-                <div className="flex items-center justify-between text-sm font-medium text-[color:var(--neutral-500)]">
-                  <span>{card.efficiencyLabel || "Energieeffizienz"}</span>
-                  <span className="text-[color:var(--brand-blue-900)]">
-                    {(card.efficiencyFrom || "D") +
-                      " → " +
-                      (card.efficiencyTo || "A+")}
-                  </span>
-                </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-[color:var(--surface-muted)]">
+                <div className="space-y-3 rounded-xl bg-[color:var(--surface-subtle)] p-4">
                   <div
-                    className="h-full rounded-full bg-[color:var(--brand-accent-amber)]"
-                    style={{ width: `${clampedScore || 0}%` }}
-                  />
+                    className="flex items-center justify-between text-sm font-medium"
+                    style={{ color: "var(--muted-foreground)" }}
+                  >
+                    <span>{card.efficiencyLabel || "Energieeffizienz"}</span>
+                    <span style={{ color: "var(--primary-strong)" }}>
+                      {(card.efficiencyFrom || "D") +
+                        " → " +
+                        (card.efficiencyTo || "A+")}
+                    </span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-[color:var(--muted)]">
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${clampedScore}%`,
+                        backgroundColor: "var(--accent)",
+                      }}
+                    />
+                  </div>
                 </div>
-                <p className="text-xs text-[color:var(--neutral-500)]">
-                  {card.efficiencyCopy ||
-                    "Mit Sanierungsfahrplan und Förderbegleitung erreichen Sie Ihr Ziel effizient und planbar."}
-                </p>
-              </div>
 
-              <div className="grid grid-cols-2 gap-[var(--space-3)] text-xs text-[color:var(--neutral-500)]">
-                <div className="rounded-2xl bg-[color:var(--surface-subtle)] px-4 py-3">
-                  <p className="text-sm font-semibold text-[color:var(--brand-blue-900)]">
-                    {card.temperature || "22 °C"}
-                  </p>
-                  <p>{card.temperatureLabel || "Optimale Raumtemperatur"}</p>
-                </div>
-                <div className="rounded-2xl bg-[color:var(--surface-subtle)] px-4 py-3">
-                  <p className="text-sm font-semibold text-[color:var(--brand-blue-900)]">
-                    {card.amortization || "8–12 Jahre"}
-                  </p>
-                  <p>{card.amortizationLabel || "Investition amortisiert"}</p>
+                <div className="grid grid-cols-2 gap-[var(--space-3)] text-xs text-[color:var(--muted-foreground)]">
+                  <div className="rounded-xl bg-[color:var(--surface-subtle)] px-4 py-3">
+                    <p
+                      className="text-sm font-semibold"
+                      style={{ color: "var(--primary-strong)" }}
+                    >
+                      {card.temperature || "22 °C"}
+                    </p>
+                    <p>{card.temperatureLabel || "Optimale Raumtemperatur"}</p>
+                  </div>
+                  <div className="rounded-xl bg-[color:var(--surface-subtle)] px-4 py-3">
+                    <p
+                      className="text-sm font-semibold"
+                      style={{ color: "var(--primary-strong)" }}
+                    >
+                      {card.amortization || "8–12 Jahre"}
+                    </p>
+                    <p>{card.amortizationLabel || "Investition amortisiert"}</p>
+                  </div>
                 </div>
               </div>
-
-              <footer className="flex items-center gap-3 rounded-2xl bg-[color:var(--surface-muted)] px-4 py-3 text-xs text-[color:var(--neutral-500)]">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--brand-blue-900)]/15 text-[color:var(--brand-blue-900)]">
-                  {card.badgeIcon ?? "✓"}
-                </span>
-                <span>
-                  {card.badgeCopy ||
-                    "BAFA-anerkannte Energieberatung – staatliche Förderung inklusive."}
-                </span>
-              </footer>
             </article>
           </div>
         </div>
       </div>
-    </AmbientSurface>
+    </section>
   );
 }

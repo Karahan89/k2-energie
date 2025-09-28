@@ -19,7 +19,7 @@ export function ImageLinkCards({
     <AmbientSurface
       id="image-link-cards"
       variant="default"
-      className="my-[var(--space-8)] py-[var(--space-10)] md:my-[var(--space-12)] md:py-[var(--space-12)] lg:my-[var(--space-14)] lg:py-[var(--space-14)]"
+      className="my-[var(--space-8)] py-[var(--space-10)] md:my-[var(--space-10)] md:py-[var(--space-10)] lg:my-[var(--space-12)] lg:py-[var(--space-12)]"
     >
       <div className="layout-shell">
         <div className="flex w-full flex-col items-center">

@@ -106,7 +106,7 @@ export function Footer({ navigation = [], settings }: FooterProps) {
   const logoImage = settings?.logo as SanityImageProps | undefined;
 
   return (
-    <footer className="mt-[var(--space-10)] bg-[color:var(--brand-blue-900)] text-[color:var(--neutral-000)]">
+    <footer className="mt-[var(--space-10)] bg-[color:var(--brand-900)] text-[color:var(--neutral-000)]">
       <section className="layout-shell py-[var(--space-10)]">
         <div className="flex flex-col items-center justify-between gap-8 text-center text-[color:var(--neutral-000)]/85 lg:flex-row lg:text-left">
           <div className="flex w-full max-w-80 shrink flex-col items-center justify-between gap-5 lg:items-start">

@@ -1,5 +1,3 @@
-import { Badge } from "@workspace/ui/components/badge";
-
 import type { PagebuilderType } from "@/types";
 
 import { AmbientSurface } from "../ambient-surface";
@@ -15,17 +13,27 @@ type FeatureCardProps = {
 function FeatureCard({ card }: FeatureCardProps) {
   const { icon, title, richText } = card ?? {};
   return (
-    <article className="flex h-full flex-col gap-[var(--space-3)] rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-strong)] p-6 shadow-[var(--shadow-soft)]">
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--surface-subtle)] text-[color:var(--brand-blue-900)]">
+    <article className="glass-surface flex h-full flex-col gap-[var(--space-3)] rounded-2xl p-6">
+      <span
+        className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
+        style={{
+          backgroundColor:
+            "color-mix(in srgb, var(--primary) 15%, transparent 85%)",
+          color: "var(--primary-strong)",
+        }}
+      >
         <SanityIcon icon={icon} className="size-6" />
       </span>
       <div className="space-y-[var(--space-2)]">
-        <h3 className="text-lg font-semibold text-[color:var(--brand-blue-900)]">
+        <h3
+          className="text-lg font-semibold"
+          style={{ color: "var(--primary-strong)" }}
+        >
           {title}
         </h3>
         <RichText
           richText={richText}
-          className="text-sm leading-relaxed text-[color:var(--neutral-500)]"
+          className="text-sm leading-relaxed text-[color:var(--muted-foreground)]"
         />
       </div>
     </article>
@@ -42,29 +50,40 @@ export function FeatureCardsWithIcon({
     <AmbientSurface
       id="features"
       variant="muted"
-      className="my-[var(--space-12)] py-[var(--space-12)] md:my-[var(--space-14)]"
+      className="my-[var(--space-10)] py-[var(--space-10)] md:my-[var(--space-12)]"
     >
       <div className="layout-shell">
         <div className="flex flex-col items-center text-center">
-          <div className="content-readable flex flex-col items-center space-y-[var(--space-3)]">
+          <div className="content-readable flex flex-col items-center space-y-[var(--space-4)]">
             {eyebrow && (
-              <Badge
-                variant="secondary"
-                className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-strong)] px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-[color:var(--brand-blue-900)]"
+              <div
+                className="inline-flex items-center gap-2 self-center rounded-full px-3 py-1 text-sm"
+                style={{
+                  backgroundColor: "var(--primary-soft)",
+                  color: "var(--primary-strong)",
+                  border: "1px solid var(--border)",
+                }}
               >
                 {eyebrow}
-              </Badge>
+              </div>
             )}
-            <h2 className="text-balance text-3xl font-semibold sm:text-[length:var(--step-3)]">
+            <h2
+              className="font-serif"
+              style={{
+                color: "var(--primary-strong)",
+                fontSize: "var(--step-4)",
+                lineHeight: 1.1,
+              }}
+            >
               {title}
             </h2>
             <RichText
               richText={richText}
-              className="text-pretty text-[length:var(--step--1)] text-[color:var(--neutral-500)]"
+              className="text-pretty text-[length:var(--step-0)] text-[color:var(--muted-foreground)]"
             />
           </div>
         </div>
-        <div className="mx-auto mt-[var(--space-10)] grid gap-[var(--space-4)] md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-[var(--space-8)] grid max-w-6xl gap-[var(--space-6)] md:grid-cols-2 lg:grid-cols-3">
           {cards?.map((card, index) => (
             <FeatureCard
               key={`FeatureCard-${card?._key}-${index}`}
