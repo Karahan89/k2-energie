@@ -16,11 +16,10 @@ import { getPresentationUrl } from "./utils/helper";
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID ?? "";
 const dataset = process.env.SANITY_STUDIO_DATASET;
-const title = process.env.SANITY_STUDIO_TITLE;
 
 export default defineConfig({
   name: "default",
-  title: title,
+  title: "K2 Energieberatung CMS",
   icon: Logo,
   projectId: projectId,
   dataset: dataset ?? "production",
@@ -61,10 +60,11 @@ export default defineConfig({
     templates: [
       {
         id: "nested-page-template",
-        title: "Nested Page",
+        title: "Neue Unterseite",
         schemaType: "page",
+        description:
+          "Erstellen Sie eine neue Unterseite mit automatischem URL-Slug",
         value: (props: { slug?: string; title?: string }) => {
-          console.log("🚀 ~ props:", props);
           return {
             ...(props.slug
               ? { slug: { current: props.slug, _type: "slug" } }
@@ -76,6 +76,53 @@ export default defineConfig({
           {
             name: "slug",
             type: "string",
+            title: "URL-Slug",
+            description: "Die Web-Adresse für diese Seite (z.B. 'ueber-uns')",
+          },
+          {
+            name: "title",
+            type: "string",
+            title: "Seitentitel",
+            description: "Der Titel der Seite",
+          },
+        ],
+      },
+      {
+        id: "service-template",
+        title: "Neue Leistung",
+        schemaType: "service",
+        description:
+          "Erstellen Sie eine neue Dienstleistung für Ihr Ingenieurbüro",
+        value: (props: { title?: string }) => {
+          return {
+            ...(props.title ? { title: props.title } : {}),
+          };
+        },
+        parameters: [
+          {
+            name: "title",
+            type: "string",
+            title: "Leistungstitel",
+            description: "z.B. 'Energieberatung für Wohngebäude'",
+          },
+        ],
+      },
+      {
+        id: "project-template",
+        title: "Neues Projekt",
+        schemaType: "project",
+        description: "Erstellen Sie eine neue Projekt-Referenz",
+        value: (props: { title?: string }) => {
+          return {
+            ...(props.title ? { title: props.title } : {}),
+          };
+        },
+        parameters: [
+          {
+            name: "title",
+            type: "string",
+            title: "Projekttitel",
+            description: "z.B. 'Energetische Sanierung Einfamilienhaus'",
           },
         ],
       },

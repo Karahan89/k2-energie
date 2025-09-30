@@ -19,11 +19,11 @@ export function ModeToggle() {
         <Button
           variant="outline"
           size="icon"
-          className="h-8 w-8 min-h-0 rounded-full border-[color:var(--brand-200)]/70 bg-white/70 p-0 text-[color:var(--brand-700)] shadow-none transition-colors hover:bg-[color:var(--brand-100)] supports-[backdrop-filter]:bg-white/40 dark:border-[color:var(--neutral-100)]/25 dark:bg-[color:var(--surface-muted)]/70 dark:text-[color:var(--neutral-000)] dark:hover:bg-[color:var(--surface-muted)]/90"
+          className="h-8 w-8 min-h-0 rounded-full border-[color:var(--color-border-muted)] bg-[color:var(--color-surface-elevated)] p-0 text-[color:var(--color-brand-primary)] shadow-none transition-colors hover:bg-[color:var(--color-brand-secondary)] dark:border-[color:var(--color-border-muted)]/60 dark:bg-[color:var(--color-background-muted)] dark:text-[color:var(--color-text-inverse)] dark:hover:bg-[color:var(--surface-muted)]/80"
         >
           <Sun className="h-[0.9rem] w-[0.9rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[0.9rem] w-[0.9rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">Theme wechseln</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

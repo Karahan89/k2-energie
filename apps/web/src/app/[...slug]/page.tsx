@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 
-import { PageBuilder } from "@/components/pagebuilder";
+import { PageBuilder, type PageBuilderProps } from "@/components/pagebuilder";
 import { client } from "@/lib/sanity/client";
 import { sanityFetch } from "@/lib/sanity/live";
 import { querySlugPageData, querySlugPagePaths } from "@/lib/sanity/query";
+import type { QuerySlugPageDataResult } from "@/lib/sanity/sanity.types";
 import { getSEOMetadata } from "@/lib/seo";
 
 function normalizeSlug(slug: string) {
@@ -21,6 +22,27 @@ async function fetchSlugPageData(slug: string, stega = true) {
     params: { slug: normalizedSlug || slugWithLeading, slugWithLeading },
     stega,
   });
+}
+
+function extractTitle(data: QuerySlugPageDataResult | null | undefined) {
+  if (!data) return "";
+  if ("title" in data && typeof data.title === "string") return data.title;
+  if ("name" in data && typeof data.name === "string") return data.name;
+  return data.seoTitle ?? "";
+}
+
+function extractDescription(data: QuerySlugPageDataResult | null | undefined) {
+  if (!data) return "";
+  if ("description" in data && typeof data.description === "string") {
+    return data.description;
+  }
+  if ("summary" in data && typeof data.summary === "string") {
+    return data.summary;
+  }
+  if ("bio" in data && typeof data.bio === "string") {
+    return data.bio;
+  }
+  return data.seoDescription ?? "";
 }
 
 async function fetchSlugPagePaths() {
@@ -46,8 +68,8 @@ export async function generateMetadata({
   return getSEOMetadata(
     pageData
       ? {
-          title: pageData?.title ?? pageData?.seoTitle ?? "",
-          description: pageData?.description ?? pageData?.seoDescription ?? "",
+          title: extractTitle(pageData),
+          description: extractDescription(pageData),
           slug: pageData?.slug,
           contentId: pageData?._id,
           contentType: pageData?._type,
@@ -73,16 +95,29 @@ export default async function SlugPage({
     return notFound();
   }
 
-  const { title, pageBuilder, _id, _type } = pageData ?? {};
+  const pageBlocks = Array.isArray(
+    (pageData as { pageBuilder?: PageBuilderProps["pageBuilder"] }).pageBuilder,
+  )
+    ? ((pageData as { pageBuilder?: PageBuilderProps["pageBuilder"] })
+        .pageBuilder ?? [])
+    : [];
 
-  return !Array.isArray(pageBuilder) || pageBuilder?.length === 0 ? (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] text-center p-4">
-      <h1 className="text-2xl font-semibold mb-4 capitalize">{title}</h1>
-      <p className="text-muted-foreground mb-6">
-        This page has no content blocks yet.
+  const pageTitle = extractTitle(pageData);
+  const pageDescription = extractDescription(pageData);
+
+  return pageBlocks.length === 0 ? (
+    <div className="flex min-h-[50vh] flex-col items-center justify-center p-4 text-center">
+      <h1 className="mb-4 text-2xl font-semibold capitalize">{pageTitle}</h1>
+      <p className="mb-6 max-w-2xl text-muted-foreground">
+        {pageDescription ||
+          "Für diese Seite sind noch keine Inhalte hinterlegt."}
       </p>
     </div>
   ) : (
-    <PageBuilder pageBuilder={pageBuilder} id={_id} type={_type} />
+    <PageBuilder
+      pageBuilder={pageBlocks}
+      id={pageData._id}
+      type={pageData._type}
+    />
   );
 }

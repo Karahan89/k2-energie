@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@workspace/ui/lib/utils";
 import Link from "next/link";
 import {
@@ -11,15 +12,53 @@ import { parseChildrenToSlug } from "@/utils";
 
 import { SanityImage } from "./sanity-image";
 
+const baseParagraphClass =
+  "text-[length:var(--step--1)] leading-[var(--line-base)] text-[color:var(--color-text-muted)]";
+
+function headingClasses(level: 2 | 3 | 4 | 5 | 6) {
+  const shared = "first:mt-0 text-pretty";
+  switch (level) {
+    case 2:
+      return cn(
+        shared,
+        "mt-[var(--space-6)] font-serif text-[length:var(--step-3)] leading-[1.2] tracking-[var(--tracking-tight)] text-[color:var(--color-brand-primary-active)]",
+      );
+    case 3:
+      return cn(
+        shared,
+        "mt-[var(--space-5)] font-sans text-[length:var(--step-2)] font-semibold leading-[1.3] text-[color:var(--color-brand-primary-active)]",
+      );
+    case 4:
+      return cn(
+        shared,
+        "mt-[var(--space-4)] font-sans text-[length:var(--step-1)] font-semibold leading-[1.35] text-[color:var(--color-text-base)]",
+      );
+    case 5:
+      return cn(
+        shared,
+        "mt-[var(--space-3)] font-sans text-[length:var(--step-0)] font-semibold leading-[1.4] text-[color:var(--color-text-base)]",
+      );
+    case 6:
+    default:
+      return cn(
+        shared,
+        "mt-[var(--space-3)] font-sans text-[length:var(--step--1)] font-semibold uppercase tracking-[var(--tracking-wide)] text-[color:var(--color-text-muted)]",
+      );
+  }
+}
+
+const listClassName = cn(
+  baseParagraphClass,
+  "ms-[var(--space-4)] list-outside space-y-[var(--space-2)] ps-[var(--space-3)]",
+);
+
 const components: Partial<PortableTextReactComponents> = {
   block: {
+    normal: ({ children }) => <p className={baseParagraphClass}>{children}</p>,
     h2: ({ children, value }) => {
       const slug = parseChildrenToSlug(value.children);
       return (
-        <h2
-          id={slug}
-          className="scroll-m-20 border-b pb-2 text-3xl font-semibold first:mt-0"
-        >
+        <h2 id={slug} className={headingClasses(2)}>
           {children}
         </h2>
       );
@@ -27,7 +66,7 @@ const components: Partial<PortableTextReactComponents> = {
     h3: ({ children, value }) => {
       const slug = parseChildrenToSlug(value.children);
       return (
-        <h3 id={slug} className="scroll-m-20 text-2xl font-semibold">
+        <h3 id={slug} className={headingClasses(3)}>
           {children}
         </h3>
       );
@@ -35,7 +74,7 @@ const components: Partial<PortableTextReactComponents> = {
     h4: ({ children, value }) => {
       const slug = parseChildrenToSlug(value.children);
       return (
-        <h4 id={slug} className="scroll-m-20 text-xl font-semibold">
+        <h4 id={slug} className={headingClasses(4)}>
           {children}
         </h4>
       );
@@ -43,7 +82,7 @@ const components: Partial<PortableTextReactComponents> = {
     h5: ({ children, value }) => {
       const slug = parseChildrenToSlug(value.children);
       return (
-        <h5 id={slug} className="scroll-m-20 text-lg font-semibold">
+        <h5 id={slug} className={headingClasses(5)}>
           {children}
         </h5>
       );
@@ -51,34 +90,61 @@ const components: Partial<PortableTextReactComponents> = {
     h6: ({ children, value }) => {
       const slug = parseChildrenToSlug(value.children);
       return (
-        <h6 id={slug} className="scroll-m-20 text-base font-semibold">
+        <h6 id={slug} className={headingClasses(6)}>
           {children}
         </h6>
       );
     },
   },
+  list: {
+    bullet: ({ children }) => (
+      <ul
+        className={cn(
+          listClassName,
+          "list-disc marker:text-[color:var(--color-brand-primary)]",
+        )}
+      >
+        {children}
+      </ul>
+    ),
+    number: ({ children }) => (
+      <ol
+        className={cn(
+          listClassName,
+          "list-decimal marker:font-semibold marker:text-[color:var(--color-brand-primary-active)]",
+        )}
+      >
+        {children}
+      </ol>
+    ),
+  },
   marks: {
     code: ({ children }) => (
-      <code className="rounded-md border border-white/10 bg-opacity-5 p-1 text-sm lg:whitespace-nowrap">
+      <code className="rounded-md border border-[color:var(--color-border-muted)] bg-[color:var(--color-surface-muted)] px-[var(--space-1)] py-[var(--space-1)] text-[length:var(--step--2)] text-[color:var(--color-text-base)]">
         {children}
       </code>
     ),
+    brand: ({ children }) => (
+      <span className="font-semibold text-[color:var(--color-text-brand)]">
+        {children}
+      </span>
+    ),
     customLink: ({ children, value }) => {
       if (!value.href || value.href === "#") {
-        console.warn("🚀 link is not set", value);
+        console.warn("RichText: link is not set", value);
         return (
-          <span className="underline decoration-dotted underline-offset-2">
-            Link Broken
+          <span className="underline decoration-dotted underline-offset-[0.3em] text-[color:var(--color-status-warning)]">
+            Link nicht gesetzt
           </span>
         );
       }
       return (
         <Link
-          className="underline decoration-dotted underline-offset-2"
+          className="underline decoration-dotted underline-offset-[0.3em] text-[color:var(--color-interactive-cta)] transition-colors hover:text-[color:var(--color-interactive-cta-hover)]"
           href={value.href}
           prefetch={false}
-          aria-label={`Link to ${value?.href}`}
           target={value.openInNewTab ? "_blank" : "_self"}
+          rel={value.openInNewTab ? "noreferrer" : undefined}
         >
           {children}
         </Link>
@@ -89,18 +155,18 @@ const components: Partial<PortableTextReactComponents> = {
     image: ({ value }) => {
       if (!value?.id) return null;
       return (
-        <figure className="my-4">
+        <figure className="space-y-[var(--space-2)]">
           <SanityImage
             image={value}
-            className="h-auto rounded-lg w-full"
+            className="h-auto w-full rounded-3xl object-cover"
             width={1600}
             height={900}
           />
-          {value?.caption && (
-            <figcaption className="mt-2 text-center text-sm text-zinc-500 dark:text-zinc-400">
+          {value?.caption ? (
+            <figcaption className="text-center text-[length:var(--step--2)] text-[color:var(--color-text-muted)]">
               {value.caption}
             </figcaption>
-          )}
+          ) : null}
         </figure>
       );
     },
@@ -120,7 +186,7 @@ export function RichText<T>({
   return (
     <div
       className={cn(
-        "prose prose-zinc prose-headings:scroll-m-24 prose-headings:text-opacity-90 prose-p:text-opacity-80 prose-a:decoration-dotted prose-ol:text-opacity-80 prose-ul:text-opacity-80 prose-h2:border-b prose-h2:pb-2 prose-h2:text-3xl prose-h2:font-semibold prose-h2:first:mt-0 max-w-none dark:prose-invert",
+        "richtext flex flex-col gap-[var(--space-3)] text-[length:var(--step--1)] leading-[var(--line-base)] text-[color:var(--color-text-muted)]",
         className,
       )}
     >

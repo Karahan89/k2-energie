@@ -1,14 +1,18 @@
 import { createClient, type SanityClient } from "@sanity/client";
 
 const projectId =
-  process.env.SANITY_STUDIO_PROJECT_ID ?? process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.SANITY_STUDIO_DATASET ?? process.env.NEXT_PUBLIC_SANITY_DATASET;
+  process.env.SANITY_STUDIO_PROJECT_ID ??
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const dataset =
+  process.env.SANITY_STUDIO_DATASET ?? process.env.NEXT_PUBLIC_SANITY_DATASET;
+
 const token =
   process.env.SANITY_WRITE_TOKEN ??
   process.env.SANITY_API_TOKEN ??
   process.env.SANITY_STUDIO_WRITE_TOKEN ??
   process.env.SANITY_EXEC_USER_TOKEN ??
-  process.env.SANITY_CLI_USER_TOKEN;
+  process.env.SANITY_CLI_USER_TOKEN ??
+  process.env.SANITY_AUTH_TOKEN;
 
 if (!projectId || !dataset) {
   throw new Error(
@@ -30,7 +34,8 @@ const client: SanityClient = createClient({
   useCdn: false,
 });
 
-const key = (prefix: string) => `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
+const key = (prefix: string) =>
+  `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
 
 const block = (text: string, style: "normal" | "h2" | "h3" = "normal") => ({
   _type: "block" as const,
@@ -47,31 +52,82 @@ const block = (text: string, style: "normal" | "h2" | "h3" = "normal") => ({
   ],
 });
 
-const button = ({
-  text,
+const externalUrl = ({
   href,
-  variant = "default",
   newTab = false,
 }: {
-  text: string;
   href: string;
-  variant?: "default" | "secondary" | "outline" | "link";
   newTab?: boolean;
 }) => ({
-  _type: "button" as const,
-  _key: key("btn"),
-  text,
-  variant,
-  url: {
-    _type: "customUrl" as const,
-    type: "external" as const,
-    external: href,
-    href,
-    openInNewTab: newTab,
-  },
+  _type: "customUrl" as const,
+  type: "external" as const,
+  href,
+  external: href,
+  openInNewTab: newTab,
 });
 
+const internalUrl = ({
+  ref,
+  slug,
+  newTab = false,
+}: {
+  ref: string;
+  slug: string;
+  newTab?: boolean;
+}) => ({
+  _type: "customUrl" as const,
+  type: "internal" as const,
+  href: slug,
+  internal: { _type: "reference" as const, _ref: ref },
+  openInNewTab: newTab,
+});
+
+type ButtonExternalLink = {
+  href: string;
+  internalRef?: undefined;
+  internalSlug?: undefined;
+};
+
+type ButtonInternalLink = {
+  internalRef: string;
+  internalSlug: string;
+  href?: undefined;
+};
+
+type ButtonLink = ButtonExternalLink | ButtonInternalLink;
+
+const button = ({
+  text,
+  variant = "default",
+  newTab = false,
+  ...link
+}: {
+  text: string;
+  variant?: "default" | "secondary" | "outline" | "link";
+  newTab?: boolean;
+} & ButtonLink) => {
+  if ("internalRef" in link && typeof link.internalRef === "string") {
+    const { internalRef, internalSlug } = link as ButtonInternalLink;
+    return {
+      _type: "button" as const,
+      _key: key("btn"),
+      text,
+      variant,
+      url: internalUrl({ ref: internalRef, slug: internalSlug, newTab }),
+    };
+  }
+
+  return {
+    _type: "button" as const,
+    _key: key("btn"),
+    text,
+    variant,
+    url: externalUrl({ href: link.href, newTab }),
+  };
+};
+
 const heroBlock = ({
+  variant = "full",
   badge,
   title,
   highlights,
@@ -79,6 +135,7 @@ const heroBlock = ({
   features,
   primaryCta,
 }: {
+  variant?: "full" | "simple";
   badge?: string;
   title: string;
   highlights?: string[];
@@ -88,31 +145,34 @@ const heroBlock = ({
 }) => ({
   _type: "hero" as const,
   _key: key("hero"),
+  variant,
   badge,
   title,
   titleHighlights: highlights ?? [],
   richText: [block(body)],
   features: features ?? [],
   buttons: primaryCta ? [primaryCta] : [],
-  energyCard: {
-    title: "Energie-Analyse",
-    subtitle: "Beispiel-Berechnung Mehrfamilienhaus",
-    badge: "BAFA-konform",
-    annualSavings: "4.200 €",
-    annualSavingsLabel: "Jährliche Einsparung",
-    costReduction: "↓ 62% Energiekosten",
-    co2Reduction: "-6.3 t",
-    co2ReductionLabel: "CO₂ pro Jahr",
-    emissionReduction: "↓ 58% Emissionen",
-    efficiencyLabel: "Energieeffizienz",
-    efficiencyFrom: "E",
-    efficiencyTo: "A+",
-    efficiencyScore: 78,
-    temperature: "21°C",
-    temperatureLabel: "Optimale Raumtemperatur",
-    amortization: "7-11",
-    amortizationLabel: "Jahre Amortisation",
-  },
+  ...(variant === "full" && {
+    energyCard: {
+      title: "Energie-Analyse",
+      subtitle: "Beispiel-Berechnung Mehrfamilienhaus",
+      badge: "BAFA-konform",
+      annualSavings: "4.200 €",
+      annualSavingsLabel: "Jährliche Einsparung",
+      costReduction: "↓ 62% Energiekosten",
+      co2Reduction: "-6.3 t",
+      co2ReductionLabel: "CO₂ pro Jahr",
+      emissionReduction: "↓ 58% Emissionen",
+      efficiencyLabel: "Energieeffizienz",
+      efficiencyFrom: "E",
+      efficiencyTo: "A+",
+      efficiencyScore: 78,
+      temperature: "21°C",
+      temperatureLabel: "Optimale Raumtemperatur",
+      amortization: "7-11",
+      amortizationLabel: "Jahre Amortisation",
+    },
+  }),
 });
 
 const featureCardsBlock = ({
@@ -151,11 +211,22 @@ const imageLinkCardsBlock = ({
   eyebrow?: string;
   title: string;
   description: string;
-  cards: {
-    title: string;
-    description: string;
-    href: string;
-  }[];
+  cards: (
+    | {
+        title: string;
+        description: string;
+        href: string;
+        internalRef?: undefined;
+        internalSlug?: undefined;
+      }
+    | {
+        title: string;
+        description: string;
+        internalRef: string;
+        internalSlug: string;
+        href?: undefined;
+      }
+  )[];
 }) => ({
   _type: "imageLinkCards" as const,
   _key: key("image-cards"),
@@ -163,19 +234,155 @@ const imageLinkCardsBlock = ({
   title,
   richText: [block(description)],
   buttons: [],
-  cards: cards.map((card) => ({
-    _type: "imageLinkCard" as const,
-    _key: key("link"),
-    title: card.title,
-    description: card.description,
-    url: {
-      _type: "customUrl" as const,
-      type: "external" as const,
-      external: card.href,
-      href: card.href,
-      openInNewTab: false,
+  cards: cards.map((card) => {
+    if ("internalRef" in card && typeof card.internalRef === "string") {
+      const { internalRef, internalSlug, title, description } = card as {
+        internalRef: string;
+        internalSlug: string;
+        title: string;
+        description: string;
+      };
+      return {
+        _type: "imageLinkCard" as const,
+        _key: key("link"),
+        title,
+        description,
+        url: internalUrl({ ref: internalRef, slug: internalSlug }),
+      };
+    }
+
+    return {
+      _type: "imageLinkCard" as const,
+      _key: key("link"),
+      title: card.title,
+      description: card.description,
+      url: externalUrl({ href: card.href }),
+    };
+  }),
+});
+
+const contactFormBlock = ({
+  eyebrow,
+  title,
+  intro,
+  successMessage,
+  submitLabel = "Nachricht senden",
+}: {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  successMessage?: string;
+  submitLabel?: string;
+}) => ({
+  _type: "contactForm" as const,
+  _key: key("contact-form"),
+  eyebrow,
+  title,
+  intro: intro ? [block(intro)] : [],
+  fields: [
+    {
+      _type: "field" as const,
+      _key: key("field"),
+      label: "Ihr Name",
+      name: "name",
+      fieldType: "text" as const,
+      placeholder: "Max Mustermann",
+      required: true,
     },
+    {
+      _type: "field" as const,
+      _key: key("field"),
+      label: "Unternehmen / Organisation",
+      name: "company",
+      fieldType: "text" as const,
+      placeholder: "Firmenname (optional)",
+      required: false,
+    },
+    {
+      _type: "field" as const,
+      _key: key("field"),
+      label: "E-Mail-Adresse",
+      name: "email",
+      fieldType: "email" as const,
+      placeholder: "hallo@beispiel.de",
+      required: true,
+    },
+    {
+      _type: "field" as const,
+      _key: key("field"),
+      label: "Telefon",
+      name: "phone",
+      fieldType: "tel" as const,
+      placeholder: "+49 531 123456",
+      required: false,
+    },
+    {
+      _type: "field" as const,
+      _key: key("field"),
+      label: "Projektbeschreibung",
+      name: "message",
+      fieldType: "textarea" as const,
+      placeholder: "Um welche Immobilie oder Maßnahme geht es?",
+      required: true,
+    },
+  ],
+  privacyNotice: [
+    block(
+      "Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zu. Wir verwenden sie ausschließlich zur Bearbeitung Ihrer Anfrage.",
+    ),
+  ],
+  submitLabel,
+  successMessage:
+    successMessage ??
+    "Vielen Dank für Ihre Nachricht! Unser Team meldet sich spätestens am nächsten Werktag.",
+});
+
+const projectGalleryBlock = ({
+  title,
+  intro,
+  projectIds,
+  buttons,
+}: {
+  title: string;
+  intro?: string;
+  projectIds: string[];
+  buttons?: ReturnType<typeof button>[];
+}) => ({
+  _type: "projectGallery" as const,
+  _key: key("project-gallery"),
+  title,
+  intro: intro ? [block(intro)] : [],
+  projects: projectIds.map((projectId) => ({
+    _type: "reference" as const,
+    _ref: projectId,
   })),
+  buttons: buttons ?? [],
+});
+
+const navLink = ({
+  name,
+  url,
+}: {
+  name: string;
+  url: ReturnType<typeof internalUrl> | ReturnType<typeof externalUrl>;
+}) => ({
+  _type: "navbarLink" as const,
+  _key: key("nav-link"),
+  name,
+  url,
+});
+
+const footerLink = ({
+  name,
+  url,
+}: {
+  name: string;
+  url: ReturnType<typeof internalUrl> | ReturnType<typeof externalUrl>;
+}) => ({
+  _type: "footerColumnLink" as const,
+  _key: key("footer-link"),
+  name,
+  url,
 });
 
 const ctaBlock = ({
@@ -197,24 +404,29 @@ const ctaBlock = ({
   buttons: ctas,
 });
 
-const subscribeBlock = ({
-  title,
-  subtitle,
-  helper,
-}: {
-  title: string;
-  subtitle: string;
-  helper: string;
-}) => ({
-  _type: "subscribeNewsletter" as const,
-  _key: key("newsletter"),
-  title,
-  subTitle: [block(subtitle)],
-  helperText: [block(helper)],
-});
-
 async function seed() {
   console.info("Seeding energy consulting sample content...");
+
+  const deletionQueries = [
+    '*[_type == "navbar"]',
+    '*[_type == "footer"]',
+    '*[_type == "navigationItem"]',
+    '*[_type == "page"]',
+    '*[_type == "project"]',
+    '*[_type in ["homePage", "companyPage"]]',
+    '*[_type == "service"]',
+    '*[_type == "faq"]',
+    '*[_type == "contactPage"]',
+    '*[_type == "legalPage"]',
+    '*[_type == "siteSettings"]',
+  ];
+
+  console.info("Removing existing documents for seed types...");
+  for (const query of deletionQueries) {
+    await client.delete({ query });
+    console.info(`Deleted documents matching query: ${query}`);
+  }
+  console.info("Existing seed documents removed.");
 
   const faqDocs = [
     {
@@ -252,8 +464,213 @@ async function seed() {
     },
   ];
 
+  const homePageId = "homePage";
+  const companyPageId = "companyPage";
+  const contactPageId = "contactPage";
+  const referencesPageId = "page-referenzen";
+
   const serviceBeratungId = "service-beratung";
   const serviceSanierungsplanId = "service-sanierungsfahrplan";
+
+  const projectDocs = [
+    {
+      _id: "project-referenz-sonnenpark",
+      _type: "project",
+      title: "Quartier Sonnenpark Lengede",
+      summary:
+        "Energetisches Gesamtkonzept für zwölf Mehrfamilienhäuser inklusive iSFP, Wärmepumpenverbund und fortlaufendem Monitoring.",
+      slug: {
+        _type: "slug",
+        current: "/referenzen/quartier-sonnenpark-lengede",
+      },
+      date: "2025-04-15",
+      pageBuilder: [
+        heroBlock({
+          variant: "simple",
+          badge: "Wohnungswirtschaft",
+          title: "Quartier Sonnenpark effizient und förderfähig",
+          highlights: ["iSFP", "Förderquote 45 %"],
+          body: "Für die Wohnungsbaugenossenschaft Sonnenpark entwickelten wir einen vollständigen Sanierungsfahrplan mit Wärmepumpenverbund, PV-Dachanlagen und Mieterstromkonzept.",
+          features: [
+            "12 Mehrfamilienhäuser",
+            "45 % Zuschuss gesichert",
+            "Digitale Fortschrittsberichte",
+          ],
+          primaryCta: button({
+            text: "Projekt anfragen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+          }),
+        }),
+        featureCardsBlock({
+          eyebrow: "Projektumfang",
+          title: "Leistungen im Überblick",
+          intro:
+            "Wir begleiteten die Genossenschaft von der Bestandsaufnahme bis zur Förderauszahlung und übernahmen die komplette Kommunikation mit BAFA und KfW.",
+          cards: [
+            {
+              title: "Gebäude-Scan",
+              body: "3D-Laserscan und Thermografie aller Gebäude inklusive Lastganganalyse der bestehenden Wärmeerzeugung.",
+            },
+            {
+              title: "Sanierungsfahrplan",
+              body: "Phasenmodell mit Budget- und Terminplanung sowie jährlicher CO₂-Minderung von 380 Tonnen.",
+            },
+            {
+              title: "Fördermanagement",
+              body: "Kombination aus BEG EM, Landesmitteln und Kommunalkrediten – Nachweisführung und Auszahlung inklusive.",
+            },
+          ],
+        }),
+        ctaBlock({
+          eyebrow: "Ähnliche Gebäude?",
+          title: "Wir prüfen Ihr Quartier",
+          body: "In einem 30-minütigen Gespräch klären wir Bestand, Zeithorizont und Förderrouten für Ihre Objektgruppe.",
+          ctas: [
+            button({
+              text: "Beratung anfragen",
+              internalRef: contactPageId,
+              internalSlug: "/kontakt",
+            }),
+          ],
+        }),
+      ],
+      seoTitle: "Referenz Quartier Sonnenpark Lengede | k2-energie",
+      seoDescription:
+        "Quartier Sonnenpark Lengede: iSFP, Wärmepumpenverbund und 45 % Förderquote – umgesetzt durch k2-energie.",
+    },
+    {
+      _id: "project-referenz-campus-braunschweig",
+      _type: "project",
+      title: "Technologie-Campus Braunschweig",
+      summary:
+        "Energiemonitoring und Reallaborkonzept für einen Technologie-Campus mit hybrider Wärmeversorgung und PV-Carports.",
+      slug: {
+        _type: "slug",
+        current: "/referenzen/technologie-campus-braunschweig",
+      },
+      date: "2024-11-08",
+      pageBuilder: [
+        heroBlock({
+          variant: "simple",
+          badge: "Gewerbe",
+          title: "Technologie-Campus mit Reallabor-Charakter",
+          highlights: ["Monitoring", "Sektorkopplung"],
+          body: "Für einen privaten Campus entwickelten wir ein Reallabor aus PV-Carports, smarter Speichertechnik und Lastmanagement für Labore und Büros.",
+          features: [
+            "Echtzeit-Lastmanagement",
+            "CO₂-Reduktion 52 %",
+            "Sektorkopplung Strom & Wärme",
+          ],
+          primaryCta: button({
+            text: "Projekt besprechen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+          }),
+        }),
+        featureCardsBlock({
+          eyebrow: "Kernleistungen",
+          title: "Was wir umgesetzt haben",
+          intro:
+            "Der Campus nutzt jetzt ein automatisiertes Energiemanagement, das Produktionsspitzen abfedert und Fördermittel optimal kombiniert.",
+          cards: [
+            {
+              title: "Energiemonitoring",
+              body: "Aufbau eines Dashboards mit 64 Messpunkten für Wärme, Strom und Prozesskälte.",
+            },
+            {
+              title: "Förderstrategie",
+              body: "Bundesförderung für Energie- und Ressourceneffizienz plus Innovationsprogramm des Landes Niedersachsen.",
+            },
+            {
+              title: "Betriebsführung",
+              body: "Servicevereinbarung für Monitoring, Wartung und jährlichen Fördermittel-Check.",
+            },
+          ],
+        }),
+        ctaBlock({
+          eyebrow: "Nächste Schritte",
+          title: "Wir analysieren Ihren Campus",
+          body: "Ob Rechenzentrum oder Laborgebäude – wir identifizieren Potentiale und erstellen eine Investitionsstrategie.",
+          ctas: [
+            button({
+              text: "Termin vereinbaren",
+              internalRef: contactPageId,
+              internalSlug: "/kontakt",
+            }),
+          ],
+        }),
+      ],
+      seoTitle: "Referenz Technologie-Campus Braunschweig | k2-energie",
+      seoDescription:
+        "Technologie-Campus Braunschweig: Energiemonitoring, PV-Carports und intelligentes Lastmanagement von k2-energie.",
+    },
+    {
+      _id: "project-referenz-rathaus-salzgitter",
+      _type: "project",
+      title: "Rathaus Salzgitter",
+      summary:
+        "Kommunaler Sanierungsfahrplan für das Rathaus Salzgitter mit Wärmeerzeugung, Fassadendämmung und Beleuchtungsumbau.",
+      slug: { _type: "slug", current: "/referenzen/rathaus-salzgitter" },
+      date: "2023-09-20",
+      pageBuilder: [
+        heroBlock({
+          variant: "simple",
+          badge: "Kommunen",
+          title: "Rathaus Salzgitter fit für die Klimaziele",
+          highlights: ["Kommunalverwaltung", "Energieeffizienz"],
+          body: "Für die Stadt Salzgitter entwickelten wir einen mehrstufigen Sanierungsfahrplan samt Beschlussvorlage und Förderkulisse.",
+          features: [
+            "CO₂-Einsparung 61 %",
+            "Amortisation 8 Jahre",
+            "Förderquote 50 %",
+          ],
+          primaryCta: button({
+            text: "Beratung für Kommunen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+          }),
+        }),
+        featureCardsBlock({
+          eyebrow: "Maßnahmen",
+          title: "Was umgesetzt wurde",
+          intro:
+            "Das Ergebnis: politisch tragfähige Beschlüsse, klare Kostensicherheit und umsetzungsfertige Maßnahmenpakete.",
+          cards: [
+            {
+              title: "Anlagentechnik",
+              body: "Umstellung auf Wärmepumpe mit Spitzenlastkessel sowie hydraulischer Abgleich aller Heizkreise.",
+            },
+            {
+              title: "Gebäudehülle",
+              body: "Neue Fassadendämmung inklusive Fenstertausch mit Sonnenschutz und Lichtsensorik.",
+            },
+            {
+              title: "Innenbeleuchtung",
+              body: "LED-Umrüstung mit Präsenzsteuerung für Sitzungssäle und Verwaltungsbereiche.",
+            },
+          ],
+        }),
+        ctaBlock({
+          eyebrow: "Förderquote sichern",
+          title: "Wir begleiten Ihre Kommune",
+          body: "Vom Ratsbeschluss bis zur Nachweisführung – wir übernehmen das Fördermanagement und die Qualitätssicherung.",
+          ctas: [
+            button({
+              text: "Gespräch vereinbaren",
+              internalRef: contactPageId,
+              internalSlug: "/kontakt",
+            }),
+          ],
+        }),
+      ],
+      seoTitle: "Referenz Rathaus Salzgitter | k2-energie",
+      seoDescription:
+        "Rathaus Salzgitter: Kommunaler Sanierungsfahrplan mit 61 % CO₂-Einsparung und 50 % Förderquote von k2-energie.",
+    },
+  ];
+
+  const projectIds = projectDocs.map((project) => project._id);
 
   const serviceDocs = [
     {
@@ -265,17 +682,21 @@ async function seed() {
         "Ganzheitliche Energieberatung für Wohn- und Nichtwohngebäude inklusive Fördermittelcheck und Maßnahmenplan.",
       pageBuilder: [
         heroBlock({
+          variant: "simple",
           badge: "BAFA-gelistet",
           title: "Vor-Ort Energieberatung für Gebäude mit Zukunft",
           highlights: ["Energieberatung", "Sanierungsfahrplan"],
-          body:
-            "Wir analysieren Gebäudehülle, Anlagentechnik und Förderpotenziale, um Sanierungen wirtschaftlich und nachhaltig umzusetzen.",
+          body: "Wir analysieren Gebäudehülle, Anlagentechnik und Förderpotenziale, um Sanierungen wirtschaftlich und nachhaltig umzusetzen.",
           features: [
             "Förderfähiger iSFP inklusive",
             "Digitale Dokumentation & BIM-kompatibel",
             "Transparente Kostenschätzung",
           ],
-          primaryCta: button({ text: "Erstberatung buchen", href: "/kontakt" }),
+          primaryCta: button({
+            text: "Erstberatung buchen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+          }),
         }),
         featureCardsBlock({
           title: "Was Sie von uns erwarten dürfen",
@@ -285,27 +706,29 @@ async function seed() {
           cards: [
             {
               title: "Ganzheitliche Analyse",
-              body:
-                "Gebäudeaufnahme, thermografische Auswertung und Verbrauchsanalyse bilden die Grundlage.",
+              body: "Gebäudeaufnahme, thermografische Auswertung und Verbrauchsanalyse bilden die Grundlage.",
             },
             {
               title: "Fördermittel-Mapping",
-              body:
-                "Wir prüfen BAFA, KfW und regionale Programme und bereiten die Antragsunterlagen vor.",
+              body: "Wir prüfen BAFA, KfW und regionale Programme und bereiten die Antragsunterlagen vor.",
             },
             {
               title: "Sanierungsfahrplan",
-              body:
-                "Klare Prioritäten, Zeitachsen und Budgetempfehlungen inklusive CO₂- und Kostenwirkung.",
+              body: "Klare Prioritäten, Zeitachsen und Budgetempfehlungen inklusive CO₂- und Kostenwirkung.",
             },
           ],
         }),
         ctaBlock({
           eyebrow: "Nächster Schritt",
           title: "Starten Sie mit einer Bestandsaufnahme",
-          body:
-            "In einem 30-minütigen Gespräch klären wir Projektziele, Gebäudetyp und verfügbare Förderprogramme.",
-          ctas: [button({ text: "Unverbindlichen Termin sichern", href: "/kontakt" })],
+          body: "In einem 30-minütigen Gespräch klären wir Projektziele, Gebäudetyp und verfügbare Förderprogramme.",
+          ctas: [
+            button({
+              text: "Unverbindlichen Termin sichern",
+              internalRef: contactPageId,
+              internalSlug: "/kontakt",
+            }),
+          ],
         }),
       ],
       seoTitle: "Vor-Ort Energieberatung | k2-energie",
@@ -321,11 +744,11 @@ async function seed() {
         "Individueller Sanierungsfahrplan (iSFP) inklusive Fördermittellogik und Umsetzungshilfe für größere Projekte.",
       pageBuilder: [
         heroBlock({
+          variant: "simple",
           badge: "iSFP inklusive",
           title: "Sanierungsfahrplan mit klarer Investitionsstrategie",
           highlights: ["Sanierungsfahrplan", "Fördermanagement"],
-          body:
-            "Wir priorisieren Maßnahmen nach Energie- und Wirtschaftlichkeitskennzahlen und begleiten die Umsetzung bis zur Auszahlung.",
+          body: "Wir priorisieren Maßnahmen nach Energie- und Wirtschaftlichkeitskennzahlen und begleiten die Umsetzung bis zur Auszahlung.",
           features: [
             "Transparente Fördermatrix",
             "Monitoring der CO₂-Effekte",
@@ -333,7 +756,8 @@ async function seed() {
           ],
           primaryCta: button({
             text: "Projekt anfragen",
-            href: "/kontakt",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
           }),
         }),
         featureCardsBlock({
@@ -362,8 +786,105 @@ async function seed() {
     },
   ];
 
-  const companyPageId = "companyPage-ueber-uns";
-  const contactPageId = "contactPage-kontakt";
+  const legalImpressumId = "legalPage-impressum";
+  const legalDatenschutzId = "legalPage-datenschutz";
+  const legalAgbId = "legalPage-agb";
+
+  const legalDocs = [
+    {
+      _id: legalImpressumId,
+      _type: "legalPage",
+      title: "Impressum",
+      slug: { _type: "slug", current: "impressum" },
+      category: "impressum",
+      content: [
+        block(
+          "Bitte hinterlegen Sie hier Ihr vollständiges Impressum samt Anbieterkennzeichnung, Vertretungsberechtigten und Aufsichtsbehörden.",
+        ),
+      ],
+    },
+    {
+      _id: legalDatenschutzId,
+      _type: "legalPage",
+      title: "Datenschutz",
+      slug: { _type: "slug", current: "datenschutz" },
+      category: "datenschutz",
+      content: [
+        block(
+          "Beschreiben Sie hier Ihre Datenschutzrichtlinien, insbesondere Umgang mit personenbezogenen Daten, Rechtsgrundlagen und Betroffenenrechte.",
+        ),
+      ],
+    },
+    {
+      _id: legalAgbId,
+      _type: "legalPage",
+      title: "Allgemeine Geschäftsbedingungen",
+      slug: { _type: "slug", current: "agb" },
+      category: "agb",
+      content: [
+        block(
+          "Ergänzen Sie hier Ihre Allgemeinen Geschäftsbedingungen inklusive Leistungsbeschreibung, Zahlungsmodalitäten und Haftungsregelungen.",
+        ),
+      ],
+    },
+  ];
+
+  const referencesPageDoc = {
+    _id: referencesPageId,
+    _type: "page",
+    title: "Referenzen",
+    description:
+      "Referenzen von k2-energie: Quartiere, Kommunen und Gewerbeimmobilien, die wir mit Sanierungsfahrplänen, Monitoring und Fördermanagement erfolgreich begleitet haben.",
+    slug: { _type: "slug", current: "/referenzen" },
+    pageBuilder: [
+      heroBlock({
+        variant: "simple",
+        badge: "Referenzen",
+        title: "Erfolgreiche Energieprojekte aus Wohnungswirtschaft & Kommunen",
+        highlights: ["iSFP", "Förderquoten"],
+        body: "Von Mehrfamilienhäusern über Technologie-Campi bis zu kommunalen Liegenschaften – wir entwickeln praxisnahe Konzepte mit messbaren Effekten.",
+        features: [
+          "45 % durchschnittliche Förderquote",
+          "350+ Projekte",
+          "Monitoring über 24 Monate",
+        ],
+        primaryCta: button({
+          text: "Projekt besprechen",
+          internalRef: contactPageId,
+          internalSlug: "/kontakt",
+        }),
+      }),
+      projectGalleryBlock({
+        title: "Ausgewählte Referenzen",
+        intro:
+          "Ein Auszug aus Projekten, die wir in den letzten Jahren begleitet haben. Gerne zeigen wir Ihnen weitere Referenzen aus Ihrer Branche.",
+        projectIds,
+        buttons: [
+          button({
+            text: "Weitere Referenzen anfragen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+            variant: "secondary",
+          }),
+        ],
+      }),
+      ctaBlock({
+        eyebrow: "Nächster Schritt",
+        title: "Lassen Sie uns über Ihr Vorhaben sprechen",
+        body: "In einem unverbindlichen Erstgespräch prüfen wir Gebäude, Zeithorizont und die passende Förderstrategie.",
+        ctas: [
+          button({
+            text: "Kontakt aufnehmen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+          }),
+        ],
+      }),
+    ],
+    seoTitle: "Referenzen & Projekte | k2-energie",
+    seoDescription:
+      "Referenzen von k2-energie: Erfolgreiche Energie- und Förderprojekte für Wohnungswirtschaft, Gewerbe und Kommunen – inklusive messbarer Einsparungen.",
+  };
 
   const companyPageDoc = {
     _id: companyPageId,
@@ -374,11 +895,11 @@ async function seed() {
     slug: { _type: "slug", current: "/unternehmen" },
     pageBuilder: [
       heroBlock({
+        variant: "simple",
         badge: "Unser Team",
         title: "Ingenieur:innen mit Energie für morgen",
         highlights: ["Ingenieur:innen", "Lengede"],
-        body:
-          "Wir sind ein interdisziplinäres Team aus Gebäudeenergieberater:innen, Versorgungstechnikern und Bauphysiker:innen – seit 2014 in Lengede zu Hause.",
+        body: "Wir sind ein interdisziplinäres Team aus Gebäudeenergieberater:innen, Versorgungstechnikern und Bauphysiker:innen – seit 2014 in Lengede zu Hause.",
         features: [
           "Zertifiziert nach DIN EN 16247",
           "Erfahrung aus 350+ Projekten",
@@ -387,7 +908,8 @@ async function seed() {
       }),
       featureCardsBlock({
         title: "Was uns auszeichnet",
-        intro: "Wir kombinieren Ingenieurwissen mit pragmatischer Umsetzungserfahrung.",
+        intro:
+          "Wir kombinieren Ingenieurwissen mit pragmatischer Umsetzungserfahrung.",
         cards: [
           {
             title: "Transparente Zusammenarbeit",
@@ -410,31 +932,46 @@ async function seed() {
     _id: contactPageId,
     _type: "contactPage",
     title: "Kontakt",
-    description: "Wir freuen uns auf Ihr Projekt. Sprechen Sie mit unserem Beratungsteam.",
+    description:
+      "Wir freuen uns auf Ihr Projekt. Sprechen Sie mit unserem Beratungsteam.",
     slug: { _type: "slug", current: "/kontakt" },
     pageBuilder: [
       heroBlock({
+        variant: "simple",
         title: "Persönlich beraten in Lengede & digital deutschlandweit",
         highlights: ["Kontakt", "Team"],
-        body:
-          "Rufen Sie uns an unter +49 5344 984 92 10 oder schreiben Sie an hallo@k2-energie.de – wir antworten werktags innerhalb von 24 Stunden.",
+        body: "Rufen Sie uns an unter +49 5344 984 92 10 oder schreiben Sie an hallo@k2-energie.de – wir antworten werktags innerhalb von 24 Stunden.",
         features: [
           "Bürozeiten: Mo–Do 8–17 Uhr, Fr 8–15 Uhr",
           "Vor-Ort-Termine in Niedersachsen & Sachsen-Anhalt",
           "Digitale Beratung bundesweit",
         ],
-        primaryCta: button({ text: "Termin vereinbaren", href: "mailto:hallo@k2-energie.de" }),
+        primaryCta: button({
+          text: "Termin vereinbaren",
+          href: "mailto:hallo@k2-energie.de",
+        }),
+      }),
+      contactFormBlock({
+        eyebrow: "Kontakt aufnehmen",
+        title: "Wie können wir Sie unterstützen?",
+        intro:
+          "Beschreiben Sie Ihr Gebäude, geplante Maßnahmen und Ihren Zeithorizont. Wir melden uns werktags innerhalb eines Tages mit Terminvorschlägen.",
+        successMessage:
+          "Vielen Dank! Unser Team setzt sich spätestens am nächsten Werktag mit Ihnen in Verbindung.",
       }),
       ctaBlock({
-        title: "Projekt anfragen",
-        body:
-          "Beschreiben Sie kurz Ihr Gebäude, geplante Maßnahmen und Zeithorizont. Wir melden uns mit einem konkreten Vorschlag für die nächsten Schritte.",
+        eyebrow: "Direkter Draht",
+        title: "Sie erreichen uns auch telefonisch",
+        body: "Montag bis Donnerstag 8–17 Uhr, Freitag 8–15 Uhr. Wir freuen uns auf den Austausch mit Ihnen.",
         ctas: [
-          button({ text: "Anfrageformular öffnen", href: "https://forms.gle/energieberatung" }),
           button({
-            text: "Zum Erstgespräch",
+            text: "Anrufen",
             href: "tel:+4953449849210",
             variant: "outline",
+          }),
+          button({
+            text: "E-Mail schreiben",
+            href: "mailto:hallo@k2-energie.de",
           }),
         ],
       }),
@@ -442,7 +979,7 @@ async function seed() {
   };
 
   const homePageDoc = {
-    _id: "homePage-energy",
+    _id: homePageId,
     _type: "homePage",
     title: "k2-energie – Ingenieurbüro für Energieberatung",
     description:
@@ -453,14 +990,17 @@ async function seed() {
         badge: "BAFA-zertifiziert",
         title: "Ihr Ingenieurbüro für Energieberatung & Sanierungsplanung",
         highlights: ["Ingenieurbüro", "Energieberatung"],
-        body:
-          "Wir entwickeln energetische Gesamtkonzepte, sichern maximale Förderquoten und begleiten die Umsetzung bis zur Abnahme.",
+        body: "Wir entwickeln energetische Gesamtkonzepte, sichern maximale Förderquoten und begleiten die Umsetzung bis zur Abnahme.",
         features: [
           "> 350 Projekte erfolgreich umgesetzt",
           "iSFP & Fördermanagement aus einer Hand",
           "Messbare CO₂- und Kosteneffekte",
         ],
-        primaryCta: button({ text: "Kostenloses Erstgespräch", href: "/kontakt" }),
+        primaryCta: button({
+          text: "Kostenloses Erstgespräch",
+          internalRef: contactPageId,
+          internalSlug: "/kontakt",
+        }),
       }),
       featureCardsBlock({
         eyebrow: "Unsere Leistungen",
@@ -490,18 +1030,24 @@ async function seed() {
         cards: [
           {
             title: "Wohnungswirtschaft",
-            description: "Portfoliostrategien, Quartierslösungen und Mieterkommunikation.",
-            href: "/leistungen/beratung",
+            description:
+              "Portfoliostrategien, Quartierslösungen und Mieterkommunikation.",
+            internalRef: serviceBeratungId,
+            internalSlug: "/leistungen/beratung",
           },
           {
             title: "Gewerbe & Industrie",
-            description: "Effizienzsteigerung in Produktion, Abwärmenutzung und Lastmanagement.",
-            href: "/leistungen/sanierungsfahrplan",
+            description:
+              "Effizienzsteigerung in Produktion, Abwärmenutzung und Lastmanagement.",
+            internalRef: serviceSanierungsplanId,
+            internalSlug: "/leistungen/sanierungsfahrplan",
           },
           {
             title: "Kommunen",
-            description: "Integrierte Klimaschutzkonzepte und Gebäudebestand im öffentlichen Bereich.",
-            href: "/unternehmen",
+            description:
+              "Integrierte Klimaschutzkonzepte und Gebäudebestand im öffentlichen Bereich.",
+            internalRef: companyPageId,
+            internalSlug: "/unternehmen",
           },
         ],
       }),
@@ -511,30 +1057,27 @@ async function seed() {
         eyebrow: "Fragen aus der Praxis",
         title: "Häufige Fragen zur Energieberatung",
         subtitle: "Transparente Antworten für Entscheider:innen",
-        faqs: faqDocs.map((faq) => ({ _type: "reference" as const, _ref: faq._id })),
+        faqs: faqDocs.map((faq) => ({
+          _type: "reference" as const,
+          _ref: faq._id,
+        })),
         link: {
           title: "Noch Fragen?",
           description: "Wir beraten Sie gerne persönlich.",
-          url: {
-            _type: "customUrl" as const,
-            type: "external" as const,
-            external: "/kontakt",
-            href: "/kontakt",
-            openInNewTab: false,
-          },
+          url: internalUrl({ ref: contactPageId, slug: "/kontakt" }),
         },
       },
-      subscribeBlock({
-        title: "Energie-Update für Entscheider:innen",
-        subtitle:
-          "Monatliche Insights zu Förderprogrammen, Techniktrends und Best Practices direkt in Ihr Postfach.",
-        helper: "Kostenfrei, jederzeit abbestellbar.",
-      }),
       ctaBlock({
         eyebrow: "Bereit für den nächsten Schritt?",
         title: "Wir entwickeln Ihren Sanierungsfahrplan",
         body: "Sichern Sie sich ein unverbindliches Erstgespräch mit unseren Energieingenieur:innen.",
-        ctas: [button({ text: "Projekt anfragen", href: "/kontakt" })],
+        ctas: [
+          button({
+            text: "Projekt anfragen",
+            internalRef: contactPageId,
+            internalSlug: "/kontakt",
+          }),
+        ],
       }),
     ],
     featuredServices: [
@@ -546,80 +1089,131 @@ async function seed() {
       "Ingenieurbüro für Energieberatung in Lengede: Vor-Ort Audits, Sanierungsfahrpläne, Fördermanagement und Monitoring für Wohnungswirtschaft, Kommunen und Unternehmen.",
   };
 
-  const navigationItems = [
-    {
-      _id: "nav-start",
-      _type: "navigationItem",
-      title: "Start",
-      location: "header",
-      order: 0,
-      kind: "internal",
-      internal: { _type: "reference", _ref: homePageDoc._id },
-    },
-    {
-      _id: "nav-leistungen",
-      _type: "navigationItem",
-      title: "Leistungen",
-      location: "header",
-      order: 1,
-      kind: "internal",
-      internal: { _type: "reference", _ref: serviceBeratungId },
-    },
-    {
-      _id: "nav-unternehmen",
-      _type: "navigationItem",
-      title: "Unternehmen",
-      location: "header",
-      order: 2,
-      kind: "internal",
-      internal: { _type: "reference", _ref: companyPageId },
-    },
-    {
-      _id: "nav-kontakt",
-      _type: "navigationItem",
-      title: "Kontakt",
-      location: "header",
-      order: 3,
-      kind: "internal",
-      internal: { _type: "reference", _ref: contactPageId },
-    },
-    {
-      _id: "nav-footer-beratung",
-      _type: "navigationItem",
-      title: "Energieberatung",
-      location: "footer",
-      order: 0,
-      kind: "internal",
-      internal: { _type: "reference", _ref: serviceBeratungId },
-    },
-    {
-      _id: "nav-footer-fahrplan",
-      _type: "navigationItem",
-      title: "Sanierungsfahrplan",
-      location: "footer",
-      order: 1,
-      kind: "internal",
-      internal: { _type: "reference", _ref: serviceSanierungsplanId },
-    },
-    {
-      _id: "nav-footer-unternehmen",
-      _type: "navigationItem",
-      title: "Über uns",
-      location: "footer",
-      order: 2,
-      kind: "internal",
-      internal: { _type: "reference", _ref: companyPageId },
-    },
-    {
-      _id: "nav-footer-kontakt",
-      _type: "navigationItem",
-      title: "Kontakt",
-      location: "footer",
-      order: 3,
-      kind: "internal",
-      internal: { _type: "reference", _ref: contactPageId },
-    },
-  ];
+  const navbarDoc = {
+    _id: "navbar",
+    _type: "navbar",
+    label: "Hauptnavigation",
+    columns: [
+      navLink({
+        name: "Start",
+        url: internalUrl({ ref: homePageId, slug: "/" }),
+      }),
+      navLink({
+        name: "Leistungen",
+        url: internalUrl({
+          ref: serviceBeratungId,
+          slug: "/leistungen/beratung",
+        }),
+      }),
+      navLink({
+        name: "Sanierungsfahrplan",
+        url: internalUrl({
+          ref: serviceSanierungsplanId,
+          slug: "/leistungen/sanierungsfahrplan",
+        }),
+      }),
+      navLink({
+        name: "Referenzen",
+        url: internalUrl({ ref: referencesPageId, slug: "/referenzen" }),
+      }),
+      navLink({
+        name: "Unternehmen",
+        url: internalUrl({ ref: companyPageId, slug: "/unternehmen" }),
+      }),
+      navLink({
+        name: "Kontakt",
+        url: internalUrl({ ref: contactPageId, slug: "/kontakt" }),
+      }),
+    ],
+    buttons: [
+      button({
+        text: "Kostenloses Erstgespräch",
+        internalRef: contactPageId,
+        internalSlug: "/kontakt",
+      }),
+    ],
+  };
+
+  const footerDoc = {
+    _id: "footer",
+    _type: "footer",
+    label: "Footer",
+    subtitle:
+      "Ingenieurbüro für Energieberatung, Sanierungsfahrpläne und Fördermanagement in Lengede.",
+    columns: [
+      {
+        _type: "footerColumn" as const,
+        _key: key("footer-column"),
+        title: "Navigation",
+        links: [
+          footerLink({
+            name: "Start",
+            url: internalUrl({ ref: homePageId, slug: "/" }),
+          }),
+          footerLink({
+            name: "Leistungen",
+            url: internalUrl({
+              ref: serviceBeratungId,
+              slug: "/leistungen/beratung",
+            }),
+          }),
+          footerLink({
+            name: "Sanierungsfahrplan",
+            url: internalUrl({
+              ref: serviceSanierungsplanId,
+              slug: "/leistungen/sanierungsfahrplan",
+            }),
+          }),
+          footerLink({
+            name: "Referenzen",
+            url: internalUrl({ ref: referencesPageId, slug: "/referenzen" }),
+          }),
+          footerLink({
+            name: "Unternehmen",
+            url: internalUrl({ ref: companyPageId, slug: "/unternehmen" }),
+          }),
+          footerLink({
+            name: "Kontakt",
+            url: internalUrl({ ref: contactPageId, slug: "/kontakt" }),
+          }),
+        ],
+      },
+      {
+        _type: "footerColumn" as const,
+        _key: key("footer-column"),
+        title: "Kontakt",
+        links: [
+          footerLink({
+            name: "Telefon",
+            url: externalUrl({ href: "tel:+4953449849210" }),
+          }),
+          footerLink({
+            name: "E-Mail",
+            url: externalUrl({ href: "mailto:hallo@k2-energie.de" }),
+          }),
+        ],
+      },
+      {
+        _type: "footerColumn" as const,
+        _key: key("footer-column"),
+        title: "Rechtliches",
+        links: [
+          footerLink({
+            name: "Impressum",
+            url: internalUrl({ ref: legalImpressumId, slug: "/impressum" }),
+          }),
+          footerLink({
+            name: "Datenschutz",
+            url: internalUrl({ ref: legalDatenschutzId, slug: "/datenschutz" }),
+          }),
+          footerLink({
+            name: "AGB",
+            url: internalUrl({ ref: legalAgbId, slug: "/agb" }),
+          }),
+        ],
+      },
+    ],
+  };
 
   const siteSettingsDoc = {
     _id: "siteSettings",
@@ -641,15 +1235,19 @@ async function seed() {
   const docs = [
     ...faqDocs,
     ...serviceDocs,
+    ...projectDocs,
+    ...legalDocs,
     companyPageDoc,
     contactPageDoc,
+    referencesPageDoc,
     homePageDoc,
     siteSettingsDoc,
-    ...navigationItems,
+    navbarDoc,
+    footerDoc,
   ];
 
   const tx = client.transaction();
-  docs.forEach((doc) => tx.createOrReplace(doc));
+  docs.forEach((doc) => tx.createOrReplace(doc as any));
   await tx.commit();
   console.info("Seed data imported successfully.\nDocs created:", docs.length);
 }

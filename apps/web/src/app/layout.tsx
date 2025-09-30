@@ -41,10 +41,11 @@ export default async function RootLayout({
             siteSettings={nav.siteSettings}
           />
           {children}
-          {nav.footerNavigation.length || nav.siteSettings ? (
+          {nav.footerNavigation.length || nav.siteSettings || nav.footerData ? (
             <Footer
               navigation={nav.footerNavigation}
               settings={nav.siteSettings}
+              footerData={nav.footerData}
             />
           ) : (
             <FooterSkeleton />

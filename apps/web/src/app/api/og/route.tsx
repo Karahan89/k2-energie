@@ -8,7 +8,6 @@ import { getTitleCase } from "@/utils";
 
 import { getOgMetaData } from "./og-config";
 import {
-  getBlogPageOGData,
   getGenericPageOGData,
   getHomePageOGData,
   getSlugPageOGData,
@@ -16,10 +15,21 @@ import {
 
 export const runtime = "edge";
 
+const TOKEN_COLOR_BRAND_PRIMARY_ACTIVE = "#2d5a42"; // Styleguide: --color-brand-primary-active
+const TOKEN_COLOR_SURFACE_BASE = "#ffffff"; // Styleguide: --color-surface-base
+const TOKEN_COLOR_TEXT_INVERSE = "#ffffff"; // Styleguide: --color-text-inverse
+const TRANSLUCENT_SURFACE_LAYER =
+  "color-mix(in srgb, #ffffff 20%, transparent)";
+const EMPHASIS_SURFACE_LAYER = "color-mix(in srgb, #ffffff 60%, transparent)";
+
 const errorContent = (
-  <div tw="flex flex-col w-full h-full items-center justify-center">
-    <div tw=" flex w-full h-full items-center justify-center ">
-      <h1 tw="text-white">Something went Wrong with image generation</h1>
+  <div
+    tw={`flex h-full w-full flex-col items-center justify-center bg-[${TOKEN_COLOR_BRAND_PRIMARY_ACTIVE}]`}
+  >
+    <div tw="flex h-full w-full items-center justify-center">
+      <h1 tw={`text-[${TOKEN_COLOR_TEXT_INVERSE}]`}>
+        Something went Wrong with image generation
+      </h1>
     </div>
   </div>
 );
@@ -39,6 +49,26 @@ type DominantColorSeoImageRenderProps = {
   _type?: Maybe<string>;
   description?: Maybe<string>;
 };
+
+function toPlainText(value: unknown): string | undefined {
+  if (typeof value === "string") return value;
+  if (!value || !Array.isArray(value)) return undefined;
+  const text = value
+    .filter(
+      (block) => block && typeof block === "object" && block._type === "block",
+    )
+    .map((block) => {
+      const children =
+        (block as { children?: Array<{ text?: string }> }).children ?? [];
+      return children
+        .map((child) => (typeof child?.text === "string" ? child.text : ""))
+        .join(" ");
+    })
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text.length > 0 ? text : undefined;
+}
 
 const seoImageRender = ({ seoImage }: SeoImageRenderProps) => {
   return (
@@ -60,7 +90,7 @@ const dominantColorSeoImageRender = ({
   return (
     <div
       tw={`bg-[${
-        dominantColor ?? "#12061F"
+        dominantColor ?? TOKEN_COLOR_BRAND_PRIMARY_ACTIVE
       }] flex flex-row overflow-hidden relative w-full`}
       style={{ fontFamily: "Inter" }}
     >
@@ -73,7 +103,10 @@ const dominantColorSeoImageRender = ({
         <defs>
           <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" style={{ stopColor: "transparent" }} />
-            <stop offset="100%" style={{ stopColor: "white" }} />
+            <stop
+              offset="100%"
+              style={{ stopColor: TOKEN_COLOR_SURFACE_BASE }}
+            />
           </linearGradient>
         </defs>
         <rect width="100%" height="100%" fill="url(#gradient)" opacity="0.2" />
@@ -82,7 +115,13 @@ const dominantColorSeoImageRender = ({
       <div tw="flex-1 p-10 flex flex-col justify-between relative z-10">
         <div tw="flex justify-between items-start w-full">
           {logo && <img src={logo} alt="Logo" height={48} />}
-          <div tw="bg-white flex bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium">
+          <div
+            tw="flex px-4 py-2 rounded-full text-sm font-medium"
+            style={{
+              backgroundColor: TRANSLUCENT_SURFACE_LAYER,
+              color: TOKEN_COLOR_TEXT_INVERSE,
+            }}
+          >
             {new Date(date ?? new Date()).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
@@ -91,15 +130,21 @@ const dominantColorSeoImageRender = ({
           </div>
         </div>
 
-        <h1 tw="text-5xl font-bold leading-tight max-w-[90%] text-white">
+        <h1
+          tw={`text-5xl font-bold leading-tight max-w-[90%] text-[${TOKEN_COLOR_TEXT_INVERSE}]`}
+        >
           {title}
         </h1>
-        {description && <p tw="text-lg text-white">{description}</p>}
+        {description && (
+          <p tw={`text-lg text-[${TOKEN_COLOR_TEXT_INVERSE}]`}>{description}</p>
+        )}
         {_type && (
           <div
-            tw={`bg-white text-[${
-              dominantColor ?? "#12061F"
-            }] flex px-5 py-2 rounded-full text-base font-semibold self-start`}
+            tw="flex px-5 py-2 rounded-full text-base font-semibold self-start"
+            style={{
+              backgroundColor: TRANSLUCENT_SURFACE_LAYER,
+              color: dominantColor ?? TOKEN_COLOR_BRAND_PRIMARY_ACTIVE,
+            }}
           >
             {getTitleCase(_type)}
           </div>
@@ -107,7 +152,10 @@ const dominantColorSeoImageRender = ({
       </div>
 
       <div tw="w-[630px] h-[630px] flex items-center justify-center p-8 relative z-10">
-        <div tw="w-[566px] h-[566px] bg-white bg-opacity-20 flex flex-col justify-center items-center rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03),0_4px_6px_-1px_rgba(0,0,0,0.05),0_8px_10px_-1px_rgba(0,0,0,0.05)] overflow-hidden">
+        <div
+          tw="w-[566px] h-[566px] flex flex-col justify-center items-center rounded-3xl shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03),0_4px_6px_-1px_rgba(0,0,0,0.05),0_8px_10px_-1px_rgba(0,0,0,0.05)] overflow-hidden"
+          style={{ backgroundColor: EMPHASIS_SURFACE_LAYER }}
+        >
           <div tw="flex relative w-full h-full">
             {image ? (
               <img
@@ -211,22 +259,20 @@ const getHomePageContent = async ({ id }: ContentProps) => {
   const [result, err] = await getHomePageOGData(id);
   if (err || !result) return undefined;
   if (result?.seoImage) return seoImageRender({ seoImage: result.seoImage });
-  return dominantColorSeoImageRender(result);
+  return dominantColorSeoImageRender({
+    ...result,
+    description: toPlainText(result.description),
+  });
 };
 const getSlugPageContent = async ({ id }: ContentProps) => {
   if (!id) return undefined;
   const [result, err] = await getSlugPageOGData(id);
   if (err || !result) return undefined;
   if (result?.seoImage) return seoImageRender({ seoImage: result.seoImage });
-  return dominantColorSeoImageRender(result);
-};
-
-const getBlogPageContent = async ({ id }: ContentProps) => {
-  if (!id) return undefined;
-  const [result, err] = await getBlogPageOGData(id);
-  if (err || !result) return undefined;
-  if (result?.seoImage) return seoImageRender({ seoImage: result.seoImage });
-  return dominantColorSeoImageRender(result);
+  return dominantColorSeoImageRender({
+    ...result,
+    description: toPlainText(result.description),
+  });
 };
 
 const getGenericPageContent = async ({ id }: ContentProps) => {
@@ -234,13 +280,15 @@ const getGenericPageContent = async ({ id }: ContentProps) => {
   const [result, err] = await getGenericPageOGData(id);
   if (err || !result) return undefined;
   if (result?.seoImage) return seoImageRender({ seoImage: result.seoImage });
-  return dominantColorSeoImageRender(result);
+  return dominantColorSeoImageRender({
+    ...result,
+    description: toPlainText(result.description),
+  });
 };
 
 const block = {
   homePage: getHomePageContent,
   page: getSlugPageContent,
-  blog: getBlogPageContent,
 } as const;
 
 export async function GET({ url }: Request): Promise<ImageResponse> {

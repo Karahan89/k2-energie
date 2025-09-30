@@ -1,10 +1,7 @@
 import { DocumentIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
-import {
-  PathnameFieldComponent,
-  UrlSlugFieldComponent,
-} from "../../components";
+import { PathnameFieldComponent } from "../../components";
 import { GROUP, GROUPS } from "../../utils/constant";
 import { ogFields } from "../../utils/og-fields";
 import { seoFields } from "../../utils/seo-fields";
@@ -77,10 +74,7 @@ export const page = defineType({
 
             if (basicValidation !== true) return basicValidation;
 
-            // Then check that pages don't use blog prefixes
-            if (slug?.current?.startsWith("/blog")) {
-              return 'Pages cannot use "/blog" prefix - this is reserved for blog content';
-            }
+            // Additional validation can be added here if needed
 
             return true;
           }),

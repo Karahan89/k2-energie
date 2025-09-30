@@ -11,45 +11,49 @@ import { pageBuilderField } from "../common";
 export const homePage = defineType({
   name: "homePage",
   type: "document",
-  title: "Home Page",
+  title: "Startseite",
   icon: HomeIcon,
   description:
-    "This is where you create the main page visitors see when they first come to your website. Think of it like the front door to your online home - you can add a welcoming title, a short description, and build the page with different sections like pictures, text, and buttons.",
+    "Konfigurieren Sie die Hauptseite Ihrer Website. Hier können Sie den Hero-Bereich mit Energie-Analyse-Card, hervorgehobene Leistungen und Projekte einrichten.",
   groups: GROUPS,
   fields: [
     defineField({
       name: "title",
       type: "string",
+      title: "Haupttitel",
       description:
-        "The main heading that will appear at the top of your home page",
+        "Der Haupttitel, der auf Ihrer Startseite erscheint (z.B. 'Ihr Partner für Energieberatung')",
       group: GROUP.MAIN_CONTENT,
+      validation: (rule) =>
+        rule.required().error("Ein Haupttitel ist erforderlich"),
     }),
     defineField({
       name: "description",
-      title: "Description",
+      title: "Kurzbeschreibung",
       type: "text",
       description:
-        "A short summary that tells visitors what your website is about. This text also helps your page show up in Google searches.",
+        "Eine kurze Beschreibung Ihres Ingenieurbüros. Diese hilft auch bei der Suchmaschinenoptimierung.",
       rows: 3,
       group: GROUP.MAIN_CONTENT,
       validation: (rule) => [
         rule
           .min(140)
           .warning(
-            "The meta description should be at least 140 characters for optimal SEO visibility in search results",
+            "Die Beschreibung sollte mindestens 140 Zeichen haben für optimale SEO-Sichtbarkeit",
           ),
         rule
           .max(160)
           .warning(
-            "The meta description should not exceed 160 characters as it will be truncated in search results",
+            "Die Beschreibung sollte maximal 160 Zeichen haben, da sie in Suchergebnissen abgeschnitten wird",
           ),
       ],
     }),
     defineField({
       name: "slug",
       type: "slug",
+      title: "URL-Slug",
       description:
-        "The web address for your home page. Usually this is just '/' for the main page of your website.",
+        "Die Web-Adresse Ihrer Startseite. Normalerweise ist das '/' für die Hauptseite.",
       group: GROUP.MAIN_CONTENT,
       options: {
         source: "title",
@@ -58,7 +62,7 @@ export const homePage = defineType({
       validation: (Rule) =>
         Rule.required().custom(
           createSlugValidator({
-            documentType: "Home page",
+            documentType: "Startseite",
             requiredPrefix: "/",
             sanityDocumentType: "homePage",
           }),
@@ -69,25 +73,33 @@ export const homePage = defineType({
       name: "featuredServices",
       title: "Hervorgehobene Leistungen",
       type: "array",
+      description:
+        "Wählen Sie bis zu 6 Leistungen aus, die auf der Startseite hervorgehoben werden",
       of: [
         {
           type: "reference",
-          to: [{ type: "service" }],
+          to: [{ type: "serviceItem" }],
         },
       ],
       group: GROUP.MAIN_CONTENT,
+      validation: (rule) =>
+        rule.max(6).warning("Maximal 6 Leistungen werden angezeigt"),
     }),
     defineField({
       name: "featuredProjects",
       title: "Hervorgehobene Projekte",
       type: "array",
+      description:
+        "Wählen Sie bis zu 6 Projekte aus, die auf der Startseite als Referenzen gezeigt werden",
       of: [
         {
           type: "reference",
-          to: [{ type: "project" }],
+          to: [{ type: "projectItem" }],
         },
       ],
       group: GROUP.MAIN_CONTENT,
+      validation: (rule) =>
+        rule.max(6).warning("Maximal 6 Projekte werden angezeigt"),
     }),
     ...seoFields.filter(
       (field) => !["seoNoIndex", "seoHideFromLists"].includes(field.name),
@@ -101,9 +113,11 @@ export const homePage = defineType({
       slug: "slug.current",
     },
     prepare: ({ title, description, slug }) => ({
-      title: title || "Untitled Home Page",
+      title: title || "Startseite",
       media: HomeIcon,
-      subtitle: slug || "Home Page",
+      subtitle: description
+        ? description.substring(0, 60) + "..."
+        : "Keine Beschreibung",
     }),
   },
 });

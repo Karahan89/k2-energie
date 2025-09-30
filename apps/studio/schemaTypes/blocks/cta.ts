@@ -9,17 +9,11 @@ export const cta = defineType({
   icon: PhoneIcon,
   fields: [
     defineField({
-      name: "eyebrow",
-      title: "Eyebrow",
-      type: "string",
-      description:
-        "The smaller text that sits above the title to provide context",
-    }),
-    defineField({
       name: "title",
-      title: "Title",
+      title: "Titel",
       type: "string",
-      description: "The large text that is the primary focus of the block",
+      description: "Der Haupttitel der CTA-Sektion",
+      validation: (Rule) => Rule.required().max(100),
     }),
     richTextField,
     buttonsField,
@@ -29,8 +23,8 @@ export const cta = defineType({
       title: "title",
     },
     prepare: ({ title }) => ({
-      title,
-      subtitle: "CTA Block",
+      title: title || "CTA Block",
+      subtitle: "Call-to-Action Sektion",
     }),
   },
 });

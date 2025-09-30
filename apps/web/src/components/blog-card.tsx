@@ -1,13 +1,18 @@
 "use client";
 import Link from "next/link";
 
-import type { QueryBlogIndexPageDataResult } from "@/lib/sanity/sanity.types";
+import type { SanityImageProps } from "@/types";
 
 import { SanityImage } from "./elements/sanity-image";
 
-type Blog = NonNullable<
-  NonNullable<QueryBlogIndexPageDataResult>["blogs"]
->[number];
+type Blog = {
+  _id?: string | null;
+  title?: string | null;
+  slug?: string | null;
+  description?: string | null;
+  image?: SanityImageProps | null;
+  publishedAt?: string | null;
+};
 
 interface BlogImageProps {
   image: Blog["image"];
@@ -23,7 +28,7 @@ function BlogImage({ image, title }: BlogImageProps) {
       width={800}
       height={400}
       alt={title ?? "Blog post image"}
-      className="aspect-[16/9] w-full rounded-3xl border border-white/40 object-cover shadow-soft sm:aspect-[2/1] lg:aspect-[3/2]"
+      className="aspect-[16/9] w-full rounded-3xl border border-[color:var(--color-border-muted)] object-cover shadow-soft sm:aspect-[2/1] lg:aspect-[3/2]"
     />
   );
 }
@@ -83,7 +88,13 @@ function BlogContent({
 }
 
 export function FeaturedBlogCard({ blog }: BlogCardProps) {
-  const { title, publishedAt, slug, description, image } = blog ?? {};
+  const {
+    title = null,
+    publishedAt = null,
+    slug = null,
+    description = null,
+    image = null,
+  } = blog ?? {};
 
   return (
     <article className="glass-surface glass-surface-neutral grid w-full grid-cols-1 gap-[var(--space-5)] rounded-3xl p-6 shadow-soft transition-transform hover:-translate-y-[3px] hover:shadow-elevated lg:grid-cols-[1.05fr_0.95fr] lg:p-8">
@@ -116,13 +127,19 @@ export function BlogCard({ blog }: BlogCardProps) {
     );
   }
 
-  const { title, publishedAt, slug, description, image } = blog;
+  const {
+    title = null,
+    publishedAt = null,
+    slug = null,
+    description = null,
+    image = null,
+  } = blog;
 
   return (
     <article className="glass-surface glass-surface-neutral flex w-full flex-col gap-[var(--space-3)] rounded-2xl p-5 shadow-soft transition-transform hover:-translate-y-[2px] hover:shadow-elevated">
       <div className="relative w-full overflow-hidden rounded-3xl">
         <BlogImage image={image} title={title} />
-        <div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/30" />
+        <div className="pointer-events-none absolute inset-0 rounded-3xl border border-[color:var(--color-border-muted)]" />
       </div>
       <div className="flex flex-col gap-[var(--space-3)]">
         <BlogMeta publishedAt={publishedAt} />

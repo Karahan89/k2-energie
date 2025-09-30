@@ -1,24 +1,18 @@
 import { stegaClean } from "next-sanity";
 import type {
   Answer,
-  Article,
   ContactPoint,
   FAQPage,
   ImageObject,
   Organization,
-  Person,
   Question,
-  WebPage,
   WebSite,
   WithContext,
 } from "schema-dts";
 
 import { client, urlFor } from "@/lib/sanity/client";
 import { querySiteSettings } from "@/lib/sanity/query";
-import type {
-  QueryBlogSlugPageDataResult,
-  QuerySiteSettingsResult,
-} from "@/lib/sanity/sanity.types";
+import type { QuerySiteSettingsResult } from "@/lib/sanity/sanity.types";
 import { getBaseUrl, handleErrors } from "@/utils";
 
 interface RichTextChild {
@@ -112,70 +106,6 @@ function buildSafeImageUrl(image?: { id?: string | null }) {
     .url();
 }
 
-// Article JSON-LD Component
-interface ArticleJsonLdProps {
-  article: QueryBlogSlugPageDataResult;
-  settings?: QuerySiteSettingsResult;
-}
-export function ArticleJsonLd({ article, settings }: ArticleJsonLdProps) {
-  if (!article) return null;
-
-  const baseUrl = getBaseUrl();
-  const articleUrl = `${baseUrl}${article.slug}`;
-  const imageUrl = buildSafeImageUrl(article.image);
-  const settingsLogoUrl = settings?.logo
-    ? buildSafeImageUrl(settings.logo)
-    : undefined;
-
-  const articleJsonLd: WithContext<Article> = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title,
-    description: article.description || undefined,
-    image: imageUrl ? [imageUrl] : undefined,
-    author: article.authors
-      ? [
-          {
-            "@type": "Person",
-            name: article.authors.name,
-            url: `${baseUrl}`,
-            image: article.authors.image
-              ? ({
-                  "@type": "ImageObject",
-                  url: buildSafeImageUrl(article.authors.image),
-                } as ImageObject)
-              : undefined,
-          } as Person,
-        ]
-      : [],
-    publisher: {
-      "@type": "Organization",
-      name: settings?.siteTitle || "Website",
-      logo: settingsLogoUrl
-        ? ({
-            "@type": "ImageObject",
-            url: settingsLogoUrl,
-          } as ImageObject)
-        : undefined,
-    } as Organization,
-    datePublished: new Date(
-      article.publishedAt || article._createdAt || new Date().toISOString(),
-    ).toISOString(),
-    dateModified: new Date(
-      article._updatedAt || new Date().toISOString(),
-    ).toISOString(),
-    url: articleUrl,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": articleUrl,
-    } as WebPage,
-  };
-
-  return (
-    <JsonLdScript data={articleJsonLd} id={`article-json-ld-${article.slug}`} />
-  );
-}
-
 // Organization JSON-LD Component
 interface OrganizationJsonLdProps {
   settings: QuerySiteSettingsResult;
@@ -251,7 +181,6 @@ export function WebSiteJsonLd({ settings }: WebSiteJsonLdProps) {
 // Combined JSON-LD Component for pages with multiple structured data
 interface CombinedJsonLdProps {
   settings?: QuerySiteSettingsResult;
-  article?: QueryBlogSlugPageDataResult;
   faqs?: FlexibleFaq[];
   includeWebsite?: boolean;
   includeOrganization?: boolean;

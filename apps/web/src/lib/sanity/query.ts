@@ -53,27 +53,6 @@ const richTextFragment = /* groq */ `
   }
 `;
 
-const blogAuthorFragment = /* groq */ `
-  authors[0]->{
-    _id,
-    name,
-    position,
-    ${imageFragment}
-  }
-`;
-
-const blogCardFragment = /* groq */ `
-  _type,
-  _id,
-  title,
-  description,
-  "slug":slug.current,
-  orderRank,
-  ${imageFragment},
-  publishedAt,
-  ${blogAuthorFragment}
-`;
-
 const buttonsFragment = /* groq */ `
   buttons[]{
     text,
@@ -149,20 +128,6 @@ const faqAccordionBlock = /* groq */ `
   }
 `;
 
-const subscribeNewsletterBlock = /* groq */ `
-  _type == "subscribeNewsletter" => {
-    ...,
-    "subTitle": subTitle[]{
-      ...,
-      ${markDefsFragment}
-    },
-    "helperText": helperText[]{
-      ...,
-      ${markDefsFragment}
-    }
-  }
-`;
-
 const featureCardsIconBlock = /* groq */ `
   _type == "featureCardsIcon" => {
     ...,
@@ -174,6 +139,146 @@ const featureCardsIconBlock = /* groq */ `
   }
 `;
 
+const standardsBadgeBlock = /* groq */ `
+  _type == "standardsBadge" => {
+    ...,
+    norms[]{
+      title,
+      code,
+      summary,
+      mandatory,
+      link
+    },
+    notes
+  }
+`;
+
+const processGridBlock = /* groq */ `
+  _type == "processGrid" => {
+    ...,
+    items[]{
+      _key,
+      title,
+      description,
+      icon,
+      kpi
+    },
+    cta{
+      label,
+      href
+    }
+  }
+`;
+
+const fundingTeaserBlock = /* groq */ `
+  _type == "fundingTeaser" => {
+    ...,
+    items[]{
+      _key,
+      title,
+      fundingRate,
+      summary,
+      eligible
+    },
+    sources[]{
+      _key,
+      label,
+      url
+    }
+  }
+`;
+
+const caseStudyCompactBlock = /* groq */ `
+  _type == "caseStudyCompact" => {
+    ...,
+    metrics[]{
+      _key,
+      label,
+      value
+    },
+    results,
+    quote{
+      text,
+      author,
+      role
+    },
+    cta{
+      label,
+      href
+    }
+  }
+`;
+
+const contactCtaBlock = /* groq */ `
+  _type == "contactCta" => {
+    ...,
+    cta{
+      label,
+      href
+    },
+    secondaryCta{
+      label,
+      href
+    }
+  }
+`;
+
+const contactFormBlock = /* groq */ `
+  _type == "contactForm" => {
+    ...,
+    "intro": intro[]{
+      ...,
+      ${markDefsFragment}
+    },
+    fields[]{
+      _key,
+      label,
+      name,
+      fieldType,
+      placeholder,
+      required
+    },
+    "privacyNotice": privacyNotice[]{
+      ...,
+      ${markDefsFragment}
+    }
+  }
+`;
+
+const projectGalleryBlock = /* groq */ `
+  _type == "projectGallery" => {
+    ...,
+    "intro": intro[]{
+      ...,
+      ${markDefsFragment}
+    },
+    "projects": array::compact(projects[]->{
+      _id,
+      _type,
+      title,
+      summary,
+      date,
+      "slug": slug.current,
+      coverImage{
+        ${imageFields}
+      }
+    }),
+    ${buttonsFragment}
+  }
+`;
+
+const serviceListBlock = /* groq */ `
+  _type == "serviceList" => {
+    ...,
+    presetAudience,
+    presetDomain,
+    presetLifecycle,
+    presetServiceType,
+    presetTags,
+    enableClientFilters
+  }
+`;
+
 const pageBuilderFragment = /* groq */ `
   pageBuilder[]{
     ...,
@@ -182,8 +287,15 @@ const pageBuilderFragment = /* groq */ `
     ${heroBlock},
     ${faqAccordionBlock},
     ${featureCardsIconBlock},
-    ${subscribeNewsletterBlock},
-    ${imageLinkCardsBlock}
+    ${standardsBadgeBlock},
+    ${processGridBlock},
+    ${fundingTeaserBlock},
+    ${caseStudyCompactBlock},
+    ${contactCtaBlock},
+    ${imageLinkCardsBlock},
+    ${contactFormBlock},
+    ${projectGalleryBlock},
+    ${serviceListBlock}
   }
 `;
 
@@ -210,7 +322,7 @@ export const queryHomePageData =
   }`);
 
 export const querySlugPageData = defineQuery(`
-  *[_type in ["page","service","companyPage","contactPage","jobsIndexPage","homePage","blogIndex","project","teamMember","jobPosting"] && slug.current in [$slug, $slugWithLeading]][0]{
+  *[_type in ["page","service","companyPage","contactPage","homePage","project"] && slug.current in [$slug, $slugWithLeading]][0]{
     ...,
     "slug": slug.current,
     ${pageBuilderFragment}
@@ -218,39 +330,7 @@ export const querySlugPageData = defineQuery(`
   `);
 
 export const querySlugPagePaths = defineQuery(`
-  *[_type in ["page","service","companyPage","contactPage","jobsIndexPage","homePage","blogIndex","project","teamMember","jobPosting"] && defined(slug.current)].slug.current
-`);
-
-export const queryBlogIndexPageData = defineQuery(`
-  *[_type == "blogIndex"][0]{
-    ...,
-    _id,
-    _type,
-    title,
-    description,
-    "displayFeaturedBlogs" : displayFeaturedBlogs == "yes",
-    "featuredBlogsCount" : featuredBlogsCount,
-    ${pageBuilderFragment},
-    "slug": slug.current,
-    "blogs": *[_type == "blog" && (seoHideFromLists != true)] | order(orderRank asc){
-      ${blogCardFragment}
-    }
-  }
-`);
-
-export const queryBlogSlugPageData = defineQuery(`
-  *[_type == "blog" && slug.current == $slug][0]{
-    ...,
-    "slug": slug.current,
-    ${blogAuthorFragment},
-    ${imageFragment},
-    ${richTextFragment},
-    ${pageBuilderFragment}
-  }
-`);
-
-export const queryBlogPaths = defineQuery(`
-  *[_type == "blog" && defined(slug.current)].slug.current
+  *[_type in ["page","service","companyPage","contactPage","homePage","project"] && defined(slug.current)].slug.current
 `);
 
 const ogFieldsFragment = /* groq */ `
@@ -285,51 +365,45 @@ export const querySlugPageOGData = defineQuery(`
   }
 `);
 
-export const queryBlogPageOGData = defineQuery(`
-  *[_type == "blog" && _id == $id][0]{
-    ${ogFieldsFragment}
-  }
-`);
-
 export const queryGenericPageOGData = defineQuery(`
   *[ defined(slug.current) && _id == $id][0]{
     ${ogFieldsFragment}
   }
 `);
 
+const navigationLinkFields = /* groq */ `
+  _id,
+  title,
+  kind,
+  order,
+  openInNewTab,
+  "href": select(
+    kind == "external" => coalesce(external, "#"),
+    kind == "internal" && internal->_type == "serviceCategory" => select(
+      defined(internal->slug.current) && internal->slug.current != "" => select(
+        internal->slug.current match '^/leistungen($|/)' => coalesce(internal->slug.current, "/leistungen"),
+        internal->slug.current match '^/' => "/leistungen" + internal->slug.current,
+        "/leistungen/" + internal->slug.current
+      ),
+      "/leistungen"
+    ),
+    kind == "internal" && defined(internal->slug.current) => coalesce(internal->slug.current, "/"),
+    kind == "internal" => "/",
+    "#"
+  )
+`;
+
 export const queryNavigationData = defineQuery(`{
   "header": *[_type == "navigationItem" && location == "header"] | order(order asc){
-    _id,
-    title,
-    kind,
-    order,
-    openInNewTab,
-    "href": select(
-      kind == "internal" => coalesce(internal->slug.current, "/"),
-      kind == "external" => coalesce(external, "#"),
-      "#"
-    )
+    ${navigationLinkFields}
   },
   "footer": *[_type == "navigationItem" && location == "footer"] | order(order asc){
-    _id,
-    title,
-    kind,
-    order,
-    openInNewTab,
-    "href": select(
-      kind == "internal" => coalesce(internal->slug.current, "/"),
-      kind == "external" => coalesce(external, "#"),
-      "#"
-    )
+    ${navigationLinkFields}
   }
 }`);
 
 export const querySitemapData = defineQuery(`{
   "slugPages": *[_type == "page" && defined(slug.current)]{
-    "slug": slug.current,
-    "lastModified": _updatedAt
-  },
-  "blogPages": *[_type == "blog" && defined(slug.current)]{
     "slug": slug.current,
     "lastModified": _updatedAt
   }
@@ -352,6 +426,42 @@ export const querySiteSettings = defineQuery(`
     logo {
       ${imageFields}
     }
+  }
+`);
+
+export const queryFooterData = defineQuery(`
+  *[_type == "footer"][0] {
+    _id,
+    _type,
+    title,
+    contactInfo {
+      companyName,
+      address,
+      phone,
+      email
+    },
+    socialLinks {
+      facebook,
+      twitter,
+      instagram,
+      linkedin,
+      youtube
+    },
+    footerLinks {
+      quickLinks[] {
+        title,
+        href,
+        openInNewTab
+      }
+    },
+    copyrightLinks {
+      copyrightLinks[] {
+        title,
+        href,
+        openInNewTab
+      }
+    },
+    copyrightText
   }
 `);
 

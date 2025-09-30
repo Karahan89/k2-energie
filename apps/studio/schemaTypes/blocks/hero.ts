@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import { defineField, defineType } from "sanity";
 
-import { buttonsField, richTextField } from "../common";
+import { richTextField } from "../common";
 
 export const hero = defineType({
   name: "hero",
@@ -12,23 +12,23 @@ export const hero = defineType({
     defineField({
       name: "badge",
       type: "string",
-      title: "Badge",
+      title: "Eyebrow",
       description:
-        "Optional badge text displayed above the title, useful for highlighting new features or promotions",
+        "Kurzer Hinweis oberhalb der Überschrift, z. B. ein Erfolgsversprechen oder eine aktuelle Aktion",
     }),
     defineField({
       name: "title",
       type: "string",
-      title: "Title",
-      description:
-        "The main heading text for the hero section that captures attention",
+      title: "Titel",
+      description: "Prägnante Hauptüberschrift der Hero Section",
+      validation: (rule) => rule.required().min(10),
     }),
     defineField({
       name: "titleHighlights",
       type: "array",
-      title: "Title Highlights",
+      title: "Titel-Highlights",
       description:
-        "Optional words within the title that should be highlighted with the brand color (first match wins).",
+        "Optional bis zu drei Wörter oder Phrasen, die innerhalb des Titels visuell hervorgehoben werden sollen.",
       of: [{ type: "string" }],
       validation: (rule) => rule.max(3),
     }),
@@ -36,9 +36,9 @@ export const hero = defineType({
     defineField({
       name: "image",
       type: "image",
-      title: "Image",
+      title: "Hero-Bild",
       description:
-        "The main hero image - should be high quality and visually impactful",
+        "Großformatiges Visual (idealerweise 16:10), das den Leistungsansatz von K2 Energieberatung unterstützt",
       options: {
         hotspot: true,
       },
@@ -46,134 +46,30 @@ export const hero = defineType({
     defineField({
       name: "features",
       type: "array",
-      title: "Feature Highlights",
+      title: "Kennzahlen & Leistungsversprechen",
       description:
-        "Short bullet points that communicate benefits or proof points.",
+        "Kurze Aussagen mit optionalem zweiten Teil, z. B. \"3,2 t CO₂ weniger – pro Jahr\". Maximal vier Einträge.",
       of: [{ type: "string" }],
-      validation: (rule) => rule.max(6),
+      validation: (rule) => rule.max(4),
     }),
     defineField({
-      name: "energyCard",
-      type: "object",
-      title: "Energy Analysis Card",
+      name: "buttons",
+      type: "array",
+      title: "Call-to-Action Buttons",
       description:
-        "Configure the metrics displayed in the interactive energy analysis card.",
-      fields: [
-        defineField({
-          name: "title",
-          type: "string",
-          title: "Card Title",
-          initialValue: "Energie-Analyse",
-        }),
-        defineField({
-          name: "subtitle",
-          type: "string",
-          title: "Card Subtitle",
-          initialValue: "Beispiel-Berechnung Einfamilienhaus",
-        }),
-        defineField({
-          name: "badge",
-          type: "string",
-          title: "Badge Label",
-          initialValue: "BAFA-konform",
-        }),
-        defineField({
-          name: "annualSavings",
-          type: "string",
-          title: "Annual Savings Value",
-          initialValue: "1.850€",
-        }),
-        defineField({
-          name: "annualSavingsLabel",
-          type: "string",
-          title: "Annual Savings Label",
-          initialValue: "Jährliche Einsparung",
-        }),
-        defineField({
-          name: "costReduction",
-          type: "string",
-          title: "Cost Reduction",
-          initialValue: "↓ 68% Energiekosten",
-        }),
-        defineField({
-          name: "co2Reduction",
-          type: "string",
-          title: "CO₂ Reduction",
-          initialValue: "-3.2t",
-        }),
-        defineField({
-          name: "co2ReductionLabel",
-          type: "string",
-          title: "CO₂ Reduction Label",
-          initialValue: "CO₂ pro Jahr",
-        }),
-        defineField({
-          name: "emissionReduction",
-          type: "string",
-          title: "Emission Reduction",
-          initialValue: "↓ 72% Emissionen",
-        }),
-        defineField({
-          name: "efficiencyLabel",
-          type: "string",
-          title: "Efficiency Label",
-          initialValue: "Energieeffizienz",
-        }),
-        defineField({
-          name: "efficiencyFrom",
-          type: "string",
-          title: "Efficiency From",
-          initialValue: "D",
-        }),
-        defineField({
-          name: "efficiencyTo",
-          type: "string",
-          title: "Efficiency To",
-          initialValue: "A+",
-        }),
-        defineField({
-          name: "efficiencyScore",
-          type: "number",
-          title: "Efficiency Score (%)",
-          description: "Progress bar target value from 0-100.",
-          initialValue: 85,
-          validation: (rule) => rule.min(0).max(100),
-        }),
-        defineField({
-          name: "temperature",
-          type: "string",
-          title: "Comfort Temperature",
-          initialValue: "22°C",
-        }),
-        defineField({
-          name: "temperatureLabel",
-          type: "string",
-          title: "Temperature Label",
-          initialValue: "Optimale Temperatur",
-        }),
-        defineField({
-          name: "amortization",
-          type: "string",
-          title: "Amortisation Range",
-          initialValue: "8-12",
-        }),
-        defineField({
-          name: "amortizationLabel",
-          type: "string",
-          title: "Amortisation Label",
-          initialValue: "Jahre Amortisation",
-        }),
-      ],
+        "Maximal zwei Aktionen: der erste Eintrag erscheint als Primär-Button, der zweite als optionale Sekundäraktion.",
+      of: [{ type: "button" }],
+      validation: (rule) => rule.max(2),
     }),
-    buttonsField,
   ],
   preview: {
     select: {
       title: "title",
+      badge: "badge",
     },
-    prepare: ({ title }) => ({
+    prepare: ({ title, badge }) => ({
       title,
-      subtitle: "Hero Block",
+      subtitle: badge ? `Hero · ${badge}` : "Hero Section",
     }),
   },
 });

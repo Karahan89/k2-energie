@@ -7,38 +7,76 @@ import { richTextField } from "../common";
 export const faq = defineType({
   name: "faq",
   type: "document",
-  title: "Frequently Asked Question",
+  title: "Häufige Frage",
   description:
-    "A simple question and answer pair that helps visitors find information quickly. Think of it like writing down the questions customers often ask, along with clear answers.",
+    "Erstellen Sie eine neue FAQ für Ihr Ingenieurbüro. Beantworten Sie häufige Fragen Ihrer Kunden zu Energieberatung, Sanierung und Förderungen.",
   icon: MessageCircle,
   fields: [
     defineField({
       name: "title",
-      title: "Question",
+      title: "Frage",
       type: "string",
       description:
-        "Write the question exactly as someone might ask it. For example: 'How do I reset my password?'",
-      validation: (Rule) => Rule.required(),
+        "Formulieren Sie die Frage so, wie sie ein Kunde stellen würde. z.B. 'Welche Förderungen gibt es für energetische Sanierung?'",
+      validation: (Rule) =>
+        Rule.required().error("Eine Frage ist erforderlich"),
     }),
     defineField({
       ...richTextField,
-      title: "Answer",
+      title: "Antwort",
       description:
-        "Write a friendly, clear answer that directly addresses the question. Keep it simple enough that anyone can understand it.",
+        "Geben Sie eine klare, verständliche Antwort, die direkt auf die Frage eingeht. Verwenden Sie einfache Sprache und konkrete Beispiele.",
+    }),
+    defineField({
+      name: "category",
+      type: "string",
+      title: "Kategorie",
+      description: "Ordnen Sie die Frage einer Kategorie zu",
+      options: {
+        list: [
+          { title: "💰 Förderungen", value: "funding" },
+          { title: "🏠 Sanierung", value: "renovation" },
+          { title: "⚡ Energieberatung", value: "consulting" },
+          { title: "📋 Verfahren", value: "process" },
+          { title: "🌱 Nachhaltigkeit", value: "sustainability" },
+          { title: "📊 Gutachten", value: "reports" },
+        ],
+        layout: "radio",
+      },
+    }),
+    defineField({
+      name: "priority",
+      type: "number",
+      title: "Priorität",
+      description: "Höhere Zahlen erscheinen weiter oben in der FAQ-Liste",
+      initialValue: 0,
     }),
   ],
   preview: {
     select: {
       title: "title",
       richText: "richText",
+      category: "category",
     },
-    prepare: ({ title, richText }) => {
-      // Create a playful subtitle with emojis
-      const subtitle = `${parseRichTextToString(richText, 20)}`;
+    prepare: ({ title, richText, category }) => {
+      const categoryLabels = {
+        funding: "💰 Förderungen",
+        renovation: "🏠 Sanierung",
+        consulting: "⚡ Beratung",
+        process: "📋 Verfahren",
+        sustainability: "🌱 Nachhaltigkeit",
+        reports: "📊 Gutachten",
+      };
+
+      const subtitle = `${parseRichTextToString(richText, 30)}`;
+      const categoryLabel =
+        categoryLabels[category as keyof typeof categoryLabels] ||
+        "❓ Allgemein";
 
       return {
-        title: `❓ ${title || "Untitled Question"}`,
-        subtitle,
+        title: `❓ ${title || "Neue Frage"}`,
+        subtitle: `${categoryLabel} • ${subtitle}`,
+        media: MessageCircle,
       };
     },
   },

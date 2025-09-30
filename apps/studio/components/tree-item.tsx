@@ -119,6 +119,8 @@ export const TreeItem: React.FC<TreeItemProps> = ({
         role={node.type === "folder" ? "button" : "link"}
         aria-label={getAriaLabel()}
         aria-expanded={hasChildren ? isExpanded : undefined}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
       >
         <Flex align="center" gap={2} justify="space-between">
           <Flex align="center" gap={2} flex={1}>

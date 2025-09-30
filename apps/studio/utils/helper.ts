@@ -300,8 +300,12 @@ export function createPageTemplate() {
       type: "page",
     },
     {
-      title: "Blog",
-      type: "blog",
+      title: "Service",
+      type: "service",
+    },
+    {
+      title: "Project",
+      type: "project",
     },
   ];
   return pages.map((page) => {

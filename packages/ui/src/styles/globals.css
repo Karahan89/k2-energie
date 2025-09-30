@@ -8,184 +8,398 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Brand Palette */
-  --brand-50: #f1f6f6;
-  --brand-100: #dfeeee;
-  --brand-200: #c0ddde;
-  --brand-300: #95c6c9;
-  --brand-400: #63a8ad;
-  --brand-500: #3f8f95;
-  --brand-600: #2f737a;
-  --brand-700: #285e64;
-  --brand-800: #234c51;
-  --brand-900: #1f4045;
+  /* === Primitive Color Tokens === */
+  --green-50: #f3f9f5;
+  --green-100: #e2f0e6;
+  --green-200: #c5e0ce;
+  --green-300: #9ecab0;
+  --green-400: #6cb288;
+  --green-500: #4a8b68;
+  --green-600: #3a6b50;
+  --green-700: #2e5340;
+  --green-800: #234032;
+  --green-900: #1e3d2e;
 
-  --accent-50: #fff7ea;
-  --accent-100: #ffeaca;
-  --accent-200: #ffd394;
-  --accent-300: #ffb75a;
-  --accent-400: #ff9a2a;
-  --accent-500: #f27f00;
-  --accent-600: #cc6400;
-  --accent-700: #a44f00;
-  --accent-800: #7d3c00;
-  --accent-900: #5f2e00;
+  --amber-50: #fff7ea;
+  --amber-100: #ffeaca;
+  --amber-200: #ffd394;
+  --amber-300: #ffb75a;
+  --amber-400: #ff9a2a;
+  --amber-500: #f27f00;
+  --amber-600: #cc6400;
+  --amber-700: #a44f00;
+  --amber-800: #7d3c00;
+  --amber-900: #5f2e00;
 
-  /* Legacy aliases for component references */
-  --brand-blue-900: var(--brand-900);
-  --brand-blue-950: color-mix(in srgb, var(--brand-900) 92%, black 8%);
-  --brand-green-600: var(--brand-500);
-  --brand-accent-amber: var(--accent-500);
-  --brand-accent-amber-strong: var(--accent-600);
-  --brand-accent-orange: var(--accent-400);
+  --grey-0: #ffffff;
+  --grey-50: #f9faf9;
+  --grey-100: #f5f5f5;
+  --grey-200: #e5e7eb;
+  --grey-300: #d1d5db;
+  --grey-400: #9ca3af;
+  --grey-500: #6b7280;
+  --grey-600: #4b5563;
+  --grey-700: #374151;
+  --grey-800: #1f2937;
+  --grey-900: #1a1a1a;
 
-  --neutral-000: #ffffff;
-  --neutral-050: #f7f8f9;
-  --neutral-100: #f1f3f5;
-  --neutral-200: #e6e9ee;
-  --neutral-300: #d6dbe2;
-  --neutral-400: #aeb6c2;
-  --neutral-500: #7c8798;
-  --neutral-600: #5a6576;
-  --neutral-700: #444e5b;
-  --neutral-800: #2f3742;
-  --neutral-900: #1f252d;
+  --blue-500: #2563eb;
+  --blue-600: #1d4ed8;
+  --blue-700: #1e40af;
 
-  --info-50: #eef6ff;
-  --success-50: #e8f5ee;
+  --red-500: #dc2626;
+  --green-status-500: #16a34a;
+  --yellow-500: #f59e0b;
 
-  /* Core Tokens */
-  --background: var(--neutral-050);
-  --foreground: var(--neutral-900);
-  --card: var(--neutral-000);
-  --card-foreground: var(--foreground);
-  --popover: var(--neutral-000);
-  --popover-foreground: var(--foreground);
-  --primary: var(--brand-700);
-  --primary-foreground: var(--neutral-000);
-  --primary-strong: var(--brand-900);
-  --primary-soft: color-mix(in srgb, var(--brand-200) 70%, var(--neutral-000) 30%);
-  --secondary: var(--brand-500);
-  --secondary-foreground: var(--neutral-000);
-  --muted: var(--neutral-100);
-  --muted-foreground: var(--neutral-600);
-  --accent: var(--accent-500);
-  --accent-foreground: var(--neutral-900);
-  --destructive: #b42318;
-  --destructive-foreground: var(--neutral-000);
-  --border: color-mix(in srgb, var(--neutral-300) 70%, transparent 30%);
-  --input: color-mix(in srgb, var(--neutral-200) 80%, transparent 20%);
-  --ring: color-mix(in srgb, var(--brand-400) 60%, transparent 40%);
-  --chart-1: var(--accent-500);
-  --chart-2: var(--brand-500);
-  --chart-3: #43618a;
-  --chart-4: #79a66b;
-  --chart-5: #6f5ea5;
-  --radius: 0.75rem;
-  --sidebar: color-mix(in srgb, var(--brand-100) 55%, var(--neutral-050) 45%);
-  --sidebar-foreground: var(--neutral-800);
-  --sidebar-primary: var(--brand-700);
-  --sidebar-primary-foreground: var(--neutral-000);
-  --sidebar-accent: color-mix(in srgb, var(--brand-200) 55%, var(--neutral-100) 45%);
-  --sidebar-accent-foreground: var(--brand-800);
-  --sidebar-border: color-mix(in srgb, var(--brand-200) 30%, transparent 70%);
-  --sidebar-ring: color-mix(in srgb, var(--brand-400) 45%, transparent 55%);
-
-  --surface-strong: var(--neutral-000);
-  --surface-subtle: color-mix(in srgb, var(--neutral-100) 70%, var(--neutral-000) 30%);
-  --surface-muted: color-mix(in srgb, var(--neutral-200) 70%, var(--neutral-100) 30%);
-
-  --liquid-glass-bg: color-mix(in srgb, var(--neutral-000) 65%, transparent 35%);
-  --liquid-glass-border: color-mix(in srgb, var(--brand-400) 28%, transparent 72%);
-  --liquid-glass-highlight: color-mix(in srgb, var(--accent-400) 40%, transparent 60%);
-
-  /* Glass + Shadows */
-  --glass-background: color-mix(in srgb, var(--neutral-000) 60%, transparent 40%);
-  --glass-background-strong: color-mix(in srgb, var(--brand-100) 60%, var(--neutral-000) 40%);
-  --glass-border: color-mix(in srgb, var(--brand-300) 30%, transparent 70%);
-  --shadow-soft: 0 12px 28px -18px rgba(35, 76, 81, 0.18);
-  --shadow-elevated: 0 22px 46px -20px rgba(31, 64, 69, 0.28),
-    0 12px 24px -18px rgba(63, 143, 149, 0.16);
-
-  /* Typography */
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  --font-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
+  /* === Typography Tokens === */
+  --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-family-serif: "Source Serif 4", "Georgia", "Times New Roman", serif;
+  --font-size-5: clamp(2rem, 5vw, 2.25rem);
+  --font-size-4: clamp(1.6rem, 4vw, 1.875rem);
+  --font-size-3: clamp(1.3rem, 3vw, 1.5rem);
+  --font-size-2: clamp(1.1rem, 2.6vw, 1.25rem);
+  --font-size-1: clamp(1rem, 2vw, 1.125rem);
+  --font-size-0: clamp(0.875rem, 1.6vw, 1rem);
+  --font-size--1: clamp(0.75rem, 1.2vw, 0.875rem);
+  --font-size--2: 0.75rem;
+  --line-tight: 1.15;
+  --line-base: 1.6;
   --tracking-tight: -0.015em;
   --tracking-wide: 0.08em;
 
-  --step--2: 0.75rem; /* 12px */
-  --step--1: 0.875rem; /* 14px */
-  --step-0: 1rem; /* 16px */
-  --step-1: 1.125rem; /* 18px */
-  --step-2: 1.25rem; /* 20px */
-  --step-3: 1.5rem; /* 24px */
-  --step-4: 1.875rem; /* 30px */
-  --step-5: 2.25rem; /* 36px */
+  /* Legacy typography aliases */
+  --step-5: var(--font-size-5);
+  --step-4: var(--font-size-4);
+  --step-3: var(--font-size-3);
+  --step-2: var(--font-size-2);
+  --step-1: var(--font-size-1);
+  --step-0: var(--font-size-0);
+  --step--1: var(--font-size--1);
+  --step--2: var(--font-size--2);
 
+  /* === Spacing Tokens (4px base) === */
+  --spacing-unit: 4px;
+  --space-0: 0px;
+  --space-1: calc(var(--spacing-unit) * 1);
+  --space-2: calc(var(--spacing-unit) * 2);
+  --space-3: calc(var(--spacing-unit) * 3);
+  --space-4: calc(var(--spacing-unit) * 4);
+  --space-5: calc(var(--spacing-unit) * 5);
+  --space-6: calc(var(--spacing-unit) * 6);
+  --space-7: calc(var(--spacing-unit) * 7);
+  --space-8: calc(var(--spacing-unit) * 8);
+  --space-9: calc(var(--spacing-unit) * 9);
+  --space-10: calc(var(--spacing-unit) * 10);
+  --space-11: calc(var(--spacing-unit) * 11);
+  --space-12: calc(var(--spacing-unit) * 12);
+  --space-13: calc(var(--spacing-unit) * 13);
+  --space-14: calc(var(--spacing-unit) * 14);
+  --space-15: calc(var(--spacing-unit) * 15);
+  --space-16: calc(var(--spacing-unit) * 16);
+  --space-17: calc(var(--spacing-unit) * 17);
+  --space-18: calc(var(--spacing-unit) * 18);
+  --space-19: calc(var(--spacing-unit) * 19);
+  --space-20: calc(var(--spacing-unit) * 20);
+  --space-21: calc(var(--spacing-unit) * 21);
+  --space-22: calc(var(--spacing-unit) * 22);
+  --space-23: calc(var(--spacing-unit) * 23);
+  --space-24: calc(var(--spacing-unit) * 24);
+  --space-25: calc(var(--spacing-unit) * 25);
+  --space-26: calc(var(--spacing-unit) * 26);
+  --space-27: calc(var(--spacing-unit) * 27);
+  --space-28: calc(var(--spacing-unit) * 28);
+  --space-29: calc(var(--spacing-unit) * 29);
+  --space-30: calc(var(--spacing-unit) * 30);
+  --space-31: calc(var(--spacing-unit) * 31);
+  --space-32: calc(var(--spacing-unit) * 32);
+
+  /* === Layout Constraints === */
   --max-readable: clamp(45ch, 60ch, 68ch);
-  --page-max-width: 75rem; /* 1200px */
-  --page-max-width-wide: 82.5rem; /* 1320px */
+  --page-max-width: 75rem;
+  --page-max-width-wide: 82.5rem;
 
-  /* 4px-based spacing scale */
-  --space-0: 0rem; /* 0 */
-  --space-1: 0.25rem; /* 4 */
-  --space-2: 0.5rem; /* 8 */
-  --space-3: 0.75rem; /* 12 */
-  --space-4: 1rem; /* 16 */
-  --space-5: 1.5rem; /* 24 */
-  --space-6: 2rem; /* 32 */
-  --space-7: 2.5rem; /* 40 */
-  --space-8: 3rem; /* 48 */
-  --space-9: 4rem; /* 64 */
-  --space-10: 5rem; /* 80 */
-  --space-11: 6rem; /* 96 */
-  --space-12: 8rem; /* 128 */
+  /* === Border & Radius Tokens === */
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+  --border-width-3: 3px;
+  --radius: 0.75rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* === Shadow Tokens === */
+  --shadow-1: 0 1px 2px rgba(26, 26, 26, 0.08);
+  --shadow-2: 0 4px 12px rgba(30, 61, 46, 0.12);
+  --shadow-3: 0 12px 28px rgba(30, 61, 46, 0.14);
+  --shadow-4: 0 24px 48px rgba(26, 26, 26, 0.18);
+  --shadow-soft: 0 18px 38px -24px rgba(30, 61, 46, 0.35);
+  --shadow-elevated: 0 32px 60px -28px rgba(30, 61, 46, 0.28), 0 18px 32px -30px rgba(242, 127, 0, 0.2);
+
+  /* === Motion Tokens === */
+  --motion-duration-1: 120ms;
+  --motion-duration-2: 200ms;
+  --motion-duration-3: 320ms;
+  --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-emphasized: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* === Semantic Color Tokens (Light) === */
+  --color-background-base: var(--grey-0);
+  --color-background-subtle: color-mix(in srgb, var(--green-50) 20%, var(--grey-0) 80%);
+  --color-background-muted: color-mix(in srgb, var(--grey-100) 85%, var(--grey-0) 15%);
+  --color-surface-base: var(--grey-0);
+  --color-surface-subtle: color-mix(in srgb, var(--green-50) 30%, var(--grey-0) 70%);
+  --color-surface-muted: color-mix(in srgb, var(--grey-200) 70%, var(--grey-0) 30%);
+  --color-surface-elevated: color-mix(in srgb, var(--grey-0) 82%, var(--grey-200) 18%);
+
+  --color-text-base: var(--grey-900);
+  --color-text-muted: color-mix(in srgb, var(--grey-700) 88%, var(--grey-0) 12%);
+  --color-text-subtle: color-mix(in srgb, var(--grey-600) 72%, var(--grey-0) 28%);
+  --color-text-brand: var(--green-500);
+  --color-text-inverse: var(--grey-0);
+
+  --color-brand-primary: var(--green-500);
+  --color-brand-primary-hover: var(--green-400);
+  --color-brand-primary-active: var(--green-600);
+  --color-brand-primary-soft: color-mix(in srgb, var(--green-100) 55%, var(--grey-0) 45%);
+  --color-brand-secondary: color-mix(in srgb, var(--green-400) 18%, var(--grey-0) 82%);
+  --color-brand-secondary-hover: color-mix(in srgb, var(--green-400) 28%, var(--grey-0) 72%);
+
+  --color-interactive-cta: var(--amber-500);
+  --color-interactive-cta-hover: var(--amber-600);
+
+  --color-border-base: color-mix(in srgb, var(--grey-200) 78%, transparent 22%);
+  --color-border-muted: color-mix(in srgb, var(--grey-300) 84%, transparent 16%);
+  --color-border-strong: color-mix(in srgb, var(--grey-400) 88%, transparent 12%);
+
+  --color-status-success: var(--green-status-500);
+  --color-status-success-bg: color-mix(in srgb, var(--green-status-500) 16%, var(--grey-0) 84%);
+  --color-status-error: var(--red-500);
+  --color-status-error-bg: color-mix(in srgb, var(--red-500) 12%, var(--grey-0) 88%);
+  --color-status-info: var(--blue-500);
+  --color-status-warning: var(--yellow-500);
+  --color-status-warning-bg: color-mix(in srgb, var(--yellow-500) 14%, var(--grey-0) 86%);
+
+  --focus-ring-color: var(--color-status-info);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 3px;
+
+  /* === Component Tokens === */
+  --card-background: var(--color-surface-base);
+  --card-border: var(--color-border-muted);
+  --card-text: var(--color-text-base);
+  --card-shadow: var(--shadow-soft);
+
+  --modal-background: color-mix(in srgb, var(--color-surface-base) 92%, var(--color-background-muted) 8%);
+  --modal-border: var(--color-border-muted);
+  --modal-shadow: var(--shadow-elevated);
+  --modal-overlay: color-mix(in srgb, var(--grey-900) 65%, transparent 35%);
+  --modal-text: var(--color-text-base);
+
+  --input-background: var(--color-surface-base);
+  --input-text: var(--color-text-base);
+  --input-placeholder: color-mix(in srgb, var(--color-text-muted) 65%, var(--color-background-base) 35%);
+  --input-border: var(--color-border-muted);
+  --input-border-hover: var(--color-border-strong);
+  --input-border-focus: var(--color-brand-primary);
+  --input-border-error: var(--color-status-error);
+  --input-border-success: var(--color-status-success);
+
+  --button-primary-background: var(--color-interactive-cta);
+  --button-primary-text: var(--color-text-inverse);
+  --button-secondary-background: var(--color-surface-subtle);
+  --button-secondary-text: var(--color-text-base);
+
+  --sidebar: color-mix(in srgb, var(--green-50) 55%, var(--grey-0) 45%);
+  --sidebar-foreground: var(--color-text-base);
+  --sidebar-primary: var(--color-brand-primary);
+  --sidebar-primary-foreground: var(--color-text-inverse);
+  --sidebar-accent: color-mix(in srgb, var(--green-100) 65%, var(--grey-0) 35%);
+  --sidebar-accent-foreground: var(--green-700);
+  --sidebar-border: color-mix(in srgb, var(--grey-200) 70%, transparent 30%);
+  --sidebar-ring: color-mix(in srgb, var(--green-400) 55%, transparent 45%);
+
+  --glass-background: color-mix(in srgb, var(--grey-0) 60%, transparent 40%);
+  --glass-background-strong: color-mix(in srgb, var(--color-brand-primary) 18%, var(--grey-0) 82%);
+  --glass-border: color-mix(in srgb, var(--color-brand-primary) 24%, transparent 76%);
+  --liquid-glass-bg: color-mix(in srgb, var(--color-surface-elevated) 70%, transparent 30%);
+  --liquid-glass-border: color-mix(in srgb, var(--color-brand-primary) 24%, transparent 76%);
+  --liquid-glass-highlight: color-mix(in srgb, var(--color-interactive-cta) 34%, transparent 66%);
+
+  --chart-1: var(--color-interactive-cta);
+  --chart-2: var(--color-brand-primary);
+  --chart-3: #43618a;
+  --chart-4: #79a66b;
+  --chart-5: #6f5ea5;
+
+  /* === Legacy Compatibility Aliases === */
+  --brand-50: var(--green-50);
+  --brand-100: var(--green-100);
+  --brand-200: var(--green-200);
+  --brand-300: var(--green-300);
+  --brand-400: var(--green-400);
+  --brand-500: var(--green-500);
+  --brand-600: var(--green-600);
+  --brand-700: var(--green-700);
+  --brand-800: var(--green-800);
+  --brand-900: var(--green-900);
+
+  --accent-50: var(--amber-50);
+  --accent-100: var(--amber-100);
+  --accent-200: var(--amber-200);
+  --accent-300: var(--amber-300);
+  --accent-400: var(--amber-400);
+  --accent-500: var(--amber-500);
+  --accent-600: var(--amber-600);
+  --accent-700: var(--amber-700);
+  --accent-800: var(--amber-800);
+  --accent-900: var(--amber-900);
+
+  --neutral-000: var(--grey-0);
+  --neutral-050: var(--grey-50);
+  --neutral-100: var(--grey-100);
+  --neutral-200: var(--grey-200);
+  --neutral-300: var(--grey-300);
+  --neutral-400: var(--grey-400);
+  --neutral-500: var(--grey-500);
+  --neutral-600: var(--grey-600);
+  --neutral-700: var(--grey-700);
+  --neutral-800: var(--grey-800);
+  --neutral-900: var(--grey-900);
+
+  --brand-blue-900: var(--green-900);
+  --brand-blue-950: color-mix(in srgb, var(--green-900) 92%, black 8%);
+  --brand-green-600: var(--green-500);
+  --brand-accent-amber: var(--color-interactive-cta);
+  --brand-accent-amber-strong: var(--color-interactive-cta-hover);
+  --brand-accent-orange: var(--amber-400);
+
+  /* === System Aliases === */
+  --background: var(--color-background-base);
+  --foreground: var(--color-text-base);
+  --card: var(--card-background);
+  --card-foreground: var(--card-text);
+  --popover: var(--color-surface-elevated);
+  --popover-foreground: var(--color-text-base);
+  --primary: var(--color-brand-primary);
+  --primary-foreground: var(--color-text-inverse);
+  --primary-strong: var(--color-brand-primary-active);
+  --primary-soft: var(--color-brand-primary-soft);
+  --secondary: var(--color-brand-secondary);
+  --secondary-foreground: var(--color-text-base);
+  --muted: var(--color-background-muted);
+  --muted-foreground: var(--color-text-muted);
+  --accent: var(--color-interactive-cta);
+  --accent-foreground: var(--color-text-inverse);
+  --destructive: var(--color-status-error);
+  --destructive-foreground: var(--color-text-inverse);
+  --border: var(--color-border-base);
+  --input: var(--color-border-muted);
+  --ring: var(--focus-ring-color);
+  --surface-strong: var(--color-surface-base);
+  --surface-subtle: var(--color-surface-subtle);
+  --surface-muted: var(--color-surface-muted);
 }
 
 .dark {
-  --background: #031624;
-  --foreground: color-mix(in srgb, var(--neutral-000) 92%, var(--brand-blue-900) 8%);
-  --card: color-mix(in srgb, var(--brand-blue-900) 25%, var(--background) 75%);
-  --card-foreground: var(--foreground);
-  --popover: color-mix(in srgb, var(--brand-blue-900) 18%, var(--background) 82%);
-  --popover-foreground: var(--foreground);
-  --primary: var(--brand-accent-amber);
-  --primary-foreground: var(--neutral-800);
-  --primary-strong: color-mix(in srgb, var(--brand-accent-amber-strong) 80%, black 20%);
-  --primary-soft: color-mix(in srgb, var(--brand-accent-amber) 35%, var(--background) 65%);
-  --secondary: color-mix(in srgb, var(--brand-green-600) 75%, black 25%);
-  --secondary-foreground: var(--neutral-000);
-  --muted: color-mix(in srgb, var(--background) 70%, var(--brand-blue-900) 30%);
-  --muted-foreground: color-mix(in srgb, var(--neutral-000) 70%, var(--brand-accent-amber) 30%);
-  --accent: color-mix(in srgb, var(--brand-accent-orange) 70%, black 30%);
-  --accent-foreground: var(--neutral-000);
-  --destructive: #f97066;
-  --destructive-foreground: #2b1614;
-  --border: color-mix(in srgb, var(--brand-blue-900) 45%, transparent 55%);
-  --input: color-mix(in srgb, var(--brand-blue-900) 30%, var(--background) 70%);
-  --ring: color-mix(in srgb, var(--brand-accent-amber) 55%, var(--brand-blue-900) 45%);
-  --sidebar: color-mix(in srgb, var(--brand-blue-900) 65%, var(--background) 35%);
-  --sidebar-foreground: var(--foreground);
-  --sidebar-primary: var(--brand-accent-amber);
-  --sidebar-primary-foreground: var(--neutral-800);
-  --sidebar-accent: color-mix(in srgb, var(--brand-green-600) 60%, var(--background) 40%);
-  --sidebar-accent-foreground: var(--neutral-000);
-  --sidebar-border: color-mix(in srgb, var(--brand-accent-amber) 28%, transparent 72%);
-  --sidebar-ring: color-mix(in srgb, var(--brand-accent-amber) 45%, transparent 55%);
+  --color-background-base: var(--grey-900);
+  --color-background-subtle: color-mix(in srgb, var(--grey-900) 92%, var(--green-900) 8%);
+  --color-background-muted: color-mix(in srgb, var(--grey-900) 84%, var(--grey-800) 16%);
+  --color-surface-base: color-mix(in srgb, var(--grey-900) 94%, var(--green-900) 6%);
+  --color-surface-subtle: color-mix(in srgb, var(--grey-900) 82%, var(--green-900) 18%);
+  --color-surface-muted: color-mix(in srgb, var(--grey-800) 68%, var(--grey-900) 32%);
+  --color-surface-elevated: color-mix(in srgb, var(--grey-800) 72%, var(--grey-900) 28%);
 
-  --surface-strong: color-mix(in srgb, var(--brand-900) 18%, var(--background) 82%);
-  --surface-subtle: color-mix(in srgb, var(--background) 80%, var(--brand-900) 20%);
-  --surface-muted: color-mix(in srgb, var(--brand-800) 45%, var(--background) 55%);
+  --color-text-base: color-mix(in srgb, var(--grey-0) 92%, var(--green-900) 8%);
+  --color-text-muted: color-mix(in srgb, var(--grey-0) 70%, var(--grey-500) 30%);
+  --color-text-subtle: color-mix(in srgb, var(--grey-0) 58%, var(--grey-500) 42%);
+  --color-text-brand: var(--green-400);
+  --color-text-inverse: var(--grey-0);
 
-  --liquid-glass-bg: color-mix(in srgb, var(--brand-900) 40%, transparent 60%);
-  --liquid-glass-border: color-mix(in srgb, var(--accent-400) 40%, transparent 60%);
-  --liquid-glass-highlight: color-mix(in srgb, var(--accent-500) 55%, transparent 45%);
+  --color-brand-primary: var(--green-400);
+  --color-brand-primary-hover: var(--green-300);
+  --color-brand-primary-active: var(--green-500);
+  --color-brand-primary-soft: color-mix(in srgb, var(--green-500) 30%, var(--grey-900) 70%);
+  --color-brand-secondary: color-mix(in srgb, var(--green-500) 48%, var(--grey-900) 52%);
+  --color-brand-secondary-hover: color-mix(in srgb, var(--green-500) 56%, var(--grey-900) 44%);
 
-  --glass-background: color-mix(in srgb, var(--brand-900) 38%, transparent 62%);
-  --glass-background-strong: color-mix(in srgb, var(--accent-500) 40%, transparent 60%);
-  --glass-border: color-mix(in srgb, var(--accent-500) 38%, transparent 62%);
-  --shadow-soft: 0 18px 38px -24px rgba(11, 49, 58, 0.45);
-  --shadow-elevated: 0 32px 60px -28px rgba(242, 127, 0, 0.32);
+  --color-interactive-cta: var(--amber-500);
+  --color-interactive-cta-hover: var(--amber-400);
+
+  --color-border-base: color-mix(in srgb, var(--grey-700) 55%, transparent 45%);
+  --color-border-muted: color-mix(in srgb, var(--grey-700) 65%, transparent 35%);
+  --color-border-strong: color-mix(in srgb, var(--grey-500) 72%, transparent 28%);
+
+  --color-status-success-bg: color-mix(in srgb, var(--green-status-500) 22%, var(--grey-900) 78%);
+  --color-status-error-bg: color-mix(in srgb, var(--red-500) 18%, var(--grey-900) 82%);
+  --color-status-warning-bg: color-mix(in srgb, var(--yellow-500) 24%, var(--grey-900) 76%);
+  --color-status-warning: var(--yellow-500);
+  --color-status-info: var(--blue-500);
+
+  --modal-overlay: color-mix(in srgb, var(--grey-900) 80%, transparent 20%);
+  --modal-background: color-mix(in srgb, var(--grey-900) 85%, var(--green-900) 15%);
+  --modal-border: color-mix(in srgb, var(--grey-700) 70%, transparent 30%);
+  --modal-shadow: 0 40px 72px -36px rgba(0, 0, 0, 0.45);
+  --modal-text: var(--color-text-base);
+
+  --card-background: color-mix(in srgb, var(--grey-900) 86%, var(--green-900) 14%);
+  --card-border: color-mix(in srgb, var(--grey-700) 65%, transparent 35%);
+  --card-text: var(--color-text-base);
+  --card-shadow: 0 24px 48px -28px rgba(0, 0, 0, 0.45);
+
+  --input-background: color-mix(in srgb, var(--grey-900) 90%, var(--grey-800) 10%);
+  --input-text: var(--color-text-base);
+  --input-placeholder: color-mix(in srgb, var(--color-text-muted) 70%, var(--color-background-base) 30%);
+  --input-border: color-mix(in srgb, var(--grey-700) 68%, transparent 32%);
+  --input-border-hover: color-mix(in srgb, var(--grey-600) 70%, transparent 30%);
+  --input-border-focus: var(--color-brand-primary);
+  --input-border-error: var(--color-status-error);
+  --input-border-success: var(--color-status-success);
+
+  --sidebar: color-mix(in srgb, var(--green-900) 45%, var(--grey-900) 55%);
+  --sidebar-foreground: var(--color-text-base);
+  --sidebar-primary: var(--color-brand-primary);
+  --sidebar-primary-foreground: var(--color-text-inverse);
+  --sidebar-accent: color-mix(in srgb, var(--green-700) 55%, var(--grey-900) 45%);
+  --sidebar-accent-foreground: var(--color-text-inverse);
+  --sidebar-border: color-mix(in srgb, var(--grey-700) 60%, transparent 40%);
+  --sidebar-ring: color-mix(in srgb, var(--color-brand-primary) 40%, transparent 60%);
+
+  --glass-background: color-mix(in srgb, var(--grey-900) 60%, transparent 40%);
+  --glass-background-strong: color-mix(in srgb, var(--amber-500) 35%, transparent 65%);
+  --glass-border: color-mix(in srgb, var(--color-brand-primary) 35%, transparent 65%);
+  --liquid-glass-bg: color-mix(in srgb, var(--grey-900) 70%, transparent 30%);
+  --liquid-glass-border: color-mix(in srgb, var(--amber-500) 40%, transparent 60%);
+  --liquid-glass-highlight: color-mix(in srgb, var(--amber-500) 55%, transparent 45%);
+
+  --shadow-soft: 0 22px 48px -32px rgba(5, 20, 12, 0.6);
+  --shadow-elevated: 0 40px 72px -36px rgba(242, 127, 0, 0.35),
+    0 24px 52px -28px rgba(0, 0, 0, 0.45);
+
+  --background: var(--color-background-base);
+  --foreground: var(--color-text-base);
+  --card: var(--card-background);
+  --card-foreground: var(--card-text);
+  --popover: var(--color-surface-elevated);
+  --popover-foreground: var(--color-text-base);
+  --primary: var(--color-brand-primary);
+  --primary-foreground: var(--color-text-inverse);
+  --primary-strong: var(--color-brand-primary-active);
+  --primary-soft: var(--color-brand-primary-soft);
+  --secondary: var(--color-brand-secondary);
+  --secondary-foreground: var(--color-text-inverse);
+  --muted: color-mix(in srgb, var(--grey-900) 85%, var(--grey-800) 15%);
+  --muted-foreground: color-mix(in srgb, var(--grey-0) 68%, var(--grey-500) 32%);
+  --accent: var(--color-interactive-cta);
+  --accent-foreground: var(--color-text-inverse);
+  --destructive: var(--color-status-error);
+  --destructive-foreground: var(--color-text-inverse);
+  --border: var(--color-border-base);
+  --input: var(--input-border);
+  --ring: var(--focus-ring-color);
+  --surface-strong: var(--color-surface-base);
+  --surface-subtle: var(--color-surface-subtle);
+  --surface-muted: var(--color-surface-muted);
 }
 
 @media (min-width: 1400px) {
@@ -920,6 +1134,23 @@
     animation: shimmer-glow 3s ease-in-out infinite;
   }
 
+  .animate-aurora {
+    animation: aurora 60s linear infinite;
+  }
+
+.animate-slide-up {
+  animation: slide-up 0.7s ease-out forwards;
+}
+
+/* Logo Dark Mode Optimierung */
+.logo-dark-mode {
+  transition: filter 0.3s ease-in-out;
+}
+
+.logo-dark-mode.dark {
+  filter: brightness(1.8) contrast(1.2) saturate(1.3) hue-rotate(10deg);
+}
+
   .content-readable {
     max-width: var(--max-readable);
   }
@@ -955,4 +1186,24 @@
 @keyframes liquid-move {
   0%, 100% { transform: translate3d(0,0,0); }
   50% { transform: translate3d(-4%, -2%, 0); }
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

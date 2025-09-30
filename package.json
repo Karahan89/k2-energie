@@ -6,6 +6,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
+    "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
     "check-types": "turbo check-types",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "migrate": "tsx sanity/migrate-from-demo.ts"
@@ -15,6 +16,9 @@
     "@workspace/typescript-config": "workspace:*",
     "dotenv": "^17.2.2",
     "prettier": "^3.6.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-declaration-strict-value": "^1.10.11",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
     "turbo": "^2.5.4",
@@ -24,5 +28,13 @@
   "packageManager": "pnpm@10.12.2",
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.539.0"
   }
 }

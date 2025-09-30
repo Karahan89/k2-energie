@@ -1,10 +1,8 @@
-import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 import {
-  BookMarked,
-  BriefcaseBusiness,
   Building2,
   ClipboardList,
   CogIcon,
+  CompassIcon,
   File,
   FileText,
   Gavel,
@@ -18,15 +16,12 @@ import {
   Settings2,
   SparkleIcon,
   TrendingUpDown,
-  Users,
 } from "lucide-react";
 import type {
-  ListItemBuilder,
   StructureBuilder,
   StructureResolverContext,
 } from "sanity/structure";
 
-import { HierarchicalPagesTree } from "./components";
 import { createSlugBasedStructure } from "./components/nested-pages-strucure";
 import type { SchemaType, SingletonType } from "./schemaTypes";
 import { getTitleCase } from "./utils/helper";
@@ -68,129 +63,113 @@ const createList = ({ S, type, icon, title, id }: CreateList) => {
     .icon(icon ?? File);
 };
 
-type CreateIndexList = {
-  S: StructureBuilder;
-  list: Base;
-  index: Base<SingletonType>;
-  context: StructureResolverContext;
-};
-
-const createIndexListWithOrderableItems = ({
-  S,
-  index,
-  list,
-  context,
-}: CreateIndexList) => {
-  const indexTitle = index.title ?? getTitleCase(index.type);
-  const listTitle = list.title ?? getTitleCase(list.type);
-  return S.listItem()
-    .title(listTitle)
-    .icon(index.icon ?? File)
-    .child(
-      S.list()
-        .title(indexTitle)
-        .items([
-          S.listItem()
-            .title(indexTitle)
-            .icon(index.icon ?? File)
-            .child(
-              S.document()
-                .views([S.view.form()])
-                .schemaType(index.type)
-                .documentId(index.type),
-            ),
-          orderableDocumentListDeskItem({
-            type: list.type,
-            S,
-            context,
-            icon: list.icon ?? File,
-            title: `${listTitle}`,
-          }),
-        ]),
-    );
-};
-
-// Create hierarchical page structure using custom React component
-const createHierarchicalPageStructure = (
-  S: StructureBuilder,
-  context: StructureResolverContext,
-): ListItemBuilder => {
-  return S.listItem()
-    .title("Pages")
-    .icon(File)
-    .child(S.component(HierarchicalPagesTree).id("hierarchical-pages-tree"));
-};
-
 export const structure = (
   S: StructureBuilder,
   context: StructureResolverContext,
 ) => {
   return S.list()
-    .title("Content")
+    .title("K2 Energieberatung CMS")
     .items([
-      createSingleTon({ S, type: "homePage", icon: HomeIcon }),
-      createSingleTon({ S, type: "companyPage", icon: Building2 }),
-      createSingleTon({ S, type: "jobsIndexPage", icon: BriefcaseBusiness }),
-      createSingleTon({ S, type: "contactPage", icon: PhoneCall }),
-      S.divider(),
-      createSlugBasedStructure(S, "page"),
-      createIndexListWithOrderableItems({
-        S,
-        index: { type: "blogIndex", icon: BookMarked },
-        list: { type: "blog", title: "Blogs", icon: FileText },
-        context,
-      }),
-      createList({
-        S,
-        type: "service",
-        title: "Services",
-        icon: SparkleIcon,
-      }),
-      createList({
-        S,
-        type: "project",
-        title: "Projects",
-        icon: Landmark,
-      }),
-      createList({
-        S,
-        type: "faq",
-        title: "FAQs",
-        icon: MessageCircle,
-      }),
-      createList({ S, type: "teamMember", title: "Team", icon: Users }),
-      createList({
-        S,
-        type: "jobPosting",
-        title: "Jobs",
-        icon: BriefcaseBusiness,
-      }),
-      createList({
-        S,
-        type: "legalPage",
-        title: "Rechtliches",
-        icon: Gavel,
-      }),
-      createList({ S, type: "author", title: "Authors", icon: Users }),
-      createList({
-        S,
-        type: "redirect",
-        title: "Redirects",
-        icon: TrendingUpDown,
-      }),
-      S.divider(),
+      // Hauptseiten
       S.listItem()
-        .title("Site Configuration")
-        .icon(Settings2)
+        .title("🏠 Hauptseiten")
+        .icon(HomeIcon)
         .child(
           S.list()
-            .title("Site Configuration")
+            .title("Hauptseiten")
             .items([
               createSingleTon({
                 S,
-                type: "navbar",
-                title: "Navigation (alt)",
+                type: "homePage",
+                title: "Startseite",
+                icon: HomeIcon,
+              }),
+              createSingleTon({
+                S,
+                type: "companyPage",
+                title: "Unternehmen",
+                icon: Building2,
+              }),
+              createSingleTon({
+                S,
+                type: "contactPage",
+                title: "Kontakt",
+                icon: PhoneCall,
+              }),
+              createSingleTon({
+                S,
+                type: "service",
+                title: "Leistungen",
+                icon: SparkleIcon,
+              }),
+              createSingleTon({
+                S,
+                type: "project",
+                title: "Projekte & Referenzen",
+                icon: Landmark,
+              }),
+            ]),
+        ),
+
+      S.divider(),
+
+      // Inhalte
+      S.listItem()
+        .title("📄 Inhalte")
+        .icon(FileText)
+        .child(
+          S.list()
+            .title("Inhalte")
+            .items([
+              createSlugBasedStructure(S, "page"),
+              createList({
+                S,
+                type: "serviceItem",
+                title: "Einzelne Leistungen",
+                icon: SparkleIcon,
+              }),
+              createList({
+                S,
+                type: "serviceCategory",
+                title: "Leistungskategorien",
                 icon: PanelBottom,
+              }),
+              createList({
+                S,
+                type: "projectItem",
+                title: "Einzelne Projekte",
+                icon: Landmark,
+              }),
+              createList({
+                S,
+                type: "faq",
+                title: "Häufige Fragen",
+                icon: MessageCircle,
+              }),
+              createList({
+                S,
+                type: "legalPage",
+                title: "Rechtliches",
+                icon: Gavel,
+              }),
+            ]),
+        ),
+
+      S.divider(),
+
+      // Technische Einstellungen
+      S.listItem()
+        .title("⚙️ Einstellungen")
+        .icon(Settings2)
+        .child(
+          S.list()
+            .title("Einstellungen")
+            .items([
+              createSingleTon({
+                S,
+                type: "siteSettings",
+                title: "Globale Einstellungen",
+                icon: CogIcon,
               }),
               createSingleTon({
                 S,
@@ -198,17 +177,59 @@ export const structure = (
                 title: "Footer",
                 icon: PanelBottomIcon,
               }),
-              createSingleTon({
-                S,
-                type: "siteSettings",
-                title: "Globale Einstellungen",
-                icon: CogIcon,
-              }),
+              S.listItem()
+                .title("Navigation")
+                .icon(ClipboardList)
+                .child(
+                  S.list()
+                    .title("Navigation verwalten")
+                    .items([
+                      S.listItem()
+                        .title("Header Navigation")
+                        .icon(CompassIcon)
+                        .child(
+                          S.documentList()
+                            .title("Header Navigation")
+                            .filter(
+                              '_type == "navigationItem" && location == "header"',
+                            )
+                            .defaultOrdering([
+                              { field: "order", direction: "asc" },
+                            ]),
+                        ),
+                      S.listItem()
+                        .title("Footer Navigation")
+                        .icon(CompassIcon)
+                        .child(
+                          S.documentList()
+                            .title("Footer Navigation")
+                            .filter(
+                              '_type == "navigationItem" && location == "footer"',
+                            )
+                            .defaultOrdering([
+                              { field: "order", direction: "asc" },
+                            ]),
+                        ),
+                      S.divider(),
+                      S.listItem()
+                        .title("Alle Navigationseinträge")
+                        .icon(ClipboardList)
+                        .child(
+                          S.documentList()
+                            .title("Alle Navigationseinträge")
+                            .filter('_type == "navigationItem"')
+                            .defaultOrdering([
+                              { field: "location", direction: "asc" },
+                              { field: "order", direction: "asc" },
+                            ]),
+                        ),
+                    ]),
+                ),
               createList({
                 S,
-                type: "navigationItem",
-                title: "Navigationseinträge",
-                icon: ClipboardList,
+                type: "redirect",
+                title: "Weiterleitungen",
+                icon: TrendingUpDown,
               }),
             ]),
         ),

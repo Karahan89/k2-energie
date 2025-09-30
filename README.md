@@ -1,139 +1,178 @@
-# Next.js Monorepo with Sanity CMS
+# k2-energie
 
-A modern, full-stack monorepo template built with Next.js App Router, Sanity CMS, Shadcn UI, and TurboRepo.
+**Ingenieurbüro für Energieberatung, Sanierungsfahrpläne und klimaneutrale Quartiersentwicklung**
 
-![Easiest way to build a webpage](https://raw.githubusercontent.com/robotostudio/turbo-start-sanity/main/turbo-start-sanity-og.png)
+Ein modernes, full-stack Monorepo mit Next.js App Router, Sanity CMS, Shadcn UI und Turborepo.
 
-## Features
+## 🚀 Quick Start
 
-### Monorepo Structure
+```bash
+# Repository klonen
+git clone <repository-url>
+cd k2-energie-1
 
-- Apps: web (Next.js frontend) and studio (Sanity Studio)
-- Shared packages: UI components, TypeScript config, ESLint config
-- Turborepo for build orchestration and caching
+# Dependencies installieren
+pnpm install
 
-### Frontend (Web)
-
-- Next.js App Router with TypeScript
-- Shadcn UI components with Tailwind CSS
-- Server Components and Server Actions
-- SEO optimization with metadata
-- Blog system with rich text editor
-- Table of contents generation
-- Responsive layouts
-
-### Content Management (Studio)
-
-- Sanity Studio v3
-- Custom document types (Blog, FAQ, Pages)
-- Visual editing integration
-- Structured content with schemas
-- Live preview capabilities
-- Asset management
-
-## Getting Started
-
-### Installing the template
-
-#### 1. Initialize template with Sanity CLI
-
-Run the command in your Terminal to initialize this template on your local computer.
-
-See the documentation if you are [having issues with the CLI](https://www.sanity.io/help/cli-errors).
-
-```shell
-npm create sanity@latest -- --template robotostudio/turbo-start-sanity
-```
-
-#### 2. Run Studio and Next.js app locally
-
-Navigate to the template directory using `cd <your app name>`, and start the development servers by running the following command
-
-```shell
+# Development Server starten
 pnpm run dev
 ```
 
-#### 3. Open the app and sign in to the Studio
+**Verfügbare URLs:**
+- **Web App**: http://localhost:3000
+- **Sanity Studio**: http://localhost:3333
 
-Open the Next.js app running locally in your browser on [http://localhost:3000](http://localhost:3000).
+## 📚 Dokumentation
 
-Open the Studio running locally in your browser on [http://localhost:3333](http://localhost:3333). You should now see a screen prompting you to log in to the Studio. Use the same service (Google, GitHub, or email) that you used when you logged in to the CLI.
+Die vollständige Dokumentation finden Sie im [`docs/`](./docs/) Verzeichnis:
 
-### Adding content with Sanity
+- **[Getting Started](./docs/getting-started.md)** - Schnellstart-Anleitung
+- **[Projektarchitektur](./docs/architecture.md)** - Technische Übersicht
+- **[Development](./docs/development/)** - Entwicklungsumgebung und Code-Standards
+- **[Content Management](./docs/content/)** - Sanity Studio und Content-Strategie
+- **[Deployment](./docs/deployment/)** - Deployment-Anleitungen
 
-#### 1. Publish your first document
+## 🏗️ Projektstruktur
 
-The template comes pre-defined with a schema containing `Author`, `Blog`, `BlogIndex`, `FAQ`, `Footer`, `HomePage`, `Navbar`, `Page`, and `Settings` document types.
+```
+k2-energie-1/
+├── apps/
+│   ├── web/                 # Next.js Frontend
+│   └── studio/              # Sanity CMS Studio
+├── packages/
+│   ├── ui/                  # Shared UI Components
+│   ├── typescript-config/   # TypeScript Konfiguration
+│   └── eslint-config/       # ESLint Konfiguration
+├── docs/                    # Zentrale Dokumentation
+└── turbo.json              # Turborepo Konfiguration
+```
 
-From the Studio, click "+ Create" and select the `Blog` document type. Go ahead and create and publish the document.
+## 🎯 Über k2-energie
 
-Your content should now appear in your Next.js app ([http://localhost:3000](http://localhost:3000)) as well as in the Studio on the "Presentation" Tab
+**k2-energie** ist ein Ingenieurbüro für Energieberatung mit Sitz in Lengede, das sich auf folgende Bereiche spezialisiert hat:
 
-#### 2. Sample Content
+- **Energieberatung** (BAFA-konform)
+- **Sanierungsfahrpläne** (iSFP)
+- **Fördermanagement** für BAFA, KfW und regionale Programme
+- **Zielgruppen**: Wohnungswirtschaft, Kommunen, Gewerbe & Industrie
 
-When you initialize the template using the Sanity CLI, sample content is not automatically imported into your project. However, you can import it after the init is done. This data includes example blog posts, authors, and other content types to help you get started quickly (see next step).
+## 🛠️ Technologie-Stack
 
-#### 3. Seed data using script
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **CMS**: Sanity Studio v3 mit Visual Editing
+- **UI**: Shadcn UI Komponenten
+- **Build**: Turborepo für optimierte Builds
+- **Styling**: CSS Custom Properties, responsive Design
 
-To add sample data programmatically, run the following command:
+## 🚀 Features
 
-```shell
+### Monorepo Structure
+- Apps: web (Next.js frontend) und studio (Sanity Studio)
+- Shared packages: UI components, TypeScript config, ESLint config
+- Turborepo für Build-Orchestrierung und Caching
+
+### Frontend (Web)
+- Next.js App Router mit TypeScript
+- Shadcn UI components mit Tailwind CSS
+- Server Components und Server Actions
+- SEO-Optimierung mit Metadaten
+- Page Builder System für dynamische Inhalte
+- Responsive Layouts
+- **Schlanke Struktur** ohne Blog oder Newsletter für maximale Klarheit
+
+### Content Management (Studio)
+- Sanity Studio v3
+- Custom document types (Services, Projects, Pages)
+- Visual editing integration
+- Strukturierte Inhalte mit Schemas
+- Live preview capabilities
+- Asset management
+
+## 📦 Verfügbare Scripts
+
+```bash
+# Development
+pnpm run dev          # Startet beide Apps
+pnpm run build        # Baut beide Apps
+pnpm run lint         # Lintet alle Apps
+pnpm run check-types  # TypeScript Check
+
+# Sanity Studio
 cd apps/studio
-npx sanity exec scripts/create-data.ts --with-user-token
+npx sanity start      # Nur Studio starten
+npx sanity deploy     # Studio deployen
+npx sanity exec       # Scripts ausführen
+
+# Web App
+cd apps/web
+pnpm run dev          # Nur Web App starten
+pnpm run build        # Nur Web App bauen
 ```
 
-This command executes a TypeScript script that creates and populates content in your Sanity dataset.
+## 🔧 Environment Setup
 
-#### 4. Extending the Sanity schema
+Erstellen Sie eine `.env.local` Datei im Root-Verzeichnis:
 
-The schemas for all document types are defined in the `studio/schemaTypes/documents` directory. You can [add more document types](https://www.sanity.io/docs/schema-types) to the schema to suit your needs.
+```env
+# Sanity Configuration
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2025-02-10
+NEXT_PUBLIC_SANITY_STUDIO_URL=http://localhost:3333
 
-### Deploying your application and inviting editors
-
-#### 1. Deploy Sanity Studio
-
-Your Next.js frontend (`/web`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
-
-> **⚠️ Important**: When initializing the template with the Sanity CLI, the `.github` folder may not be included or might be renamed to `github` (without the dot). If you don't see a `.github` folder in your project root, you'll need to manually create it and copy the GitHub Actions workflows from the [template repository](https://github.com/robotostudio/turbo-start-sanity/tree/main/.github) for the deployment automation to work.
-
-The template includes a GitHub Actions workflow [`deploy-sanity.yml`](https://raw.githubusercontent.com/robotostudio/turbo-start-sanity/main/.github/workflows/deploy-sanity.yml) that automatically deploys your Sanity Studio whenever changes are pushed to the `studio` directory.
-
-> **Note**: To use the GitHub Actions workflow, make sure to configure the following secrets in your repository settings:
->
-> - `SANITY_DEPLOY_TOKEN`
-> - `SANITY_STUDIO_PROJECT_ID`
-> - `SANITY_STUDIO_DATASET`
-> - `SANITY_STUDIO_TITLE`
-> - `SANITY_STUDIO_PRESENTATION_URL`
-> - `SANITY_STUDIO_PRODUCTION_HOSTNAME`
-
-Set `SANITY_STUDIO_PRODUCTION_HOSTNAME` to whatever you want your deployed Sanity Studio hostname to be. Eg. for `SANITY_STUDIO_PRODUCTION_HOSTNAME=my-cool-project` you'll get a studio URL of `https://my-cool-project.sanity.studio` (and `<my-branch-name>-my-cool-project.sanity.studio` for PR previews builds done automatically via the `deploy-sanity.yml` github CI workflow when you open a PR.)
-
-Set `SANITY_STUDIO_PRESENTATION_URL` to your web app front-end URL (from the Vercel deployment). This URL is required for production deployments and should be:
-- Set in your GitHub repository secrets for CI/CD deployments
-- Set in your local environment if deploying manually with `npx sanity deploy`
-- Not needed for local development, where preview will automatically use http://localhost:3000
-
-You can then manually deploy from your Studio directory (`/studio`) using:
-
-```shell
-npx sanity deploy
+# Sanity Studio (für Development)
+SANITY_STUDIO_PROJECT_ID=your_project_id
+SANITY_STUDIO_DATASET=production
+SANITY_STUDIO_TITLE=k2-energie Studio
 ```
 
-**Note**: To use the live preview feature, your browser needs to enable third party cookies.
+## 📝 Content erstellen
 
-#### 2. Deploy Next.js app to Vercel
+### Seed Data laden
+```bash
+cd apps/studio
+npx sanity exec scripts/seed-energy-consulting.ts --with-user-token
+```
 
-You have the freedom to deploy your Next.js app to your hosting provider of choice. With Vercel and GitHub being a popular choice, we'll cover the basics of that approach.
+### Content bearbeiten
+1. Öffnen Sie das Sanity Studio (http://localhost:3333)
+2. Erstellen Sie Ihre erste Homepage
+3. Fügen Sie Services und Projekte hinzu
+4. Nutzen Sie das Visual Editing für Live-Updates
 
-1. Create a GitHub repository from this project. [Learn more](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
-2. Create a new Vercel project and connect it to your Github repository.
-3. Set the `Root Directory` to your Next.js app (`/apps/web`).
-4. Configure your Environment Variables.
+## 🚀 Deployment
 
-#### 3. Invite a collaborator
+### Sanity Studio
+- **Automatisch**: GitHub Actions bei Push auf `main`
+- **Manuell**: `npx sanity deploy` im `apps/studio` Verzeichnis
 
-Now that you've deployed your Next.js application and Sanity Studio, you can optionally invite a collaborator to your Studio. Open up [Manage](https://www.sanity.io/manage), select your project and click "Invite project members"
+### Next.js App
+- **Vercel** (empfohlen): Automatisches Deployment
+- **Netlify**: Mit `netlify.toml` Konfiguration
+- **Eigener Server**: Docker-basiertes Deployment
 
-They will be able to access the deployed Studio, where you can collaborate together on creating content.
-# k2-energie
+Detaillierte Anleitungen finden Sie in der [Deployment-Dokumentation](./docs/deployment/).
+
+## 🤝 Contributing
+
+Wir freuen uns über Beiträge! Bitte lesen Sie unsere [Contributing Guidelines](./docs/legal/contributing.md) und den [Code of Conduct](./docs/legal/code-of-conduct.md).
+
+## 📞 Support
+
+- **E-Mail**: hallo@k2-energie.de
+- **Telefon**: +49 5344 984 92 10
+- **Bürozeiten**: Mo-Do 8-17 Uhr, Fr 8-15 Uhr
+
+## 📄 Lizenz
+
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe [LICENSE](./LICENSE) für Details.
+
+## 🔗 Links
+
+- **Website**: https://k2-energie.de
+- **Sanity Studio**: https://k2-energie.sanity.studio
+- **Dokumentation**: [docs/](./docs/)
+
+---
+
+*Entwickelt mit ❤️ für nachhaltige Energieberatung*

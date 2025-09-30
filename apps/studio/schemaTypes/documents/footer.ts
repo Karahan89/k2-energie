@@ -1,114 +1,190 @@
-import { LayoutPanelLeft, Link, PanelBottom } from "lucide-react";
+import { PanelBottomIcon } from "lucide-react";
 import { defineField, defineType } from "sanity";
 
-const footerColumnLink = defineField({
-  name: "footerColumnLink",
+const contactInfo = defineField({
+  name: "contactInfo",
+  title: "Kontaktinformationen",
   type: "object",
-  icon: Link,
   fields: [
     defineField({
-      name: "name",
+      name: "companyName",
+      title: "Firmenname",
       type: "string",
-      title: "Name",
-      description: "Name for the link",
+      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "url",
-      type: "customUrl",
+      name: "address",
+      title: "Adresse",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "phone",
+      title: "Telefon",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "email",
+      title: "E-Mail",
+      type: "string",
+      validation: (rule) => rule.required().email(),
     }),
   ],
-  preview: {
-    select: {
-      title: "name",
-      externalUrl: "url.external",
-      urlType: "url.type",
-      internalUrl: "url.internal.slug.current",
-      openInNewTab: "url.openInNewTab",
-    },
-    prepare({ title, externalUrl, urlType, internalUrl, openInNewTab }) {
-      const url = urlType === "external" ? externalUrl : internalUrl;
-      const newTabIndicator = openInNewTab ? " ↗" : "";
-      const truncatedUrl =
-        url?.length > 30 ? `${url.substring(0, 30)}...` : url;
-
-      return {
-        title: title || "Untitled Link",
-        subtitle: `${urlType === "external" ? "External" : "Internal"} • ${truncatedUrl}${newTabIndicator}`,
-        media: Link,
-      };
-    },
-  },
 });
 
-const footerColumn = defineField({
-  name: "footerColumn",
+
+const socialLinks = defineField({
+  name: "socialLinks",
+  title: "Social Media Links",
   type: "object",
-  icon: LayoutPanelLeft,
   fields: [
     defineField({
-      name: "title",
-      type: "string",
-      title: "Title",
-      description: "Title for the column",
+      name: "facebook",
+      title: "Facebook URL",
+      type: "url",
     }),
     defineField({
-      name: "links",
-      type: "array",
-      title: "Links",
-      description: "Links for the column",
-      of: [footerColumnLink],
+      name: "twitter",
+      title: "Twitter/X URL",
+      type: "url",
+    }),
+    defineField({
+      name: "instagram",
+      title: "Instagram URL",
+      type: "url",
+    }),
+    defineField({
+      name: "linkedin",
+      title: "LinkedIn URL",
+      type: "url",
+    }),
+    defineField({
+      name: "youtube",
+      title: "YouTube URL",
+      type: "url",
     }),
   ],
-  preview: {
-    select: {
-      title: "title",
-      links: "links",
+});
+
+const footerLinks = defineField({
+  name: "footerLinks",
+  title: "Footer Links",
+  type: "object",
+  fields: [
+    defineField({
+      name: "quickLinks",
+      title: "Schnellzugriff Links",
+      description: "Links zu Hauptseiten der Website",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "title",
+              title: "Titel",
+              type: "string",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "href",
+              title: "URL",
+              type: "string",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "openInNewTab",
+              title: "In neuem Tab öffnen",
+              type: "boolean",
+              initialValue: false,
+            }),
+          ],
+          preview: {
+            select: {
+              title: "title",
+              subtitle: "href",
+            },
+          },
+        },
+      ],
+    }),
+  ],
+});
+
+const copyrightLinks = defineField({
+  name: "copyrightLinks",
+  title: "Copyright-Zeile Links",
+  description: "Links die in der Copyright-Zeile angezeigt werden (z.B. Impressum, Datenschutz)",
+  type: "array",
+  of: [
+    {
+      type: "object",
+      fields: [
+        defineField({
+          name: "title",
+          title: "Titel",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "href",
+          title: "URL",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "openInNewTab",
+          title: "In neuem Tab öffnen",
+          type: "boolean",
+          initialValue: false,
+        }),
+      ],
+      preview: {
+        select: {
+          title: "title",
+          subtitle: "href",
+        },
+      },
     },
-    prepare({ title, links = [] }) {
-      return {
-        title: title || "Untitled Column",
-        subtitle: `${links.length} link${links.length === 1 ? "" : "s"}`,
-      };
-    },
-  },
+  ],
 });
 
 export const footer = defineType({
   name: "footer",
   type: "document",
   title: "Footer",
-  description: "Footer content for your website",
+  description: "Footer-Konfiguration mit Newsletter, Kontakt und Links",
+  icon: PanelBottomIcon,
   fields: [
     defineField({
-      name: "label",
+      name: "title",
+      title: "Titel",
       type: "string",
       initialValue: "Footer",
-      title: "Label",
-      description: "Label used to identify footer in the CMS",
       validation: (rule) => rule.required(),
     }),
+    contactInfo,
+    socialLinks,
+    footerLinks,
+    copyrightLinks,
     defineField({
-      name: "subtitle",
-      type: "text",
-      rows: 2,
-      title: "Subtitle",
-      description: "Subtitle that sits beneath the logo in the footer",
-    }),
-    defineField({
-      name: "columns",
-      type: "array",
-      title: "Columns",
-      description: "Columns for the footer",
-      of: [footerColumn],
+      name: "copyrightText",
+      title: "Copyright Text",
+      type: "string",
+      initialValue: "Alle Rechte vorbehalten.",
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: "label",
+      title: "title",
+      companyName: "contactInfo.companyName",
     },
-    prepare: ({ title }) => ({
-      title: title || "Untitled Footer",
-      media: PanelBottom,
+    prepare: ({ title, companyName }) => ({
+      title: title || "Footer",
+      subtitle: companyName ? `Firma: ${companyName}` : "Footer-Konfiguration",
+      media: PanelBottomIcon,
     }),
   },
 });

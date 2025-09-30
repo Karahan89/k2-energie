@@ -16,27 +16,34 @@ export const GROUP = {
 };
 
 export const GROUPS: FieldGroupDefinition[] = [
-  // { name: CONST.MAIN_CONTENT, default: true },
   {
     name: GROUP.MAIN_CONTENT,
     icon: ComposeIcon,
-    title: "Content",
+    title: "Inhalt",
     default: true,
   },
-  { name: GROUP.SEO, icon: SearchIcon, title: "SEO" },
+  {
+    name: GROUP.SEO,
+    icon: SearchIcon,
+    title: "SEO & Suchmaschinenoptimierung",
+    description: "Einstellungen für bessere Sichtbarkeit in Suchmaschinen",
+  },
   {
     name: GROUP.OG,
     icon: InsertAboveIcon,
-    title: "Open Graph",
+    title: "Social Media",
+    description: "Vorschau-Bilder und Texte für Facebook, Twitter etc.",
   },
   {
     name: GROUP.CARD,
     icon: BlockElementIcon,
-    title: "Card",
+    title: "Karten-Ansicht",
+    description: "Einstellungen für die Darstellung in Übersichten",
   },
   {
     name: GROUP.RELATED,
     icon: InlineElementIcon,
-    title: "Related",
+    title: "Verwandte Inhalte",
+    description: "Links zu anderen Seiten und Inhalten",
   },
 ];

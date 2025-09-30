@@ -19,6 +19,8 @@
     "check": "npm run lint && npm run format && npm run check-types",
     "check:fix": "npm run lint:fix && npm run format:fix",
     "type": "sanity schema extract --enforce-required-fields && sanity typegen generate",
+    "setup-nav": "tsx scripts/setup-navigation-auto.ts",
+    "setup-footer": "tsx scripts/setup-footer.ts",
     "postinstall": "sanity exec scripts/cli-alert-for-data.ts"
   },
   "keywords": [

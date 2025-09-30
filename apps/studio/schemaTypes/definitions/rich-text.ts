@@ -37,6 +37,7 @@ const richTextMembers = [
         { title: "Strong", value: "strong" },
         { title: "Emphasis", value: "em" },
         { title: "Code", value: "code" },
+        { title: "Brand Highlight", value: "brand" },
       ],
     },
   }),

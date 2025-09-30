@@ -52,10 +52,10 @@ export async function isUnique(
 export const getDocTypePrefix = (type: string) => {
   const prefixMap: Record<string, string | undefined> = {
     page: "",
-    teamMember: "team",
-    jobPosting: "jobs",
-    service: "leistungen",
-    project: "projekte",
+    serviceItem: "leistungen",
+    projectItem: "projekte",
+    faq: "faq",
+    legalPage: "rechtliches",
   };
 
   const mapped = prefixMap[type];
@@ -65,10 +65,10 @@ export const getDocTypePrefix = (type: string) => {
 
 const slugMapper = {
   homePage: "/",
-  blogIndex: "/blog",
   companyPage: "/unternehmen",
-  jobsIndexPage: "/karriere",
   contactPage: "/kontakt",
+  service: "/leistungen",
+  project: "/projekte",
 } as Record<string, string>;
 
 export const createSlug: SlugifierFn = (input, _, { parent }) => {

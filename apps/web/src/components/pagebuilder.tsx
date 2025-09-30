@@ -7,12 +7,20 @@ import { useCallback, useMemo } from "react";
 import { dataset, projectId, studioUrl } from "@/config";
 import type { QueryHomePageDataResult } from "@/lib/sanity/sanity.types";
 
+import { CaseStudyCompactSection } from "./sections/case-study-compact";
+import { ContactCtaSection } from "./sections/contact-cta";
+import { ContactFormSection } from "./sections/contact-form-modern";
 import { CTABlock } from "./sections/cta";
 import { FaqAccordion } from "./sections/faq-accordion";
 import { FeatureCardsWithIcon } from "./sections/feature-cards-with-icon";
-import { HeroBlock } from "./sections/hero";
+import { FundingTeaserSection } from "./sections/funding-teaser";
+import { HeroBlock } from "./sections/hero-modern";
 import { ImageLinkCards } from "./sections/image-link-cards";
-import { SubscribeNewsletter } from "./sections/subscribe-newsletter";
+import { ProcessGridSection } from "./sections/process-grid";
+import { ProjectGallerySection } from "./sections/project-gallery-modern";
+import { ServiceListSection } from "./sections/service-list";
+import { StandardsBadgeSection } from "./sections/standards-badge";
+import { SectionTransition } from "./ui/section-transition";
 
 // More specific and descriptive type aliases
 type PageBuilderBlock = NonNullable<
@@ -89,8 +97,14 @@ function useOptimisticPageBuilder(
   return useOptimistic<PageBuilderBlock[], PageBuilderOptimisticAction>(
     initialBlocks,
     (currentBlocks, action) => {
-      if (action?.id === documentId && action.document?.pageBuilder) {
-        return action.document.pageBuilder;
+      const optimisticAction = action as
+        | PageBuilderOptimisticAction
+        | undefined;
+      if (
+        optimisticAction?.id === documentId &&
+        optimisticAction.document?.pageBuilder
+      ) {
+        return optimisticAction.document.pageBuilder as PageBuilderBlock[];
       }
       return currentBlocks;
     },
@@ -144,26 +158,70 @@ function useBlockRenderer(id: string, type: string) {
               <FeatureCardsWithIcon {...block} />
             </div>
           );
-        case "subscribeNewsletter":
-          return (
-            <div key={blockKey} data-sanity={dataAttribute}>
-              <SubscribeNewsletter {...block} />
-            </div>
-          );
         case "imageLinkCards":
           return (
             <div key={blockKey} data-sanity={dataAttribute}>
               <ImageLinkCards {...block} />
             </div>
           );
-        default:
+        case "standardsBadge":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <StandardsBadgeSection {...block} />
+            </div>
+          );
+        case "processGrid":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <ProcessGridSection {...block} />
+            </div>
+          );
+        case "fundingTeaser":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <FundingTeaserSection {...block} />
+            </div>
+          );
+        case "caseStudyCompact":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <CaseStudyCompactSection {...block} />
+            </div>
+          );
+        case "contactCta":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <ContactCtaSection {...block} />
+            </div>
+          );
+        case "contactForm":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <ContactFormSection {...block} />
+            </div>
+          );
+        case "projectGallery":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <ProjectGallerySection {...block} />
+            </div>
+          );
+        case "serviceList":
+          return (
+            <div key={blockKey} data-sanity={dataAttribute}>
+              <ServiceListSection {...block} />
+            </div>
+          );
+        default: {
+          const fallback = block as { _type?: string; _key?: string };
           return (
             <UnknownBlockError
               key={blockKey}
-              blockType={block._type}
-              blockKey={block._key ?? blockKey}
+              blockType={fallback._type ?? "unknown"}
+              blockKey={fallback._key ?? blockKey}
             />
           );
+        }
       }
     },
     [createBlockDataAttribute],
@@ -176,10 +234,11 @@ function useBlockRenderer(id: string, type: string) {
  * PageBuilder component for rendering dynamic content blocks from Sanity CMS
  */
 export function PageBuilder({
-  pageBuilder: initialBlocks = [],
+  pageBuilder: initialBlocksProp,
   id,
   type,
 }: PageBuilderProps) {
+  const initialBlocks = initialBlocksProp ?? ([] as PageBuilderBlock[]);
   const blocks = useOptimisticPageBuilder(initialBlocks, id);
   const { renderBlock } = useBlockRenderer(id, type);
 
@@ -194,11 +253,20 @@ export function PageBuilder({
 
   return (
     <div
-      className="flex w-full flex-col gap-[var(--space-8)] sm:gap-[var(--space-10)]"
+      className="flex w-full flex-col"
       data-sanity={containerDataAttribute}
       aria-label="Page content"
     >
-      {blocks.map(renderBlock)}
+      {blocks.map((block, index) => (
+        <SectionTransition
+          key={`${block._type}-${block._key ?? "unknown"}-${index}`}
+          variant="slide"
+          className="delay-100"
+          style={{ animationDelay: `${index * 100}ms` }}
+        >
+          {renderBlock(block)}
+        </SectionTransition>
+      ))}
     </div>
   );
 }

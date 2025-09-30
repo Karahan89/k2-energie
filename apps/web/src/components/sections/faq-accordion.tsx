@@ -12,6 +12,7 @@ import type { PagebuilderType } from "@/types";
 
 import { AmbientSurface } from "../ambient-surface";
 import { RichText } from "../elements/rich-text";
+import { AuroraSection } from "../ui/aurora-section";
 
 type FaqAccordionProps = PagebuilderType<"faqAccordion">;
 
@@ -23,10 +24,12 @@ export function FaqAccordion({
   link,
 }: FaqAccordionProps) {
   return (
-    <AmbientSurface
-      id="faq"
+    <AuroraSection
       variant="muted"
-      className="my-[var(--space-12)] py-[var(--space-12)]"
+      withAurora={true}
+      withTopDivider={true}
+      withBottomDivider={true}
+      className="py-[var(--space-16)] md:py-[var(--space-20)] lg:py-[var(--space-24)]"
     >
       <div className="layout-shell">
         <div className="flex w-full flex-col items-center text-center">
@@ -34,7 +37,7 @@ export function FaqAccordion({
             {eyebrow && (
               <Badge
                 variant="secondary"
-                className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-strong)] px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-[color:var(--brand-800)] dark:text-[color:var(--neutral-000)]/85"
+                className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface-strong)] px-4 py-2 text-[length:var(--step--2)] uppercase tracking-[0.18em] text-[color:var(--color-brand-primary-active)] dark:text-[color:var(--color-text-inverse)]/85"
               >
                 {eyebrow}
               </Badge>
@@ -43,7 +46,7 @@ export function FaqAccordion({
               {title}
             </h2>
             {subtitle && (
-              <p className="text-pretty text-[length:var(--step--1)] text-[color:var(--neutral-500)]">
+              <p className="text-pretty text-[length:var(--step--1)] text-[color:var(--color-text-muted)]">
                 {subtitle}
               </p>
             )}
@@ -64,16 +67,16 @@ export function FaqAccordion({
                   key={`AccordionItem-${faq?._id ?? index}-${index}`}
                   className="border-b border-[color:var(--border)]/60 last:border-none"
                 >
-                  <AccordionTrigger className="group py-4 text-left text-[length:var(--step--1)] font-medium text-[color:var(--brand-800)] transition-colors hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)] dark:text-[color:var(--neutral-000)]">
+                  <AccordionTrigger className="group py-4 text-left text-[length:var(--step--1)] font-medium text-[color:var(--color-brand-primary-active)] transition-colors hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)] dark:text-[color:var(--color-text-inverse)]">
                     <span className="flex items-center justify-between gap-3 text-left">
                       {faq?.title}
                       <ArrowUpRight
-                        className="h-4 w-4 shrink-0 text-[color:var(--brand-800)] transition-transform duration-200 group-data-[state=open]:rotate-45 dark:text-[color:var(--neutral-000)]"
+                        className="h-4 w-4 shrink-0 text-[color:var(--color-brand-primary-active)] transition-transform duration-200 group-data-[state=open]:rotate-45 dark:text-[color:var(--color-text-inverse)]"
                         aria-hidden="true"
                       />
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-4 text-[color:var(--neutral-500)]">
+                  <AccordionContent className="pb-4 text-[color:var(--color-text-muted)]">
                     <RichText
                       richText={faq?.richText ?? []}
                       className="text-[length:var(--step--1)] leading-relaxed"
@@ -86,14 +89,14 @@ export function FaqAccordion({
             {link?.href && (
               <div className="mt-[var(--space-4)] border-t border-[color:var(--border)] pt-[var(--space-4)] text-left">
                 {link.title && (
-                  <p className="text-[length:var(--step--2)] uppercase tracking-[0.24em] text-[color:var(--neutral-500)]">
+                  <p className="text-[length:var(--step--2)] uppercase tracking-[0.24em] text-[color:var(--color-text-muted)]">
                     {link.title}
                   </p>
                 )}
                 <Link
                   href={link.href ?? "#"}
                   target={link.openInNewTab ? "_blank" : "_self"}
-                  className="mt-1 inline-flex items-center gap-2 text-[length:var(--step--1)] font-semibold text-[color:var(--brand-800)] transition-colors hover:text-[color:var(--accent-500)] dark:text-[color:var(--neutral-000)]"
+                  className="mt-1 inline-flex items-center gap-2 text-[length:var(--step--1)] font-semibold text-[color:var(--color-brand-primary-active)] transition-colors hover:text-[color:var(--color-interactive-cta)] dark:text-[color:var(--color-text-inverse)]"
                 >
                   {link?.description}
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -103,6 +106,6 @@ export function FaqAccordion({
           </div>
         </div>
       </div>
-    </AmbientSurface>
+    </AuroraSection>
   );
 }

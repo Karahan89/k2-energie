@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import type { Maybe, SanityImageProps } from "@/types";
 
@@ -29,6 +30,25 @@ export function Logo({
   priority = true,
 }: LogoProps) {
   const resolvedAlt = alt ?? "logo";
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    checkTheme();
+
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Link href="/" aria-label="Zur Startseite">
@@ -40,7 +60,11 @@ export function Logo({
           <SanityImage
             image={image}
             alt={resolvedAlt}
-            className="h-full w-full object-contain dark:invert"
+            className={`h-full w-full object-contain transition-all duration-300 ${
+              isDarkMode
+                ? "brightness-150 contrast-125 saturate-150 hue-rotate-10"
+                : ""
+            }`}
             loading="eager"
             decoding="sync"
           />
@@ -50,7 +74,11 @@ export function Logo({
             alt={resolvedAlt}
             width={width}
             height={height}
-            className="h-full w-full object-contain dark:invert"
+            className={`h-full w-full object-contain transition-all duration-300 ${
+              isDarkMode
+                ? "brightness-150 contrast-125 saturate-150 hue-rotate-10"
+                : ""
+            }`}
             loading="eager"
             priority={priority}
             decoding="sync"
